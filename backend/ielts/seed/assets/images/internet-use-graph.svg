@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" width="680" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="680" height="440" fill="#ffffff"/>
+  <text x="340" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">Average hours per week spent online, by age group (2010–2025)</text>
+
+  <!-- y: 0h at 370, 35h at 90 => 8px per hour; x: 2010=120, 2015=280, 2020=440, 2025=600 -->
+  <g stroke="#e3e3e3">
+    <line x1="90" y1="330" x2="630" y2="330"/><line x1="90" y1="290" x2="630" y2="290"/>
+    <line x1="90" y1="250" x2="630" y2="250"/><line x1="90" y1="210" x2="630" y2="210"/>
+    <line x1="90" y1="170" x2="630" y2="170"/><line x1="90" y1="130" x2="630" y2="130"/>
+    <line x1="90" y1="90" x2="630" y2="90"/>
+  </g>
+  <line x1="90" y1="370" x2="630" y2="370" stroke="#555"/>
+  <line x1="90" y1="80" x2="90" y2="370" stroke="#555"/>
+  <g font-size="12" fill="#444" text-anchor="end">
+    <text x="82" y="374">0</text><text x="82" y="334">5</text><text x="82" y="294">10</text><text x="82" y="254">15</text>
+    <text x="82" y="214">20</text><text x="82" y="174">25</text><text x="82" y="134">30</text><text x="82" y="94">35</text>
+  </g>
+  <text x="30" y="230" font-size="13" fill="#444" transform="rotate(-90 30 230)" text-anchor="middle">Hours per week</text>
+  <g font-size="13" fill="#333" text-anchor="middle">
+    <text x="120" y="392">2010</text><text x="280" y="392">2015</text><text x="440" y="392">2020</text><text x="600" y="392">2025</text>
+  </g>
+
+  <!-- 16–24: 12, 18, 25, 29 -->
+  <polyline points="120,274 280,226 440,170 600,138" fill="none" stroke="#c0504d" stroke-width="3"/>
+  <g fill="#c0504d"><circle cx="120" cy="274" r="5"/><circle cx="280" cy="226" r="5"/><circle cx="440" cy="170" r="5"/><circle cx="600" cy="138" r="5"/></g>
+  <!-- 25–44: 8, 13, 19, 22 -->
+  <polyline points="120,306 280,266 440,218 600,194" fill="none" stroke="#4f81bd" stroke-width="3"/>
+  <g fill="#4f81bd"><rect x="115" y="301" width="10" height="10"/><rect x="275" y="261" width="10" height="10"/><rect x="435" y="213" width="10" height="10"/><rect x="595" y="189" width="10" height="10"/></g>
+  <!-- 45+: 3, 6, 11, 15 -->
+  <polyline points="120,346 280,322 440,282 600,250" fill="none" stroke="#9bbb59" stroke-width="3"/>
+  <g fill="#9bbb59"><path d="M120 340 l6 10 h-12 z"/><path d="M280 316 l6 10 h-12 z"/><path d="M440 276 l6 10 h-12 z"/><path d="M600 244 l6 10 h-12 z"/></g>
+
+  <!-- Legend -->
+  <g font-size="13" fill="#333">
+    <line x1="170" y1="424" x2="196" y2="424" stroke="#c0504d" stroke-width="3"/><text x="202" y="428">Aged 16–24</text>
+    <line x1="300" y1="424" x2="326" y2="424" stroke="#4f81bd" stroke-width="3"/><text x="332" y="428">Aged 25–44</text>
+    <line x1="430" y1="424" x2="456" y2="424" stroke="#9bbb59" stroke-width="3"/><text x="462" y="428">Aged 45 and over</text>
+  </g>
+</svg>

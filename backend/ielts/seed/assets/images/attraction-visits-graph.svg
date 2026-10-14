@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" width="680" height="440" font-family="Arial, Helvetica, sans-serif">
+  <rect width="680" height="440" fill="#ffffff"/>
+  <text x="340" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">Visits to three kinds of attraction, 2000 to 2020 (millions per year)</text>
+
+  <!-- Axes & grid: y from 0 (y=370) to 40 million (y=70), 7.5px per million; x from 2000 (x=100) to 2020 (x=600) -->
+  <g stroke="#e3e3e3">
+    <line x1="100" y1="70" x2="620" y2="70"/><line x1="100" y1="145" x2="620" y2="145"/>
+    <line x1="100" y1="220" x2="620" y2="220"/><line x1="100" y1="295" x2="620" y2="295"/>
+  </g>
+  <line x1="100" y1="370" x2="620" y2="370" stroke="#555"/>
+  <line x1="100" y1="60" x2="100" y2="370" stroke="#555"/>
+  <g font-size="12" fill="#444" text-anchor="end">
+    <text x="92" y="374">0</text><text x="92" y="299">10</text><text x="92" y="224">20</text>
+    <text x="92" y="149">30</text><text x="92" y="74">40</text>
+  </g>
+  <text x="40" y="220" font-size="13" fill="#444" text-anchor="middle" transform="rotate(-90 40 220)">Visits (millions)</text>
+  <g font-size="13" fill="#333" text-anchor="middle">
+    <text x="100" y="392">2000</text><text x="225" y="392">2005</text><text x="350" y="392">2010</text><text x="475" y="392">2015</text><text x="600" y="392">2020</text>
+  </g>
+
+  <!-- Theme parks: 30, 32, 28, 23, 16 -->
+  <polyline fill="none" stroke="#c0504d" stroke-width="3" points="100,145 225,130 350,160 475,197.5 600,250"/>
+  <g fill="#c0504d">
+    <rect x="95" y="140" width="10" height="10"/><rect x="220" y="125" width="10" height="10"/><rect x="345" y="155" width="10" height="10"/>
+    <rect x="470" y="192.5" width="10" height="10"/><rect x="595" y="245" width="10" height="10"/>
+  </g>
+
+  <!-- Museums: 20, 22, 25, 26, 26 -->
+  <polyline fill="none" stroke="#4f81bd" stroke-width="3" stroke-dasharray="9 5" points="100,220 225,205 350,182.5 475,175 600,175"/>
+  <g fill="#4f81bd">
+    <circle cx="100" cy="220" r="5.5"/><circle cx="225" cy="205" r="5.5"/><circle cx="350" cy="182.5" r="5.5"/>
+    <circle cx="475" cy="175" r="5.5"/><circle cx="600" cy="175" r="5.5"/>
+  </g>
+
+  <!-- National parks: 12, 14, 19, 29, 38 -->
+  <polyline fill="none" stroke="#5a8f3c" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round" points="100,280 225,265 350,227.5 475,152.5 600,85"/>
+  <g fill="#5a8f3c">
+    <path d="M100 273 l7 12 h-14z"/><path d="M225 258 l7 12 h-14z"/><path d="M350 220.5 l7 12 h-14z"/>
+    <path d="M475 145.5 l7 12 h-14z"/><path d="M600 78 l7 12 h-14z"/>
+  </g>
+
+  <!-- Values at each point -->
+  <g font-size="12" fill="#222" text-anchor="middle">
+    <text x="100" y="134">30</text><text x="225" y="119">32</text><text x="350" y="149">28</text><text x="475" y="216">23</text><text x="600" y="269">16</text>
+    <text x="100" y="209">20</text><text x="225" y="194">22</text><text x="350" y="172">25</text><text x="475" y="193">26</text><text x="600" y="164">26</text>
+    <text x="100" y="299">12</text><text x="225" y="284">14</text><text x="350" y="246">19</text><text x="475" y="139">29</text><text x="600" y="72">38</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="13" fill="#333">
+    <line x1="150" y1="420" x2="186" y2="420" stroke="#c0504d" stroke-width="3"/><rect x="163" y="415" width="10" height="10" fill="#c0504d"/><text x="194" y="425">Theme parks</text>
+    <line x1="300" y1="420" x2="336" y2="420" stroke="#4f81bd" stroke-width="3" stroke-dasharray="9 5"/><circle cx="318" cy="420" r="5.5" fill="#4f81bd"/><text x="344" y="425">Museums</text>
+    <line x1="430" y1="420" x2="466" y2="420" stroke="#5a8f3c" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/><path d="M448 413 l7 12 h-14z" fill="#5a8f3c"/><text x="474" y="425">National parks</text>
+  </g>
+</svg>

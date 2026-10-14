@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Messages between a student and the developers: the conversation itself
+   (components/MessageThread.jsx), the student's page (pages/hub/Messages.jsx)
+   and the studio's inbox (pages/admin/Messages.jsx). Prefix: dm-.
+   Only index.css tokens are used: the studio doesn't load the hub's stylesheets.
+   ========================================================================== */
+
+/* ---------- The conversation ---------- */
+.dm-thread { display: flex; flex-direction: column; flex: 1; min-height: 0; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; box-shadow: var(--shadow-sm); }
+.dm-log { flex: 1; min-height: 0; overflow-y: auto; padding: 18px 20px 10px; display: flex; flex-direction: column; gap: 4px; outline-offset: -3px; }
+.dm-day { align-self: center; margin: 12px 0 6px; padding: 3px 12px; border-radius: 999px; background: var(--bg); font-size: 12px; font-weight: 700; color: var(--ink-soft); }
+.dm-day:first-child { margin-top: 0; }
+.dm-msg { display: flex; flex-direction: column; align-items: flex-start; align-self: flex-start; max-width: min(80%, 620px); margin-top: 4px; animation: dmIn 0.22s ease; }
+.dm-msg.mine { align-items: flex-end; align-self: flex-end; }
+.dm-who { margin: 6px 6px 4px; font-size: 12px; font-weight: 800; color: var(--ink-soft); }
+.dm-bubble { padding: 10px 15px; border-radius: 6px 18px 18px 18px; background: color-mix(in srgb, var(--ink) 6%, var(--surface)); color: var(--ink); font-size: var(--dm-fs, var(--fs-body)); line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.dm-msg.mine .dm-bubble { border-radius: 18px 6px 18px 18px; background: var(--primary); color: #fff; }
+/* White on the dark theme's lighter blue is under 4.5:1, so "mine" keeps a deeper blue there. */
+html.dark .dm-msg.mine .dm-bubble { background: #1f55c9; }
+.dm-meta { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; margin: 4px 6px 0; font-size: 12px; color: var(--muted); }
+.dm-meta .ic { color: var(--good); }
+.dm-tag { font-style: normal; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); margin-right: 2px; }
+html.dark .dm-tag:not(.bug):not(.idea) { color: var(--primary-dark); }
+.dm-tag.bug { background: var(--danger-soft); color: var(--danger); }
+.dm-tag.idea { background: var(--good-soft); color: var(--good); }
+
+.dm-empty { margin: auto; max-width: 400px; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 20px 0; text-align: center; color: var(--ink-soft); font-size: var(--dm-fs, var(--fs-body)); line-height: 1.5; }
+.dm-empty-icon { width: 64px; height: 64px; border-radius: 22px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); margin-bottom: 4px; }
+html.dark .dm-empty-icon { color: var(--primary-dark); }
+.dm-empty h2 { margin: 0; font-family: var(--display); font-size: var(--fs-h3); font-weight: 600; color: var(--ink); }
+.dm-empty p { margin: 0; }
+.dm-empty a { color: var(--primary); font-weight: 700; }
+html.dark .dm-empty a { color: var(--primary-dark); }
+.dm-empty a:hover { text-decoration-thickness: 2px; }
+
+/* ---------- The box to write in ---------- */
+.dm-compose { padding: 8px 14px 12px; border-top: 1px solid var(--border); }
+.dm-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.dm-topics button { height: 30px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--ink-soft); font-size: 13px; font-weight: 700; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+.dm-topics button:hover { border-color: var(--primary); color: var(--primary); }
+.dm-topics button.on { background: var(--primary); border-color: var(--primary); color: #fff; }
+html.dark .dm-topics button.on { background: #1f55c9; border-color: #1f55c9; }
+.dm-box { display: flex; align-items: flex-end; gap: 10px; padding: 8px 8px 8px 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); transition: border-color 0.15s, box-shadow 0.15s; }
+.dm-box:hover:not(:focus-within) { border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); }
+.dm-box:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.dm-box textarea { flex: 1; min-width: 0; resize: none; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: var(--dm-fs, var(--fs-body)); line-height: 1.5; min-height: 24px; max-height: 160px; padding: 7px 0; field-sizing: content; }
+.dm-box textarea::placeholder { color: var(--muted); }
+.dm-send { width: 40px; height: 40px; flex-shrink: 0; border: 0; border-radius: 50%; background: var(--primary); color: #fff; display: grid; place-items: center; transition: transform 0.15s, opacity 0.15s; }
+html.dark .dm-send { background: #1f55c9; }
+.dm-send:hover:not(:disabled) { transform: scale(1.06); }
+.dm-send:disabled { opacity: 0.35; cursor: not-allowed; }
+.dm-hint { margin: 6px 6px 0; font-size: 12px; color: var(--muted); }
+.dm-hint b { color: var(--warn); font-weight: 700; }
+.dm-blocked { display: flex; align-items: flex-start; gap: 10px; margin: 0; padding: 14px 18px; border-top: 1px solid var(--border); background: var(--bg); color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
+.dm-blocked .ic { flex-shrink: 0; margin-top: 1px; color: var(--primary); }
+
+/* ---------- Student page ---------- */
+.dm-page { display: flex; flex-direction: column; gap: 16px; max-width: 880px; margin: 0 auto; padding-top: 6px; height: calc(100dvh - 176px); min-height: 460px; }
+.dm-hero { display: flex; align-items: center; gap: 14px; }
+.dm-hero-icon { width: 54px; height: 54px; flex-shrink: 0; border-radius: 18px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); }
+html.dark .dm-hero-icon { color: var(--primary-dark); }
+.dm-hero h1 { margin: 0; font-size: var(--fs-h2); font-weight: 650; letter-spacing: -0.005em; }
+.dm-hero p { margin: 2px 0 0; color: var(--ink-soft); font-size: var(--fs-body); line-height: 1.45; }
+
+/* ---------- Studio inbox ---------- */
+.dm-admin { --dm-fs: 14.5px; display: grid; grid-template-columns: minmax(260px, 340px) minmax(0, 1fr); gap: 18px; height: calc(100dvh - 250px); min-height: 460px; }
+.dm-list { display: flex; flex-direction: column; min-height: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow-sm); overflow: hidden; }
+.dm-list-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 18px 12px; border-bottom: 1px solid var(--border); }
+.dm-list-head h3 { margin: 0; font-family: var(--display); font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.dm-list-head span { font-size: 12px; color: var(--muted); }
+.dm-list-rows { flex: 1; min-height: 0; overflow-y: auto; padding: 8px; display: flex; flex-direction: column; gap: 2px; }
+.dm-conv { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px; border: 0; border-radius: 14px; background: transparent; color: var(--ink); text-align: left; transition: background 0.12s; }
+.dm-conv:hover { background: var(--primary-softer); }
+.dm-conv.on { background: var(--primary-soft); }
+.dm-conv-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.dm-conv-main b { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-conv-main span { font-size: 13px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-conv.unread .dm-conv-main b { font-weight: 800; }
+.dm-conv.unread .dm-conv-main span { color: var(--ink); font-weight: 600; }
+.dm-conv-side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.dm-conv-side small { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.dm-count { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; display: grid; place-items: center; background: var(--primary); color: #fff; font-size: 12px; font-weight: 800; font-style: normal; }
+html.dark .dm-count { background: #1f55c9; }
+.dm-pane { display: flex; flex-direction: column; min-height: 0; min-width: 0; gap: 12px; }
+.dm-pane-head { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.dm-pane-who { flex: 1; min-width: 0; }
+.dm-pane-who a { display: block; font-family: var(--display); font-size: 17px; font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-pane-who a:hover { color: var(--primary); text-decoration: underline; }
+.dm-pane-who span { display: block; font-size: 12.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm-back { display: none; }
+.dm-pane-none { flex: 1; display: grid; place-items: center; border: 2px dashed var(--border); border-radius: 22px; color: var(--muted); font-size: 14px; text-align: center; padding: 20px; }
+/* The count on the studio menu's "Messages" link. */
+.ad-nav-badge { margin-left: auto; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; display: grid; place-items: center; background: var(--primary); color: #fff; font-size: 12px; font-weight: 800; }
+html.dark .ad-nav-badge { background: #1f55c9; }
+
+@media (max-width: 900px) {
+  /* The phone's tab bar floats over the bottom of the page: leave room for it. */
+  .dm-page { height: calc(100dvh - 170px); min-height: 400px; gap: 12px; }
+  .dm-hero-icon { width: 46px; height: 46px; border-radius: 15px; }
+  .dm-hero h1 { font-size: var(--fs-h3); }
+  .dm-hero p { font-size: var(--fs-small); }
+  .dm-msg { max-width: 88%; }
+  /* One pane at a time: the list, or the conversation that was opened. */
+  .dm-admin { grid-template-columns: 1fr; height: calc(100dvh - 230px); }
+  .dm-admin.open .dm-list, .dm-admin:not(.open) .dm-pane { display: none; }
+  .dm-back { display: inline-grid; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dm-msg { animation: none; }
+  .dm-send, .dm-topics button, .dm-box { transition: none; }
+}
+@keyframes dmIn { from { opacity: 0; transform: translateY(6px); } }

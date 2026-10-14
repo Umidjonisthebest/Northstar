@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 486" width="800" height="486" font-family="Arial, Helvetica, sans-serif">
+  <rect width="800" height="486" fill="#ffffff"/>
+  <text x="400" y="24" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">How glass bottles are recycled</text>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#5b6478"/>
+    </marker>
+    <g id="box">
+      <rect width="160" height="100" rx="12" fill="#f5f8fc" stroke="#9aa9c2" stroke-width="1.5"/>
+    </g>
+  </defs>
+
+  <!-- Arrows between stages -->
+  <g stroke="#5b6478" stroke-width="2.2" fill="none" marker-end="url(#arrow)">
+    <path d="M186 96H212"/><path d="M378 96H404"/><path d="M570 96H596"/>
+    <path d="M680 148V184"/><path d="M680 302V338"/>
+    <path d="M598 400H572"/><path d="M406 400H380"/><path d="M214 400H188"/>
+    <path d="M60 344V160"/>
+  </g>
+  <text x="74" y="238" font-size="11.5" fill="#5b6478">bought, used</text>
+  <text x="74" y="253" font-size="11.5" fill="#5b6478">and returned</text>
+  <text x="74" y="268" font-size="11.5" fill="#5b6478">to bottle banks</text>
+
+  <!-- Stage boxes: number badge, icon, caption -->
+  <g font-size="11.5" fill="#333">
+    <!-- 1 Collection -->
+    <g transform="translate(24 46)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">1</text>
+      <rect x="112" y="10" width="36" height="34" rx="6" fill="#3a9d5d"/><circle cx="122" cy="22" r="4" fill="#fff"/><circle cx="138" cy="22" r="4" fill="#fff"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Collection</text><text x="14" y="77">used bottles collected</text><text x="14" y="92">from bottle banks</text>
+    </g>
+    <!-- 2 Transport -->
+    <g transform="translate(216 46)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">2</text>
+      <rect x="104" y="14" width="30" height="20" fill="#7a8aa8"/><rect x="134" y="20" width="14" height="14" fill="#4a5a78"/><circle cx="114" cy="38" r="5" fill="#333"/><circle cx="140" cy="38" r="5" fill="#333"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Transport</text><text x="14" y="77">taken by lorry to a</text><text x="14" y="92">recycling plant</text>
+    </g>
+    <!-- 3 Sorting -->
+    <g transform="translate(408 46)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">3</text>
+      <path d="M106 42V22l3-6v-6h4v6l3 6v20z" fill="#d6ecf7" stroke="#8ab" stroke-width="1"/>
+      <path d="M120 42V22l3-6v-6h4v6l3 6v20z" fill="#3a9d5d"/>
+      <path d="M134 42V22l3-6v-6h4v6l3 6v20z" fill="#8a5a2b"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Sorting</text><text x="14" y="77">sorted by colour:</text><text x="14" y="92">clear, green, brown</text>
+    </g>
+    <!-- 4 Washing -->
+    <g transform="translate(600 46)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">4</text>
+      <path d="M116 12c-5 8-8 12-8 16a8 8 0 0 0 16 0c0-4-3-8-8-16z" fill="#4aa8e8"/><path d="M138 20c-4 6-6 9-6 12a6 6 0 0 0 12 0c0-3-2-6-6-12z" fill="#7cc4f2"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Washing</text><text x="14" y="77">labels and dirt</text><text x="14" y="92">removed</text>
+    </g>
+    <!-- 5 Crushing -->
+    <g transform="translate(600 196)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">5</text>
+      <path d="M106 30l8-6 6 8-7 5z" fill="#3a9d5d"/><path d="M122 20l9 2-3 9-8-3z" fill="#8a5a2b"/><path d="M130 34l10-3 3 8-9 3z" fill="#bfe0ef" stroke="#8ab" stroke-width=".8"/><path d="M114 40l7-2 2 6-8 1z" fill="#8a5a2b"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Crushing</text><text x="14" y="77">crushed into small</text><text x="14" y="92">pieces (cullet)</text>
+    </g>
+    <!-- 6 Mixing -->
+    <g transform="translate(600 350)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">6</text>
+      <path d="M102 44c6-18 16-26 22-26s16 8 22 26z" fill="#e2c48f"/><circle cx="118" cy="36" r="2.5" fill="#3a9d5d"/><circle cx="130" cy="32" r="2.5" fill="#8a5a2b"/><circle cx="126" cy="40" r="2.5" fill="#8ab"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Mixing</text><text x="14" y="77">cullet mixed with sand</text><text x="14" y="92">and raw materials</text>
+    </g>
+    <!-- 7 Melting -->
+    <g transform="translate(408 350)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">7</text>
+      <rect x="106" y="14" width="40" height="30" rx="4" fill="#6b6f80"/><path d="M126 20c-6 8-8 12-8 15a8 8 0 0 0 16 0c0-3-2-7-8-15z" fill="#ff8a3d"/><path d="M126 28c-3 4-4 6-4 8a4 4 0 0 0 8 0c0-2-1-4-4-8z" fill="#ffd166"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Melting</text><text x="14" y="77">melted in a furnace</text><text x="14" y="92">at 1,500°C</text>
+    </g>
+    <!-- 8 Moulding -->
+    <g transform="translate(216 350)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">8</text>
+      <rect x="108" y="10" width="36" height="36" rx="4" fill="#dfe5ef" stroke="#7a8aa8" stroke-width="1.2"/><path d="M121 42V26l3-5v-6h4v6l3 5v16z" fill="#3a9d5d"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Moulding</text><text x="14" y="77">shaped into new</text><text x="14" y="92">bottles in moulds</text>
+    </g>
+    <!-- 9 Delivery -->
+    <g transform="translate(24 350)">
+      <use href="#box"/><circle cx="18" cy="18" r="11" fill="#1664e2"/><text x="18" y="22" fill="#fff" font-weight="bold" text-anchor="middle">9</text>
+      <rect x="108" y="22" width="36" height="22" fill="#f0e2c8" stroke="#a88a5a" stroke-width="1"/><path d="M104 22l6-10h32l6 10z" fill="#c0504d"/><rect x="120" y="30" width="10" height="14" fill="#a88a5a"/>
+      <text x="14" y="60" font-size="13" font-weight="bold">Delivery</text><text x="14" y="77">filled and delivered</text><text x="14" y="92">to shops</text>
+    </g>
+  </g>
+</svg>

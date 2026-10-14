@@ -1,0 +1,34 @@
+/* Text drawn by RichText.jsx (rt-): the passages and questions of the practice tests. It takes its
+   font and size from where it sits (a passage, a question, an answer choice); the math in it is
+   drawn with mathtext.css. */
+/* Blocks are spaced by this one rule, whatever each block's own margins say. */
+.rt > :not(:first-child) { margin-top: 0.85em; }
+.rt-p { margin: 0; }
+.rt u { text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+
+/* "The following text is adapted from…" above a passage, and the Text 1 / Text 2 labels. */
+.rt-src { margin: 0; font-size: 0.9em; font-style: italic; color: var(--ink-soft); }
+.rt-label { margin: 0; font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.rt > .rt-label + :not(:first-child) { margin-top: 0.3em; }
+
+/* An equation, or a system of them, set on its own lines. */
+.rt-eq { text-align: center; font-size: 1.05em; line-height: 1.85; }
+
+.rt-notes { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 0.4em; }
+
+/* A table can be wider than a phone: it scrolls inside its own box, never the page. */
+.rt .rt-table { margin-bottom: 0; }
+.rt-table-scroll { overflow-x: auto; }
+.rt-table table { width: auto; min-width: min(100%, 300px); }
+.rt-table figcaption { text-align: left; }
+.rt-table th:first-child, .rt-table td:first-child { text-align: left; }
+
+/* A figure is drawn in the page's own ink, so it follows the theme. */
+.rt-fig { margin: 0; color: var(--ink); }
+.rt-fig svg { display: block; width: 100%; height: auto; fill: currentColor; font-family: var(--sans); }
+.rt-fig figcaption { margin-top: 6px; font-family: var(--sans); font-size: 13px; font-style: italic; color: var(--muted); }
+
+/* A picture a teacher added in the studio: on white in both themes, so a chart with a transparent
+   background stays readable in dark mode. */
+.rt-img { margin: 0; padding: 8px; border-radius: 12px; background: #fff; border: 1px solid var(--border); width: fit-content; max-width: 100%; }
+.rt-img img { display: block; max-width: 100%; height: auto; max-height: 420px; }

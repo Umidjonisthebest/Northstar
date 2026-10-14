@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Weekly leagues: the student page (pages/hub/Leagues.jsx) and the home card
+   (components/LeagueCard.jsx). Who moves up or down is always said in words
+   with an arrow, not shown by colour alone. Prefix: ns-league-, ns-tier.
+   ========================================================================== */
+
+.ns-tier { flex: none; display: block; }
+
+/* Your league: a strip of night sky (always dark, so its text is always white). */
+.ns-league-top { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); border-radius: 24px; overflow: hidden; color: #fff; background: radial-gradient(1.6px 1.6px at 12% 22%, #fff 99%, transparent), radial-gradient(1.2px 1.2px at 28% 70%, rgba(255,255,255,.8) 99%, transparent), radial-gradient(1.4px 1.4px at 44% 16%, rgba(255,255,255,.9) 99%, transparent), radial-gradient(1px 1px at 58% 58%, rgba(255,255,255,.7) 99%, transparent), radial-gradient(1.6px 1.6px at 72% 28%, #fff 99%, transparent), radial-gradient(1.1px 1.1px at 86% 74%, rgba(255,255,255,.8) 99%, transparent), radial-gradient(1.3px 1.3px at 94% 18%, rgba(255,255,255,.9) 99%, transparent), radial-gradient(1px 1px at 36% 42%, rgba(255,255,255,.6) 99%, transparent), radial-gradient(1.2px 1.2px at 66% 84%, rgba(255,255,255,.7) 99%, transparent), radial-gradient(60% 120% at 8% 50%, rgba(138, 95, 230, 0.55), transparent 70%), linear-gradient(120deg, #2a2472 0%, #1c1a52 55%, #15133f 100%); }
+.ns-league-tier { display: flex; align-items: center; gap: 18px; padding: 24px 26px; }
+.ns-league-tier .ns-tier { filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4)); animation: nsTierBob 4.5s ease-in-out infinite; }
+@keyframes nsTierBob { 50% { transform: translateY(-5px) rotate(-3deg); } }
+.ns-league-tier > div { display: flex; flex-direction: column; }
+.ns-league-tier small { font-size: var(--fs-micro); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #c9c3ff; }
+.ns-league-tier b { font-family: var(--display); font-size: var(--fs-h1); font-weight: 600; line-height: 1.15; }
+.ns-league-tier span { font-size: var(--fs-body); color: #dcd8ff; }
+.ns-league-week { display: flex; flex-direction: column; justify-content: center; gap: 4px; margin: 14px 14px 14px 0; padding: 14px 20px; border-radius: 16px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.16); }
+.ns-league-week b { font-family: var(--display); font-size: var(--fs-h4); font-weight: 600; }
+.ns-league-week span { font-size: var(--fs-small); line-height: 1.5; color: #dcd8ff; }
+
+/* The five leagues as one climb: crests on a dotted line, yours lifted on a tile. */
+.ns-league-ladder { position: relative; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin: 0; padding: 0; }
+.ns-league-ladder::before { content: ""; position: absolute; left: 10%; right: 10%; top: 38px; border-top: 3px dotted var(--line-strong); }
+.ns-league-ladder li { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 6px 10px; border: 1.5px solid transparent; border-radius: 18px; text-align: center; font-family: var(--display); font-size: var(--fs-body); font-weight: 500; color: var(--ink-soft); }
+.ns-league-ladder li .ns-tier { transition: transform 0.25s var(--spring, ease); }
+.ns-league-ladder li:hover .ns-tier { transform: translateY(-3px) scale(1.06); }
+.ns-league-ladder li.here { background: var(--surface); border-color: color-mix(in srgb, #6a63ec 45%, var(--line)); box-shadow: 0 10px 24px -14px rgba(60, 50, 160, 0.5); color: var(--ink); }
+.ns-league-ladder small { font-family: var(--sans); font-size: var(--fs-micro); font-weight: 800; padding: 2px 9px; border-radius: 99px; background: color-mix(in srgb, #6a63ec 14%, var(--surface)); color: var(--primary); }
+
+.ns-league-last { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 16px; background: var(--chip); }
+.ns-league-last p { margin: 0; font-size: var(--fs-body); line-height: 1.5; color: var(--ink-2); }
+.ns-league-last b { display: block; font-size: var(--fs-small); color: var(--muted); }
+
+.ns-league-table { border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow-x: auto; }
+.ns-league-table table { width: 100%; border-collapse: collapse; font-size: var(--fs-body); }
+.ns-league-table caption { padding: 16px 18px 12px; text-align: left; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.ns-league-table th, .ns-league-table td { padding: 11px 18px; text-align: left; border-top: 1px solid var(--line); white-space: nowrap; }
+.ns-league-table thead th { font-size: var(--fs-micro); font-weight: 600; color: var(--muted); }
+.ns-league-table tbody th { font-weight: 550; color: var(--ink); }
+.ns-league-who { display: inline-flex; align-items: center; gap: 10px; }
+.ns-league-table td { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.ns-league-table tr.you th, .ns-league-table tr.you td { background: color-mix(in srgb, var(--primary) 8%, var(--surface)); color: var(--ink); font-weight: 650; }
+.ns-league-table tr.you td:first-child { box-shadow: inset 3px 0 0 var(--primary); }
+.ns-league-table tbody tr:not(.you):hover > * { background: var(--chip); }
+.ns-league-move { display: inline-flex; align-items: center; gap: 5px; font-size: var(--fs-small); color: var(--muted); }
+.ns-league-move.up { color: var(--easy); font-weight: 650; }
+.ns-league-move.down { color: var(--ink-soft); font-weight: 650; }
+
+.ns-league-goal { display: flex; align-items: center; gap: 10px; margin: 14px 0 0; padding: 12px 16px; border-radius: 14px; background: var(--sky-soft); font-size: var(--fs-body); font-weight: 550; color: var(--ink); }
+.ns-league-goal .ic { flex: none; color: var(--sky); }
+
+/* Home card */
+.ns-league-card { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border: 1px solid var(--line); border-radius: 20px; background: radial-gradient(90px 90px at 44px 50%, color-mix(in srgb, #8a5fe6 18%, transparent), transparent 70%), var(--surface); color: inherit; text-decoration: none; }
+.ns-league-card b { font-family: var(--display); font-weight: 600; }
+a.ns-league-card:hover { border-color: var(--line-strong); }
+.ns-league-card > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ns-league-card b { font-size: var(--fs-h4); }
+.ns-league-card span { font-size: var(--fs-small); color: var(--ink-soft); }
+.ns-league-card .ic { flex: none; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .ns-league-top { grid-template-columns: 1fr; }
+  .ns-league-week { margin: 0 14px 14px; }
+  .ns-league-tier { padding: 20px 20px 14px; }
+  .ns-league-ladder::before { display: none; }
+  .ns-league-ladder { gap: 2px; }
+  .ns-league-ladder li { padding: 10px 2px 8px; font-size: var(--fs-micro); min-width: 0; }
+  .ns-league-ladder li .ns-tier { width: 40px; height: 40px; }
+  .ns-league-ladder small { font-size: var(--fs-micro); padding: 2px 6px; white-space: nowrap; }
+  .ns-league-table th, .ns-league-table td { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-league-tier .ns-tier, .ns-league-ladder li .ns-tier { animation: none; transition: none; }
+}

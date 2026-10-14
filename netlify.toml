@@ -1,0 +1,52 @@
+# Northstar on Netlify: the built frontend as the site, the backend as one function
+# (netlify/functions/api.mjs -> backend/netlify.js), the database and uploads in Netlify Blobs.
+# Deploy from this folder: npx netlify-cli deploy --build --prod
+
+[build]
+  command = "npm --prefix backend install --omit=dev && npm --prefix frontend install && npm --prefix frontend run build && node tools/netlify/static.mjs"
+  publish = "frontend/dist"
+
+[functions]
+  directory = "netlify/functions"
+  # The backend folder goes into the function whole, with its node_modules (see the note in
+  # netlify/functions/api.mjs). Left out: what the CDN serves instead (question pictures, starter
+  # IELTS audio and pictures), tests, and any development database.
+  included_files = [
+    "backend/**",
+    "!backend/content/pack/media/**",
+    "!backend/ielts/seed/assets/**/*.{wav,mp3,m4a,png,jpg,jpeg,webp,svg}",
+    "!backend/**/*.test.js",
+    "!backend/uploads/**",
+    "!backend/data/db*",
+    "!backend/data/backups/**",
+    "!backend/data/.jwt-secret"
+  ]
+
+# Every page of the app is index.html (react-router). Files and the function come first.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# These apply to the published files only; the function sets its own headers.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'none'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/api/bank-media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, immutable"
+
+[[headers]]
+  for = "/ielts-assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

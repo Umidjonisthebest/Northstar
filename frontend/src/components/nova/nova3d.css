@@ -1,0 +1,20 @@
+/* The 3D Nova in pieces ("n3d-"): the star, and seven bubbles that each drift on their own. */
+/* `--n3d` is the size asked for; a caller's own class may set the width instead (e.g. 100%). */
+.n3d { position: relative; display: inline-block; width: var(--n3d, 220px); aspect-ratio: 1; max-width: 100%; flex: none; }
+.n3d-star { position: absolute; inset: 0; width: 100%; height: 100%; user-select: none; }
+.n3d-float { animation: n3dFloat 3.8s ease-in-out infinite; }
+@keyframes n3dFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-4%) rotate(2deg); }
+}
+/* Each bubble: out along its own direction and back, with a small wobble in size, like soap
+   bubbles in still air. Direction, speed and start point differ per bubble (set inline). */
+.n3d-bubble { position: absolute; height: auto; user-select: none; pointer-events: none; animation: n3dBubble 5s ease-in-out infinite; will-change: transform; }
+@keyframes n3dBubble {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  35% { transform: translate(var(--dx), var(--dy)) scale(1.08); }
+  70% { transform: translate(calc(var(--dx) * -0.5), calc(var(--dy) * 0.4)) scale(0.94); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .n3d-float, .n3d-bubble { animation: none !important; }
+}

@@ -1,0 +1,3694 @@
+{
+  "title": "Digital SAT 100-Question Practice Workbook - Pack 2",
+  "description": "Original Digital SAT-style Math and Reading and Writing practice with choice-by-choice explanations",
+  "notes": [
+    "Made from the workbook PDF by tools/workbook/build.mjs; see its README for what was changed on the way.",
+    "The workbook says of itself: newly written questions, not copied from official tests, not an official College Board test.",
+    "skill is the bank's name for the skill; subskill is the workbook's own."
+  ],
+  "counts": {
+    "math": {
+      "total": 50,
+      "by_difficulty": {
+        "Medium": 30,
+        "Easy": 12,
+        "Hard": 8
+      },
+      "by_domain": {
+        "Algebra": 10,
+        "Problem-Solving and Data Analysis": 14,
+        "Advanced Math": 13,
+        "Geometry and Trigonometry": 13
+      }
+    },
+    "ebrw": {
+      "total": 50,
+      "by_difficulty": {
+        "Medium": 28,
+        "Easy": 12,
+        "Hard": 10
+      },
+      "by_domain": {
+        "Information and Ideas": 12,
+        "Craft and Structure": 14,
+        "Standard English Conventions": 16,
+        "Expression of Ideas": 8
+      }
+    }
+  },
+  "held": [],
+  "math": [
+    {
+      "id": "WBM-201",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear inequalities",
+      "subskill": "Linear inequalities",
+      "difficulty": "Medium",
+      "question": "What is the solution to 3(2x − 1) ≥ 4x + 7?",
+      "options": [
+        {
+          "label": "A",
+          "text": "x ≥ 5",
+          "is_correct": true,
+          "explanation": "6x − 3 ≥ 4x + 7, so 2x ≥ 10 and x ≥ 5."
+        },
+        {
+          "label": "B",
+          "text": "x ≤ 5",
+          "is_correct": false,
+          "explanation": "B reverses the direction even though no division by a negative number occurs."
+        },
+        {
+          "label": "C",
+          "text": "x ≥ 2",
+          "is_correct": false,
+          "explanation": "C stops before correctly moving all constants and coefficients."
+        },
+        {
+          "label": "D",
+          "text": "x ≤ 2",
+          "is_correct": false,
+          "explanation": "D mishandles both the coefficient subtraction and the constant terms."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-202",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "One-variable data",
+      "subskill": "Interquartile range",
+      "difficulty": "Medium",
+      "question": "A data set is 2, 4, 5, 6, 8, 10, 11, 15. Using the median of each half, what is the interquartile range?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "A subtracts the wrong quartile estimates."
+        },
+        {
+          "label": "B",
+          "text": "6",
+          "is_correct": true,
+          "explanation": "Q1 = (4 + 5)/2 = 4.5 and Q3 = (10 + 11)/2 = 10.5, so IQR = 10.5 − 4.5 = 6."
+        },
+        {
+          "label": "C",
+          "text": "5",
+          "is_correct": false,
+          "explanation": "C may result from using one endpoint incorrectly when averaging the two middle values of each half."
+        },
+        {
+          "label": "D",
+          "text": "10",
+          "is_correct": false,
+          "explanation": "D confuses Q3 with the interquartile range."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-203",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Probability",
+      "subskill": "Probability of independent events",
+      "difficulty": "Easy",
+      "question": "A fair spinner lands on blue with probability 3/8. An independent coin toss lands on tails with probability 1/2. What is the probability of both events occurring?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3/16",
+          "is_correct": true,
+          "explanation": "For independent events, multiply probabilities: (3/8)(1/2) = 3/16."
+        },
+        {
+          "label": "B",
+          "text": "3/8",
+          "is_correct": false,
+          "explanation": "B reports only the probability of blue and ignores the coin toss."
+        },
+        {
+          "label": "C",
+          "text": "7/16",
+          "is_correct": false,
+          "explanation": "C adds probabilities rather than multiplying them."
+        },
+        {
+          "label": "D",
+          "text": "11/16",
+          "is_correct": false,
+          "explanation": "D uses neither the product nor the complement correctly."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-204",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Systems of linear equations",
+      "subskill": "Systems of linear equations",
+      "difficulty": "Medium",
+      "question": "If 3x + 2y = 19 and x + 2y = 9, what is the value of 2x − y?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3",
+          "is_correct": false,
+          "explanation": "A does not follow from the solution of the system."
+        },
+        {
+          "label": "B",
+          "text": "8",
+          "is_correct": true,
+          "explanation": "Subtracting the equations gives 2x = 10, so x = 5; then 5 + 2y = 9 gives y = 2, and 2x − y = 8."
+        },
+        {
+          "label": "C",
+          "text": "5",
+          "is_correct": false,
+          "explanation": "C is the value of x, not the requested expression."
+        },
+        {
+          "label": "D",
+          "text": "12",
+          "is_correct": false,
+          "explanation": "D adds or combines the equations without solving for the requested expression."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-205",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear equations and systems",
+      "subskill": "Exponential equations with different bases",
+      "difficulty": "Hard",
+      "question": "If 4^{x − 1} = 8, what is x?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3/2",
+          "is_correct": false,
+          "explanation": "A gives 4^{1/2} = 2, not 8."
+        },
+        {
+          "label": "B",
+          "text": "2",
+          "is_correct": false,
+          "explanation": "B gives 4¹ = 4, not 8."
+        },
+        {
+          "label": "C",
+          "text": "5/2",
+          "is_correct": true,
+          "explanation": "Write 4 as 2² and 8 as 2³. Then 2^{2x − 2} = 2³, so 2x − 2 = 3 and x = 5/2."
+        },
+        {
+          "label": "D",
+          "text": "3",
+          "is_correct": false,
+          "explanation": "D gives 4² = 16, not 8."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-206",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Systems of linear equations",
+      "subskill": "Solving a linear system by elimination",
+      "difficulty": "Medium",
+      "question": "For what value of x do the equations y = 3x − 8 and y = −x + 12 intersect?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "A produces y = 4 in the first equation and y = 8 in the second, so the lines do not meet there."
+        },
+        {
+          "label": "B",
+          "text": "6",
+          "is_correct": false,
+          "explanation": "B does not make the two expressions for y equal."
+        },
+        {
+          "label": "C",
+          "text": "5",
+          "is_correct": true,
+          "explanation": "Set 3x − 8 = −x + 12; then 4x = 20 and x = 5."
+        },
+        {
+          "label": "D",
+          "text": "8",
+          "is_correct": false,
+          "explanation": "D solves a rearranged equation incorrectly."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-207",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear equations in one variable",
+      "subskill": "Linear equations with parentheses",
+      "difficulty": "Easy",
+      "question": "Solve for x: 5(2x − 3) = 35.",
+      "options": [
+        {
+          "label": "A",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "A is incorrect: substituting x = 4 gives 5(8 − 3) = 25, not 35."
+        },
+        {
+          "label": "B",
+          "text": "6",
+          "is_correct": false,
+          "explanation": "B gives 5(12 − 3) = 45, not 35."
+        },
+        {
+          "label": "C",
+          "text": "5",
+          "is_correct": true,
+          "explanation": "Divide by 5 to get 2x − 3 = 7; add 3 and divide by 2 to obtain x = 5."
+        },
+        {
+          "label": "D",
+          "text": "7",
+          "is_correct": false,
+          "explanation": "D is the result of dividing 35 by 5 but then forgetting to solve 2x − 3 = 7."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-208",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear functions",
+      "subskill": "Evaluating a linear function",
+      "difficulty": "Easy",
+      "question": "A function is defined by f(x) = −3x + 11. If f(a) = −4, what is a?",
+      "options": [
+        {
+          "label": "A",
+          "text": "−5",
+          "is_correct": false,
+          "explanation": "A gives f(−5) = 26, not −4."
+        },
+        {
+          "label": "B",
+          "text": "−1",
+          "is_correct": false,
+          "explanation": "B gives f(−1) = 14."
+        },
+        {
+          "label": "C",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "C gives f(4) = −1."
+        },
+        {
+          "label": "D",
+          "text": "5",
+          "is_correct": true,
+          "explanation": "−3a + 11 = −4, so −3a = −15 and a = 5."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-209",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Circles",
+      "subskill": "Circle chords and perpendicular distances",
+      "difficulty": "Hard",
+      "question": "A circle has radius 10. A chord is 16 units long. What is the perpendicular distance from the center of the circle to the chord?",
+      "options": [
+        {
+          "label": "A",
+          "text": "6",
+          "is_correct": true,
+          "explanation": "The perpendicular bisects the chord, creating a right triangle with hypotenuse 10 and one leg 8; distance = √(10² − 8²) = 6."
+        },
+        {
+          "label": "B",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "B is the half-chord length, not the center-to-chord distance."
+        },
+        {
+          "label": "C",
+          "text": "8",
+          "is_correct": false,
+          "explanation": "C gives the half-chord length and overlooks the radius as the hypotenuse."
+        },
+        {
+          "label": "D",
+          "text": "9",
+          "is_correct": false,
+          "explanation": "D does not satisfy the Pythagorean relationship with radius 10 and half-chord 8."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-210",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear equations and systems",
+      "subskill": "Radical equations and extraneous solutions",
+      "difficulty": "Hard",
+      "question": "What is the solution to √(x + 6) = x?",
+      "options": [
+        {
+          "label": "A",
+          "text": "x = 3 only",
+          "is_correct": true,
+          "explanation": "Squaring gives x² − x − 6 = 0, so x = −2 or 3; only x = 3 satisfies the original equation."
+        },
+        {
+          "label": "B",
+          "text": "x = −2 only",
+          "is_correct": false,
+          "explanation": "B is extraneous because a principal square root cannot equal a negative number."
+        },
+        {
+          "label": "C",
+          "text": "x = −2 or x = 3",
+          "is_correct": false,
+          "explanation": "C includes an extraneous root introduced by squaring; x must be nonnegative."
+        },
+        {
+          "label": "D",
+          "text": "x = 0 only",
+          "is_correct": false,
+          "explanation": "D does not satisfy the equation because √6 is not 0."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-211",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Systems of linear equations",
+      "subskill": "Parallel lines and systems",
+      "difficulty": "Hard",
+      "question": "System I is y = 2x + 4. System II is 2y = 4x + 10. How many ordered-pair solutions satisfy both equations?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Exactly one",
+          "is_correct": false,
+          "explanation": "A would require the lines to have different slopes and intersect once."
+        },
+        {
+          "label": "B",
+          "text": "Exactly two",
+          "is_correct": false,
+          "explanation": "B Two distinct nonidentical lines cannot intersect at two separate points."
+        },
+        {
+          "label": "C",
+          "text": "Infinitely many",
+          "is_correct": false,
+          "explanation": "C would require the equations to describe the same line."
+        },
+        {
+          "label": "D",
+          "text": "None",
+          "is_correct": true,
+          "explanation": "The second equation simplifies to y = 2x + 5, a parallel line with a different intercept."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-212",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Probability",
+      "subskill": "Probability without replacement",
+      "difficulty": "Hard",
+      "question": "A box contains 5 red balls and 3 blue balls. Two balls are drawn at random without replacement. What is the probability that both are blue?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3/28",
+          "is_correct": true,
+          "explanation": "The probability is (3/8)(2/7) = 6/56 = 3/28."
+        },
+        {
+          "label": "B",
+          "text": "9/64",
+          "is_correct": false,
+          "explanation": "B multiplies 3/8 by 3/8, which assumes replacement."
+        },
+        {
+          "label": "C",
+          "text": "3/8",
+          "is_correct": false,
+          "explanation": "C is the probability of drawing one blue ball on the first draw only."
+        },
+        {
+          "label": "D",
+          "text": "1/4",
+          "is_correct": false,
+          "explanation": "D does not account for the changing total and number of blue balls after the first draw."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-213",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Right triangles and trigonometry",
+      "subskill": "Pythagorean theorem in a real context",
+      "difficulty": "Easy",
+      "question": "A 13-foot ladder rests against a vertical wall. Its base is 5 feet from the wall. How high up the wall does it reach?",
+      "options": [
+        {
+          "label": "A",
+          "text": "8 ft",
+          "is_correct": false,
+          "explanation": "A subtracts the distance from the wall from the ladder length, ignoring the right-triangle relationship."
+        },
+        {
+          "label": "B",
+          "text": "10 ft",
+          "is_correct": false,
+          "explanation": "B does not satisfy 5² + h² = 13²."
+        },
+        {
+          "label": "C",
+          "text": "18 ft",
+          "is_correct": false,
+          "explanation": "C adds the side lengths instead of applying the Pythagorean theorem."
+        },
+        {
+          "label": "D",
+          "text": "12 ft",
+          "is_correct": true,
+          "explanation": "h = √(13² − 5²) = √144 = 12 feet."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-214",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear equations in two variables",
+      "subskill": "Slope from two points",
+      "difficulty": "Easy",
+      "question": "What is the slope of the line passing through (1, −2) and (5, 10)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "2",
+          "is_correct": false,
+          "explanation": "A divides the change in y by 6 rather than by the change in x, which is 4."
+        },
+        {
+          "label": "B",
+          "text": "3",
+          "is_correct": true,
+          "explanation": "(10 − (−2))/(5 − 1) = 12/4 = 3."
+        },
+        {
+          "label": "C",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "C uses the horizontal change as the slope."
+        },
+        {
+          "label": "D",
+          "text": "12",
+          "is_correct": false,
+          "explanation": "D reports the vertical change but does not divide by the horizontal change."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-215",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Area and volume",
+      "subskill": "Volume of cylinders",
+      "difficulty": "Easy",
+      "question": "A cylinder has radius 3 centimeters and height 8 centimeters. What is its volume?",
+      "options": [
+        {
+          "label": "A",
+          "text": "24π cm³",
+          "is_correct": false,
+          "explanation": "A multiplies the radius by the height but omits the circular base area."
+        },
+        {
+          "label": "B",
+          "text": "72π cm³",
+          "is_correct": true,
+          "explanation": "V = πr²h = π(3²)(8) = 72π cm³."
+        },
+        {
+          "label": "C",
+          "text": "48π cm³",
+          "is_correct": false,
+          "explanation": "C uses 2r instead of r² in the base-area calculation."
+        },
+        {
+          "label": "D",
+          "text": "144π cm³",
+          "is_correct": false,
+          "explanation": "D doubles the correct volume."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-216",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Probability",
+      "subskill": "Two-way table interpretation",
+      "difficulty": "Medium",
+      "question": "A club has 48 members: 18 are seniors, 30 are juniors, and 12 seniors and 15 juniors participate in robotics. If a member who participates in robotics is chosen at random, what is the probability the member is a senior?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4/11",
+          "is_correct": false,
+          "explanation": "A uses an incorrect total in the denominator."
+        },
+        {
+          "label": "B",
+          "text": "4/9",
+          "is_correct": true,
+          "explanation": "12 + 15 = 27 members participate in robotics, so the probability of selecting a senior from that group is 12/27 = 4/9."
+        },
+        {
+          "label": "C",
+          "text": "12/48",
+          "is_correct": false,
+          "explanation": "C divides by all club members instead of conditioning on robotics participants."
+        },
+        {
+          "label": "D",
+          "text": "15/27",
+          "is_correct": false,
+          "explanation": "D gives the probability of selecting a junior from the robotics group."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-217",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Two-variable data",
+      "subskill": "Interpreting a linear model",
+      "difficulty": "Medium",
+      "question": "A linear model for the number of downloads, d, after t days is d = 125t + 400. What does 125 represent in this model?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The predicted number of downloads on day 0",
+          "is_correct": false,
+          "explanation": "A describes the y-intercept, 400."
+        },
+        {
+          "label": "B",
+          "text": "The predicted total after 125 days",
+          "is_correct": false,
+          "explanation": "B confuses a rate with a time value and ignores the intercept."
+        },
+        {
+          "label": "C",
+          "text": "The number of days before the first download",
+          "is_correct": false,
+          "explanation": "C is not represented by either coefficient; the model starts at 400."
+        },
+        {
+          "label": "D",
+          "text": "The predicted increase in downloads per day",
+          "is_correct": true,
+          "explanation": "The coefficient of t is the change in predicted downloads for each additional day."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-218",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "One-variable data",
+      "subskill": "Weighted means",
+      "difficulty": "Medium",
+      "question": "A student earns 84 on each of three exams and 96 on a fourth exam. What is the mean score across all four exams?",
+      "options": [
+        {
+          "label": "A",
+          "text": "87",
+          "is_correct": true,
+          "explanation": "348 ÷ 4 = 87."
+        },
+        {
+          "label": "B",
+          "text": "84",
+          "is_correct": false,
+          "explanation": "B ignores the higher fourth score."
+        },
+        {
+          "label": "C",
+          "text": "86",
+          "is_correct": false,
+          "explanation": "C underestimates the total: the sum is 3(84) + 96 = 348."
+        },
+        {
+          "label": "D",
+          "text": "90",
+          "is_correct": false,
+          "explanation": "D overweights the fourth exam relative to the three other exams."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-219",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Polynomial factor theorem",
+      "difficulty": "Medium",
+      "question": "The polynomial p(x) = x³ + kx² − 4x + 8 has (x − 2) as a factor. What is k?",
+      "options": [
+        {
+          "label": "A",
+          "text": "−4",
+          "is_correct": false,
+          "explanation": "A gives p(2) = 8 − 16 − 8 + 8 = −8, not zero."
+        },
+        {
+          "label": "B",
+          "text": "−2",
+          "is_correct": true,
+          "explanation": "Because x − 2 is a factor, p(2) = 0. Thus 8 + 4k − 8 + 8 = 0, so 4k + 8 = 0 and k = −2."
+        },
+        {
+          "label": "C",
+          "text": "0",
+          "is_correct": false,
+          "explanation": "C gives p(2) = 8, not zero."
+        },
+        {
+          "label": "D",
+          "text": "2",
+          "is_correct": false,
+          "explanation": "D gives p(2) = 24, not zero."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-220",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear equations and systems",
+      "subskill": "Absolute value equations",
+      "difficulty": "Medium",
+      "question": "How many real solutions does |2x − 5| = −3 have?",
+      "options": [
+        {
+          "label": "A",
+          "text": "0",
+          "is_correct": true,
+          "explanation": "Absolute value is always nonnegative, so it cannot equal −3."
+        },
+        {
+          "label": "B",
+          "text": "1",
+          "is_correct": false,
+          "explanation": "B is impossible because no real value makes an absolute value negative."
+        },
+        {
+          "label": "C",
+          "text": "2",
+          "is_correct": false,
+          "explanation": "C would be possible for an equation like |2x − 5| = 3, not −3."
+        },
+        {
+          "label": "D",
+          "text": "Infinitely many",
+          "is_correct": false,
+          "explanation": "D is false because the equation has no satisfying real numbers."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-221",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Area and volume",
+      "subskill": "Area scaling in similar figures",
+      "difficulty": "Hard",
+      "question": "Two triangles are similar, and the ratio of a corresponding side in the larger triangle to one in the smaller triangle is 3:2. If the smaller triangle has area 20, what is the larger triangle’s area?",
+      "options": [
+        {
+          "label": "A",
+          "text": "45",
+          "is_correct": true,
+          "explanation": "Areas scale by the square of the side factor, so 20(3/2)² = 20(9/4) = 45."
+        },
+        {
+          "label": "B",
+          "text": "30",
+          "is_correct": false,
+          "explanation": "B multiplies the area by the side scale factor 3/2 rather than its square."
+        },
+        {
+          "label": "C",
+          "text": "40",
+          "is_correct": false,
+          "explanation": "C doubles the area without applying the scale factor correctly."
+        },
+        {
+          "label": "D",
+          "text": "60",
+          "is_correct": false,
+          "explanation": "D multiplies the area by 3, confusing a side ratio with an area ratio."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-222",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Building a quadratic from its roots",
+      "difficulty": "Medium",
+      "question": "A quadratic function has zeros at x = −1 and x = 4 and passes through (0, −8). Which equation represents the function?",
+      "options": [
+        {
+          "label": "A",
+          "text": "f(x) = (x + 1)(x − 4)",
+          "is_correct": false,
+          "explanation": "A has the right zeros but gives f(0) = −4, not −8."
+        },
+        {
+          "label": "B",
+          "text": "f(x) = 2(x + 1)(x − 4)",
+          "is_correct": true,
+          "explanation": "The zeros give f(x) = a(x + 1)(x − 4); using f(0) = −8 gives −4a = −8, so a = 2."
+        },
+        {
+          "label": "C",
+          "text": "f(x) = −2(x + 1)(x − 4)",
+          "is_correct": false,
+          "explanation": "C gives f(0) = 8 and has the wrong vertical scale sign."
+        },
+        {
+          "label": "D",
+          "text": "f(x) = 2(x − 1)(x + 4)",
+          "is_correct": false,
+          "explanation": "D has zeros at x = 1 and x = −4 rather than −1 and 4."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-223",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Right triangles and trigonometry",
+      "subskill": "30-60-90 right triangles",
+      "difficulty": "Medium",
+      "question": "A 30°-60°-90° triangle has hypotenuse 14. What is the length of the longer leg?",
+      "options": [
+        {
+          "label": "A",
+          "text": "7",
+          "is_correct": false,
+          "explanation": "A is the shorter leg opposite 30°."
+        },
+        {
+          "label": "B",
+          "text": "7√3",
+          "is_correct": true,
+          "explanation": "In a 30°-60°-90° triangle, the side ratio is 1:√3:2; the longer leg is half the hypotenuse times √3, or 7√3."
+        },
+        {
+          "label": "C",
+          "text": "7√2",
+          "is_correct": false,
+          "explanation": "C uses the ratio for a 45°-45°-90° triangle."
+        },
+        {
+          "label": "D",
+          "text": "14√3",
+          "is_correct": false,
+          "explanation": "D is longer than the hypotenuse, which is impossible for a triangle leg."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-224",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Exponential decay in context",
+      "difficulty": "Medium",
+      "question": "A chemical sample starts at 640 milligrams and retains 75% of its mass each hour. According to this model, how much remains after 2 hours?",
+      "options": [
+        {
+          "label": "A",
+          "text": "320 mg",
+          "is_correct": false,
+          "explanation": "A represents retaining 50% over the full interval, not 75% twice."
+        },
+        {
+          "label": "B",
+          "text": "400 mg",
+          "is_correct": false,
+          "explanation": "B would result from a different retention factor."
+        },
+        {
+          "label": "C",
+          "text": "360 mg",
+          "is_correct": true,
+          "explanation": "640(0.75)² = 640(0.5625) = 360 mg."
+        },
+        {
+          "label": "D",
+          "text": "480 mg",
+          "is_correct": false,
+          "explanation": "D applies one 25% reduction rather than two successive reductions."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-225",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "One-variable data",
+      "subskill": "Effects of scaling on standard deviation",
+      "difficulty": "Medium",
+      "question": "Every value in a data set is multiplied by 3. What happens to the data set’s standard deviation?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It remains the same.",
+          "is_correct": false,
+          "explanation": "A would be true if a constant were added to all values, not if all values were scaled."
+        },
+        {
+          "label": "B",
+          "text": "It increases by 3.",
+          "is_correct": false,
+          "explanation": "B treats multiplication as addition."
+        },
+        {
+          "label": "C",
+          "text": "It is multiplied by 9.",
+          "is_correct": false,
+          "explanation": "C squares the scale factor even though standard deviation is measured in the same units as the data."
+        },
+        {
+          "label": "D",
+          "text": "It is multiplied by 3.",
+          "is_correct": true,
+          "explanation": "Multiplying every data value by a positive constant multiplies every distance from the mean, and therefore the standard deviation, by that constant."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-226",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Composite functions",
+      "difficulty": "Medium",
+      "question": "Let f(x) = 2x − 1 and g(x) = x² + 3. What is f(g(2))?",
+      "options": [
+        {
+          "label": "A",
+          "text": "7",
+          "is_correct": false,
+          "explanation": "A is g(2), not f(g(2))."
+        },
+        {
+          "label": "B",
+          "text": "13",
+          "is_correct": true,
+          "explanation": "g(2) = 4 + 3 = 7, then f(7) = 14 − 1 = 13."
+        },
+        {
+          "label": "C",
+          "text": "11",
+          "is_correct": false,
+          "explanation": "C results from doubling g(2) but subtracting 3 instead of 1."
+        },
+        {
+          "label": "D",
+          "text": "25",
+          "is_correct": false,
+          "explanation": "D squares 5 or applies the functions in the wrong order."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-227",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Circles",
+      "subskill": "Area of a sector",
+      "difficulty": "Medium",
+      "question": "A sector of a circle has radius 6 and central angle 60°. What is its area?",
+      "options": [
+        {
+          "label": "A",
+          "text": "3π",
+          "is_correct": false,
+          "explanation": "A uses half the required angular fraction."
+        },
+        {
+          "label": "B",
+          "text": "12π",
+          "is_correct": false,
+          "explanation": "B corresponds to a 120° sector of the same circle."
+        },
+        {
+          "label": "C",
+          "text": "6π",
+          "is_correct": true,
+          "explanation": "The sector is 60/360 = 1/6 of the circle, whose area is 36π; its area is 6π."
+        },
+        {
+          "label": "D",
+          "text": "36π",
+          "is_correct": false,
+          "explanation": "D is the area of the entire circle, not one-sixth of it."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-228",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear equations in one variable",
+      "subskill": "Linear equations in context",
+      "difficulty": "Medium",
+      "question": "A transit card costs $12 to activate and then $0.08 per mile. If the total cost is $20, how many miles were traveled?",
+      "options": [
+        {
+          "label": "A",
+          "text": "80",
+          "is_correct": false,
+          "explanation": "A would cost $18.40 because 12 + 0.08(80) = 18.40."
+        },
+        {
+          "label": "B",
+          "text": "90",
+          "is_correct": false,
+          "explanation": "B would cost $19.20, not $20."
+        },
+        {
+          "label": "C",
+          "text": "100",
+          "is_correct": true,
+          "explanation": "20 − 12 = 8 dollars remain for mileage, and 8 ÷ 0.08 = 100 miles."
+        },
+        {
+          "label": "D",
+          "text": "250",
+          "is_correct": false,
+          "explanation": "D divides the total cost by the per-mile cost without subtracting the activation fee."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-229",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear functions",
+      "subskill": "Linear models and unit rates",
+      "difficulty": "Medium",
+      "question": "A tank contains 460 liters of water and drains at a constant rate of 18 liters per minute. Which expression gives the amount of water, in liters, after t minutes?",
+      "options": [
+        {
+          "label": "A",
+          "text": "460 + 18t",
+          "is_correct": false,
+          "explanation": "A models filling rather than draining."
+        },
+        {
+          "label": "B",
+          "text": "18(460 − t)",
+          "is_correct": false,
+          "explanation": "B incorrectly multiplies the starting amount by the rate."
+        },
+        {
+          "label": "C",
+          "text": "460 − 18t",
+          "is_correct": true,
+          "explanation": "The initial amount is 460 liters and 18 liters are removed each minute."
+        },
+        {
+          "label": "D",
+          "text": "460t − 18",
+          "is_correct": false,
+          "explanation": "D multiplies the starting amount by time and subtracts the rate only once."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-230",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear equations and systems",
+      "subskill": "Sum of roots of a quadratic",
+      "difficulty": "Medium",
+      "question": "For the equation 2x² − 11x + 7 = 0, what is the sum of its two solutions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "−11/2",
+          "is_correct": false,
+          "explanation": "A reverses the sign of the sum; for ax² + bx + c, the sum is −b/a."
+        },
+        {
+          "label": "B",
+          "text": "7/2",
+          "is_correct": false,
+          "explanation": "B gives c/a, which is the product of the roots, not their sum."
+        },
+        {
+          "label": "C",
+          "text": "11/2",
+          "is_correct": true,
+          "explanation": "The sum of the roots is −(−11)/2 = 11/2."
+        },
+        {
+          "label": "D",
+          "text": "11",
+          "is_correct": false,
+          "explanation": "D forgets to divide the coefficient of x by the leading coefficient."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-231",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Equivalent expressions",
+      "subskill": "Exponent rules with negative exponents",
+      "difficulty": "Hard",
+      "question": "For nonzero a and b, which expression is equivalent to (a²b³)²/(ab⁻¹)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "a³b⁵",
+          "is_correct": false,
+          "explanation": "A uses the numerator powers but subtracts the b exponents incorrectly."
+        },
+        {
+          "label": "B",
+          "text": "a³b⁷",
+          "is_correct": true,
+          "explanation": "The numerator is a⁴b⁶; dividing by ab⁻¹ gives a^{4−1}b^{6−(−1)} = a³b⁷."
+        },
+        {
+          "label": "C",
+          "text": "a⁴b⁷",
+          "is_correct": false,
+          "explanation": "C fails to subtract 1 from the exponent of a in the denominator."
+        },
+        {
+          "label": "D",
+          "text": "a⁵b⁵",
+          "is_correct": false,
+          "explanation": "D adds the exponents in an incorrect order for both variables."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-232",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Sample statistics and margin of error",
+      "subskill": "Sampling and causal claims",
+      "difficulty": "Medium",
+      "question": "Researchers randomly select 500 adults and ask whether they prefer public transportation. Which statement is best supported by the survey alone?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Public transportation causes adults to change jobs.",
+          "is_correct": false,
+          "explanation": "A makes a causal claim that was not tested."
+        },
+        {
+          "label": "B",
+          "text": "Every adult in the country has the same preference.",
+          "is_correct": false,
+          "explanation": "B incorrectly treats a sample as a guarantee about each individual."
+        },
+        {
+          "label": "C",
+          "text": "Adults who prefer public transportation earn less money.",
+          "is_correct": false,
+          "explanation": "C introduces an income relationship that the survey did not measure."
+        },
+        {
+          "label": "D",
+          "text": "The sample can estimate the proportion of adults who prefer public transportation.",
+          "is_correct": true,
+          "explanation": "A representative random sample can estimate a population proportion, though it cannot prove an exact result for every adult."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-233",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Interpreting transformations of absolute-value graphs",
+      "difficulty": "Easy",
+      "question": "The graph of y = |x + 2| − 4 has its vertex at which point?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(2, −4)",
+          "is_correct": false,
+          "explanation": "A reverses the horizontal shift: x + 2 moves the graph left 2 units."
+        },
+        {
+          "label": "B",
+          "text": "(−4, 2)",
+          "is_correct": false,
+          "explanation": "B interchanges the shift values and signs."
+        },
+        {
+          "label": "C",
+          "text": "(2, 4)",
+          "is_correct": false,
+          "explanation": "C reverses both the horizontal and vertical shifts."
+        },
+        {
+          "label": "D",
+          "text": "(−2, −4)",
+          "is_correct": true,
+          "explanation": "y = |x − h| + k has vertex (h, k); here h = −2 and k = −4."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-234",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Ratios, rates, and units",
+      "subskill": "Converting rates between units",
+      "difficulty": "Easy",
+      "question": "A runner moves at 5 meters per second. What is this speed in kilometers per hour?",
+      "options": [
+        {
+          "label": "A",
+          "text": "9 km/h",
+          "is_correct": false,
+          "explanation": "A multiplies by 1.8 incorrectly or uses a conversion factor for another unit."
+        },
+        {
+          "label": "B",
+          "text": "18 km/h",
+          "is_correct": true,
+          "explanation": "5 m/s × 3.6 = 18 km/h."
+        },
+        {
+          "label": "C",
+          "text": "30 km/h",
+          "is_correct": false,
+          "explanation": "C multiplies by 6 rather than by 3.6."
+        },
+        {
+          "label": "D",
+          "text": "50 km/h",
+          "is_correct": false,
+          "explanation": "D confuses meters per second with meters per minute or another rate."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-235",
+      "section": "Math",
+      "domain": "Algebra",
+      "skill": "Linear inequalities",
+      "subskill": "Linear inequalities in two variables",
+      "difficulty": "Medium",
+      "question": "Which point satisfies the inequality y > 2x − 1?",
+      "options": [
+        {
+          "label": "A",
+          "text": "(1, 2)",
+          "is_correct": true,
+          "explanation": "For x = 1, 2x − 1 = 1, and y = 2 is greater than 1."
+        },
+        {
+          "label": "B",
+          "text": "(2, 2)",
+          "is_correct": false,
+          "explanation": "B gives y = 2 and 2x − 1 = 3, so the inequality is false."
+        },
+        {
+          "label": "C",
+          "text": "(0, −2)",
+          "is_correct": false,
+          "explanation": "C gives −2 > −1, which is false."
+        },
+        {
+          "label": "D",
+          "text": "(3, 4)",
+          "is_correct": false,
+          "explanation": "D gives 4 > 5, which is false."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-236",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Two-variable data",
+      "subskill": "Interpreting a scatterplot trend",
+      "difficulty": "Medium",
+      "question": "A scatterplot of study hours and exam scores has a clear upward trend. Which statement best describes the relationship shown?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Higher study hours tend to be associated with higher scores.",
+          "is_correct": true,
+          "explanation": "An upward trend indicates a positive association, although it does not prove causation or guarantee individual outcomes."
+        },
+        {
+          "label": "B",
+          "text": "The variables have a negative association.",
+          "is_correct": false,
+          "explanation": "B contradicts the upward trend, which indicates a positive association."
+        },
+        {
+          "label": "C",
+          "text": "The variables have no association.",
+          "is_correct": false,
+          "explanation": "C ignores the visible pattern in the scatterplot."
+        },
+        {
+          "label": "D",
+          "text": "Higher study hours always guarantee a perfect score.",
+          "is_correct": false,
+          "explanation": "D makes an absolute causal claim that a scatterplot cannot establish."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-237",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Right triangles and trigonometry",
+      "subskill": "Distance in the coordinate plane",
+      "difficulty": "Medium",
+      "question": "What is the distance between the points (−3, 2) and (5, 8)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "8",
+          "is_correct": false,
+          "explanation": "A is only the horizontal change and ignores the vertical change."
+        },
+        {
+          "label": "B",
+          "text": "10",
+          "is_correct": true,
+          "explanation": "The horizontal and vertical changes are 8 and 6, so the distance is √(8² + 6²) = √100 = 10."
+        },
+        {
+          "label": "C",
+          "text": "12",
+          "is_correct": false,
+          "explanation": "C adds the absolute coordinate changes instead of using the distance formula."
+        },
+        {
+          "label": "D",
+          "text": "14",
+          "is_correct": false,
+          "explanation": "D is not the hypotenuse of a right triangle with legs 8 and 6."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-238",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Circles",
+      "subskill": "Tangents and right triangles",
+      "difficulty": "Medium",
+      "question": "A circle has radius 5. A tangent segment is drawn from an external point to the circle and has length 12. What is the distance from the external point to the center?",
+      "options": [
+        {
+          "label": "A",
+          "text": "13",
+          "is_correct": true,
+          "explanation": "The radius to the tangent point is perpendicular to the tangent, so the distance is √(5² + 12²) = 13."
+        },
+        {
+          "label": "B",
+          "text": "7",
+          "is_correct": false,
+          "explanation": "B subtracts the tangent length and radius, although the two segments are perpendicular."
+        },
+        {
+          "label": "C",
+          "text": "12",
+          "is_correct": false,
+          "explanation": "C is only the tangent segment length, not the distance to the center."
+        },
+        {
+          "label": "D",
+          "text": "17",
+          "is_correct": false,
+          "explanation": "D adds the two lengths instead of using the Pythagorean theorem."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-239",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Percentages",
+      "subskill": "Successive percent changes",
+      "difficulty": "Hard",
+      "question": "A $200 item increases in price by 15% and then decreases by 15% of its new price. What is the final price?",
+      "options": [
+        {
+          "label": "A",
+          "text": "$170.00",
+          "is_correct": false,
+          "explanation": "A subtracts 15% of the original price twice."
+        },
+        {
+          "label": "B",
+          "text": "$200.00",
+          "is_correct": false,
+          "explanation": "B assumes the percentage increase and decrease cancel, even though they apply to different bases."
+        },
+        {
+          "label": "C",
+          "text": "$204.50",
+          "is_correct": false,
+          "explanation": "C adds the two rates or applies them in the wrong order."
+        },
+        {
+          "label": "D",
+          "text": "$195.50",
+          "is_correct": true,
+          "explanation": "200(1.15)(0.85) = 195.50."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-240",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Ratios, rates, and units",
+      "subskill": "Average speed",
+      "difficulty": "Easy",
+      "question": "A vehicle travels 150 kilometers in 2.5 hours at a constant speed. What is its average speed?",
+      "options": [
+        {
+          "label": "A",
+          "text": "37.5 km/h",
+          "is_correct": false,
+          "explanation": "A multiplies distance by time instead of dividing distance by time."
+        },
+        {
+          "label": "B",
+          "text": "75 km/h",
+          "is_correct": false,
+          "explanation": "B divides by 2 rather than by 2.5."
+        },
+        {
+          "label": "C",
+          "text": "375 km/h",
+          "is_correct": false,
+          "explanation": "C shifts the decimal point and gives an implausibly large result."
+        },
+        {
+          "label": "D",
+          "text": "60 km/h",
+          "is_correct": true,
+          "explanation": "Average speed = 150 ÷ 2.5 = 60 kilometers per hour."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-241",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Lines, angles, and triangles",
+      "subskill": "Perpendicular lines",
+      "difficulty": "Medium",
+      "question": "A line has equation y = −(1/2)x + 3. Which equation represents a line perpendicular to it and passing through (2, 1)?",
+      "options": [
+        {
+          "label": "A",
+          "text": "y = −(1/2)x + 2",
+          "is_correct": false,
+          "explanation": "A has the same slope as the original line, so it is parallel rather than perpendicular."
+        },
+        {
+          "label": "B",
+          "text": "y = (1/2)x",
+          "is_correct": false,
+          "explanation": "B has the wrong slope and does not pass through (2, 1)."
+        },
+        {
+          "label": "C",
+          "text": "y = 2x + 1",
+          "is_correct": false,
+          "explanation": "C has the perpendicular slope but does not pass through (2, 1), since it gives y = 5."
+        },
+        {
+          "label": "D",
+          "text": "y = 2x − 3",
+          "is_correct": true,
+          "explanation": "The perpendicular slope is 2, and using (2, 1) gives 1 = 2(2) + b, so b = −3."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-242",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Ratios, rates, and units",
+      "subskill": "Scale drawings and proportional relationships",
+      "difficulty": "Medium",
+      "question": "On a map, 1.5 centimeters represents 12 kilometers. How many kilometers are represented by 5 centimeters on the map?",
+      "options": [
+        {
+          "label": "A",
+          "text": "24",
+          "is_correct": false,
+          "explanation": "A applies the scale to 3 centimeters rather than 5."
+        },
+        {
+          "label": "B",
+          "text": "30",
+          "is_correct": false,
+          "explanation": "B uses 6 km/cm but multiplies by 5 incorrectly."
+        },
+        {
+          "label": "C",
+          "text": "40",
+          "is_correct": true,
+          "explanation": "12 ÷ 1.5 = 8 km per centimeter, and 5 × 8 = 40 km."
+        },
+        {
+          "label": "D",
+          "text": "36",
+          "is_correct": false,
+          "explanation": "D corresponds to 4.5 centimeters at the given scale."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-243",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Lines, angles, and triangles",
+      "subskill": "Triangle angle relationships",
+      "difficulty": "Easy",
+      "question": "The angles of a triangle measure x + 10 degrees, 2x degrees, and 3x − 10 degrees. What is the measure of the largest angle?",
+      "options": [
+        {
+          "label": "A",
+          "text": "80°",
+          "is_correct": true,
+          "explanation": "(x + 10) + 2x + (3x − 10) = 180 gives 6x = 180, so x = 30; the angles are 40°, 60°, and 80°."
+        },
+        {
+          "label": "B",
+          "text": "50°",
+          "is_correct": false,
+          "explanation": "B is one of the smaller angles after solving for x."
+        },
+        {
+          "label": "C",
+          "text": "60°",
+          "is_correct": false,
+          "explanation": "C does not match any of the three angle expressions when x = 30."
+        },
+        {
+          "label": "D",
+          "text": "70°",
+          "is_correct": false,
+          "explanation": "D confuses the first angle with the largest angle."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-244",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Area and volume",
+      "subskill": "Area of a trapezoid",
+      "difficulty": "Easy",
+      "question": "A trapezoid has parallel bases of lengths 9 and 15 and height 4. What is its area?",
+      "options": [
+        {
+          "label": "A",
+          "text": "24",
+          "is_correct": false,
+          "explanation": "A multiplies the shorter base by the height and ignores the longer base."
+        },
+        {
+          "label": "B",
+          "text": "42",
+          "is_correct": false,
+          "explanation": "B adds the base lengths but divides or multiplies incorrectly."
+        },
+        {
+          "label": "C",
+          "text": "48",
+          "is_correct": true,
+          "explanation": "Area = (1/2)(9 + 15)(4) = 48."
+        },
+        {
+          "label": "D",
+          "text": "96",
+          "is_correct": false,
+          "explanation": "D omits the factor of one-half in the trapezoid area formula."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-245",
+      "section": "Math",
+      "domain": "Problem-Solving and Data Analysis",
+      "skill": "Studies and experiments",
+      "subskill": "Interpreting correlation",
+      "difficulty": "Medium",
+      "question": "A study finds a strong positive correlation between the number of hours students sleep and their test scores. Which conclusion is justified by this result alone?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Sleeping longer necessarily causes every student’s score to rise.",
+          "is_correct": false,
+          "explanation": "A overstates correlation as a universal causal rule."
+        },
+        {
+          "label": "B",
+          "text": "Students with more sleep tended to have higher scores in the observed data.",
+          "is_correct": true,
+          "explanation": "A positive correlation indicates that the two variables tended to increase together in the observed data."
+        },
+        {
+          "label": "C",
+          "text": "Test scores cause students to sleep longer.",
+          "is_correct": false,
+          "explanation": "C reverses a causal direction that the correlation alone cannot establish."
+        },
+        {
+          "label": "D",
+          "text": "No other variable can explain the association.",
+          "is_correct": false,
+          "explanation": "D ignores possible confounding variables such as health, workload, or study habits."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBM-246",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Quadratic functions in vertex form",
+      "difficulty": "Easy",
+      "question": "The function g(x) = (x + 2)² − 4 has what minimum value?",
+      "options": [
+        {
+          "label": "A",
+          "text": "−2",
+          "is_correct": false,
+          "explanation": "A mistakes the horizontal shift for the minimum output."
+        },
+        {
+          "label": "B",
+          "text": "0",
+          "is_correct": false,
+          "explanation": "B is the value at x = 0, not the minimum."
+        },
+        {
+          "label": "C",
+          "text": "4",
+          "is_correct": false,
+          "explanation": "C ignores the vertical shift and the fact that the squared term can be zero."
+        },
+        {
+          "label": "D",
+          "text": "−4",
+          "is_correct": true,
+          "explanation": "(x + 2)² is always at least 0, so the minimum of the function is −4 at x = −2."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBM-247",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Area and volume",
+      "subskill": "Volume of a cone",
+      "difficulty": "Medium",
+      "question": "A cone has radius 3 and height 10. What is its volume?",
+      "options": [
+        {
+          "label": "A",
+          "text": "60π",
+          "is_correct": false,
+          "explanation": "A omits or misapplies the one-third factor while using an incorrect base area."
+        },
+        {
+          "label": "B",
+          "text": "90π",
+          "is_correct": false,
+          "explanation": "B is the volume of a cylinder with the same base and height."
+        },
+        {
+          "label": "C",
+          "text": "30π",
+          "is_correct": true,
+          "explanation": "V = (1/3)πr²h = (1/3)π(9)(10) = 30π."
+        },
+        {
+          "label": "D",
+          "text": "300π",
+          "is_correct": false,
+          "explanation": "D multiplies the radius and height incorrectly and is ten times the cone volume."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-248",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear equations and systems",
+      "subskill": "Rational equations and restrictions",
+      "difficulty": "Medium",
+      "question": "For x ≠ 1, solve 5/(x − 1) = 2.",
+      "options": [
+        {
+          "label": "A",
+          "text": "x = 7/2",
+          "is_correct": true,
+          "explanation": "5 = 2(x − 1), so 2x = 7 and x = 7/2."
+        },
+        {
+          "label": "B",
+          "text": "x = 1/2",
+          "is_correct": false,
+          "explanation": "B does not satisfy the equation; its left side is −10."
+        },
+        {
+          "label": "C",
+          "text": "x = 2",
+          "is_correct": false,
+          "explanation": "C gives 5/(2 − 1) = 5, not 2."
+        },
+        {
+          "label": "D",
+          "text": "x = 3",
+          "is_correct": false,
+          "explanation": "D gives 5/(3 − 1) = 2.5, not 2."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBM-249",
+      "section": "Math",
+      "domain": "Geometry and Trigonometry",
+      "skill": "Right triangles and trigonometry",
+      "subskill": "Tangent and sine ratios",
+      "difficulty": "Medium",
+      "question": "In a right triangle, tan θ = 3/4 for an acute angle θ. What is sin θ?",
+      "options": [
+        {
+          "label": "A",
+          "text": "4/5",
+          "is_correct": false,
+          "explanation": "A gives the cosine of θ, not the sine."
+        },
+        {
+          "label": "B",
+          "text": "3/4",
+          "is_correct": false,
+          "explanation": "B repeats the tangent ratio, which is opposite over adjacent."
+        },
+        {
+          "label": "C",
+          "text": "3/5",
+          "is_correct": true,
+          "explanation": "opposite:adjacent = 3:4, so the hypotenuse is 5 by the 3-4-5 relationship; sin θ = 3/5."
+        },
+        {
+          "label": "D",
+          "text": "4/3",
+          "is_correct": false,
+          "explanation": "D is greater than 1, so it cannot be the sine of a real angle."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBM-250",
+      "section": "Math",
+      "domain": "Advanced Math",
+      "skill": "Nonlinear functions",
+      "subskill": "Interpreting a quadratic model",
+      "difficulty": "Medium",
+      "question": "The height of a ball is modeled by h(t) = −5t² + 20t + 1, where h is in meters and t is in seconds. At what time does the ball reach its maximum height?",
+      "options": [
+        {
+          "label": "A",
+          "text": "1 second",
+          "is_correct": false,
+          "explanation": "A is half the correct time and results from omitting the factor 2 in the vertex formula."
+        },
+        {
+          "label": "B",
+          "text": "4 seconds",
+          "is_correct": false,
+          "explanation": "B confuses the coefficient b with the time of the vertex."
+        },
+        {
+          "label": "C",
+          "text": "5 seconds",
+          "is_correct": false,
+          "explanation": "C uses the magnitude of the leading coefficient as the time."
+        },
+        {
+          "label": "D",
+          "text": "2 seconds",
+          "is_correct": true,
+          "explanation": "The vertex occurs at t = −b/(2a) = −20/(2(−5)) = 2 seconds."
+        }
+      ],
+      "correct_answer": "D"
+    }
+  ],
+  "ebrw": [
+    {
+      "id": "WBRW-201",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Inferences",
+      "subskill": "Inferences",
+      "difficulty": "Medium",
+      "passage": "A museum digitized a set of handwritten letters and made the images and searchable transcripts freely available. In the months that followed, researchers from several countries began citing letters that had rarely appeared in published studies. The museum’s staff also received questions about words that the transcription software had misread.",
+      "question": "Which inference is best supported by the text?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Digitization increased access to the letters, although the transcripts still required checking.",
+          "is_correct": true,
+          "explanation": "New citations suggest wider access, while questions about misread words show that the transcripts were imperfect."
+        },
+        {
+          "label": "B",
+          "text": "Researchers no longer needed to consult the original letters.",
+          "is_correct": false,
+          "explanation": "B is too strong; nothing says that original letters became unnecessary."
+        },
+        {
+          "label": "C",
+          "text": "The software transcribed every letter accurately.",
+          "is_correct": false,
+          "explanation": "C directly conflicts with the reported transcription errors."
+        },
+        {
+          "label": "D",
+          "text": "The museum intended to stop researchers from studying the physical collection.",
+          "is_correct": false,
+          "explanation": "D invents a motive not supported by the museum’s digitization project."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-202",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Easy",
+      "passage": "The historian described the archive’s catalog as “provisional,” noting that newly discovered documents might require its categories to be revised.",
+      "question": "As used in the text, “provisional” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "permanent",
+          "is_correct": false,
+          "explanation": "A is the opposite of a catalog that may be revised."
+        },
+        {
+          "label": "B",
+          "text": "temporary",
+          "is_correct": true,
+          "explanation": "“provisional” means tentative or temporary, subject to later change."
+        },
+        {
+          "label": "C",
+          "text": "misleading",
+          "is_correct": false,
+          "explanation": "C suggests intentional or factual unreliability, which the sentence does not imply."
+        },
+        {
+          "label": "D",
+          "text": "exhaustive",
+          "is_correct": false,
+          "explanation": "D means complete, while the context emphasizes that changes may be needed."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-203",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: pronoun case",
+      "difficulty": "Easy",
+      "passage": "The panel invited Maya and ______ to inspect the prototype before the demonstration.",
+      "question": "Which choice completes the sentence according to Standard English conventions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "I",
+          "is_correct": false,
+          "explanation": "A is a subject pronoun, but the blank is part of the direct object of “invited.”"
+        },
+        {
+          "label": "B",
+          "text": "me",
+          "is_correct": true,
+          "explanation": "The object pronoun “me” is required after the verb; the panel invited Maya and me."
+        },
+        {
+          "label": "C",
+          "text": "my",
+          "is_correct": false,
+          "explanation": "C is a possessive determiner and cannot stand alone as the object."
+        },
+        {
+          "label": "D",
+          "text": "myself",
+          "is_correct": false,
+          "explanation": "D is a reflexive pronoun, which is not needed because the sentence does not refer back to the same subject."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-204",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Central Ideas and Details",
+      "subskill": "Central ideas and details",
+      "difficulty": "Medium",
+      "passage": "A team studying urban heat compared blocks with mature street trees to similar blocks with little shade. On hot afternoons, shaded blocks had cooler sidewalks and lower surface temperatures on nearby building walls. The team cautioned that tree cover is only one factor: pavement type, building height, and wind can also influence local temperatures.",
+      "question": "Which statement best expresses the main idea?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Wind is the only factor that changes sidewalk temperature.",
+          "is_correct": false,
+          "explanation": "A narrows the explanation to wind, which is only one of several factors mentioned."
+        },
+        {
+          "label": "B",
+          "text": "Every street with trees is cooler than every street without trees.",
+          "is_correct": false,
+          "explanation": "B makes a universal claim not supported by comparisons of selected blocks."
+        },
+        {
+          "label": "C",
+          "text": "Pavement type has no influence on city temperatures.",
+          "is_correct": false,
+          "explanation": "C directly contradicts the text, which lists pavement type as a factor."
+        },
+        {
+          "label": "D",
+          "text": "Street trees can help moderate urban heat, although other features also affect local temperatures.",
+          "is_correct": true,
+          "explanation": "It summarizes both the potential benefit of shade trees and the stated limitation that other variables matter."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-205",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Command of Evidence",
+      "subskill": "Command of quantitative evidence",
+      "difficulty": "Medium",
+      "passage": "A scientist recorded how much noise a sound barrier reduced at three distances. At 5 meters, noise fell by 8 decibels; at 10 meters, by 6 decibels; at 20 meters, by 3 decibels.",
+      "question": "Which statement accurately summarizes the measurements?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The barrier reduced noise by more decibels at 20 meters than at 5 meters.",
+          "is_correct": false,
+          "explanation": "A reverses the results: 3 decibels is less than 8 decibels."
+        },
+        {
+          "label": "B",
+          "text": "The reduction was greatest at 5 meters and became smaller at the greater distances tested.",
+          "is_correct": true,
+          "explanation": "The measured reduction declined from 8 to 6 to 3 decibels as distance increased."
+        },
+        {
+          "label": "C",
+          "text": "Noise reduction increased by 3 decibels for every 5 meters.",
+          "is_correct": false,
+          "explanation": "C states a trend and rate that are inconsistent with the reported measurements."
+        },
+        {
+          "label": "D",
+          "text": "The barrier eliminated all noise at every distance.",
+          "is_correct": false,
+          "explanation": "D claims total elimination, which the measurements do not show."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-206",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Cross-Text Connections",
+      "subskill": "Cross-text connections",
+      "difficulty": "Hard",
+      "passage": "Text 1: A curator argues that museums should display replicas alongside fragile artifacts because replicas allow visitors to handle objects that cannot safely be touched.\n\nText 2: Another curator agrees that visitor access matters but worries that replicas may cause visitors to overlook the material qualities of original artifacts. The curator recommends clearly distinguishing replicas from originals and explaining why each is displayed.",
+      "question": "The authors of both texts would most likely agree that",
+      "options": [
+        {
+          "label": "A",
+          "text": "original artifacts should never be displayed.",
+          "is_correct": false,
+          "explanation": "A is too absolute; neither curator argues that originals should never be displayed."
+        },
+        {
+          "label": "B",
+          "text": "visitor engagement should be considered when planning exhibits.",
+          "is_correct": true,
+          "explanation": "Both authors consider how visitors interact with objects, even though they emphasize different risks."
+        },
+        {
+          "label": "C",
+          "text": "replicas are more historically valuable than originals.",
+          "is_correct": false,
+          "explanation": "C is not stated; the second curator specifically values the material qualities of originals."
+        },
+        {
+          "label": "D",
+          "text": "museums should remove explanations from displays.",
+          "is_correct": false,
+          "explanation": "D contradicts Text 2, which recommends explanatory labels or context."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-207",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Inferences",
+      "subskill": "Inferences from scientific descriptions",
+      "difficulty": "Hard",
+      "passage": "A material absorbs sunlight and releases the stored energy as heat over several hours. Engineers are investigating whether the material could regulate temperatures in buildings. In preliminary trials, a wall panel containing the material warmed more slowly during midday and cooled more slowly after sunset than an otherwise similar panel.",
+      "question": "Which conclusion is best supported?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The material changes how quickly the panel warms and cools, but its practical benefits remain to be established.",
+          "is_correct": true,
+          "explanation": "The trials indicate slower temperature changes, but they do not establish all real-world outcomes."
+        },
+        {
+          "label": "B",
+          "text": "The material prevents all heat from entering a building.",
+          "is_correct": false,
+          "explanation": "B overstates the result: heat still enters the wall panel, just at a different rate."
+        },
+        {
+          "label": "C",
+          "text": "The material can guarantee lower energy bills in every climate.",
+          "is_correct": false,
+          "explanation": "C makes a universal economic claim not demonstrated by preliminary wall-panel trials."
+        },
+        {
+          "label": "D",
+          "text": "The material releases its stored energy only when sunlight is present.",
+          "is_correct": false,
+          "explanation": "D contradicts the description that energy is released over several hours, including after sunset."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-208",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Text Structure and Purpose",
+      "subskill": "Text structure and purpose",
+      "difficulty": "Medium",
+      "passage": "When a new railway opened across the region, newspaper editorials initially predicted that nearby villages would rapidly become industrial centers. A decade later, however, the largest factories had clustered around two existing ports instead. The railway did increase trade, but access to shipping and established labor networks appears to have shaped where industry grew.",
+      "question": "What is the function of the second sentence?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It confirms that every village became an industrial center.",
+          "is_correct": false,
+          "explanation": "A directly contradicts the statement that factories clustered around two ports."
+        },
+        {
+          "label": "B",
+          "text": "It presents an outcome that contrasts with the earlier prediction.",
+          "is_correct": true,
+          "explanation": "The decade-later outcome differs from the initial editorial prediction."
+        },
+        {
+          "label": "C",
+          "text": "It explains why the railway was never used.",
+          "is_correct": false,
+          "explanation": "C is unsupported because the text says the railway increased trade."
+        },
+        {
+          "label": "D",
+          "text": "It shifts the discussion from industrial growth to agriculture.",
+          "is_correct": false,
+          "explanation": "D is wrong because the passage continues to discuss industrial growth."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-209",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: participial phrases",
+      "difficulty": "Hard",
+      "passage": "After analyzing thousands of audio samples, ______.",
+      "question": "Which choice completes the sentence so that the introductory phrase modifies the intended subject?",
+      "options": [
+        {
+          "label": "A",
+          "text": "the whale songs revealed a seasonal pattern",
+          "is_correct": false,
+          "explanation": "A incorrectly makes the whale songs the implied analyzers."
+        },
+        {
+          "label": "B",
+          "text": "a seasonal pattern was revealed by the whale songs",
+          "is_correct": false,
+          "explanation": "B makes a pattern the implied analyzer, creating a dangling modifier."
+        },
+        {
+          "label": "C",
+          "text": "researchers identified a seasonal pattern in the whale songs",
+          "is_correct": true,
+          "explanation": "“researchers” are the ones who analyzed the samples, matching the introductory phrase."
+        },
+        {
+          "label": "D",
+          "text": "the data showed researchers a seasonal pattern",
+          "is_correct": false,
+          "explanation": "D makes “the data” appear to have analyzed the samples and creates a mismatched subject."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-210",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "subskill": "Transitions",
+      "difficulty": "Easy",
+      "passage": "The first trial produced inconsistent readings because the sensor had not been calibrated. ______, the researchers recalibrated the sensor before repeating the test.",
+      "question": "Which choice completes the text with the most logical transition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nevertheless",
+          "is_correct": false,
+          "explanation": "A signals contrast, but the second action is a response to the problem rather than an unexpected contrast."
+        },
+        {
+          "label": "B",
+          "text": "Consequently",
+          "is_correct": true,
+          "explanation": "Recalibration followed as a consequence of the inconsistent readings."
+        },
+        {
+          "label": "C",
+          "text": "For example",
+          "is_correct": false,
+          "explanation": "C introduces an example rather than an outcome."
+        },
+        {
+          "label": "D",
+          "text": "Similarly",
+          "is_correct": false,
+          "explanation": "D signals similarity, which does not express the cause-and-response relationship."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-211",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Hard",
+      "passage": "Although the review praised the novel’s detailed setting, it found the central conflict “muted”: the characters’ disagreements rarely influenced their choices or the plot’s direction.",
+      "question": "As used in the text, “muted” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "subdued",
+          "is_correct": true,
+          "explanation": "The conflict is described as restrained or lacking force."
+        },
+        {
+          "label": "B",
+          "text": "loud",
+          "is_correct": false,
+          "explanation": "B is the opposite of the conflict’s limited influence."
+        },
+        {
+          "label": "C",
+          "text": "unpredictable",
+          "is_correct": false,
+          "explanation": "C concerns predictability rather than intensity."
+        },
+        {
+          "label": "D",
+          "text": "exaggerated",
+          "is_correct": false,
+          "explanation": "D means overstated or made larger, which conflicts with the review’s criticism."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-212",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: verb tense consistency",
+      "difficulty": "Medium",
+      "passage": "By the time the field team reached the site, the storm ______ and the river had begun to recede.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "had passed",
+          "is_correct": true,
+          "explanation": "The past perfect marks the storm’s ending as occurring before the team reached the site."
+        },
+        {
+          "label": "B",
+          "text": "passes",
+          "is_correct": false,
+          "explanation": "B uses the present tense where the sentence describes a completed past event."
+        },
+        {
+          "label": "C",
+          "text": "has passed",
+          "is_correct": false,
+          "explanation": "C uses the present perfect, which does not fit the past narrative time frame."
+        },
+        {
+          "label": "D",
+          "text": "will pass",
+          "is_correct": false,
+          "explanation": "D uses a future tense inconsistent with the past events described."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-213",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "subskill": "Transitions",
+      "difficulty": "Easy",
+      "passage": "The original survey included only adults who used a particular fitness app. ______, its results may not represent adults who do not use fitness apps.",
+      "question": "Which choice completes the text with the most logical transition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "As a result",
+          "is_correct": true,
+          "explanation": "Because the sample excluded nonusers, the result may not generalize to them."
+        },
+        {
+          "label": "B",
+          "text": "In contrast",
+          "is_correct": false,
+          "explanation": "B signals contrast between two claims, rather than the consequence of a sampling limitation."
+        },
+        {
+          "label": "C",
+          "text": "For example",
+          "is_correct": false,
+          "explanation": "C introduces an example and does not fit the inferential relationship."
+        },
+        {
+          "label": "D",
+          "text": "Meanwhile",
+          "is_correct": false,
+          "explanation": "D indicates events occurring at the same time."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-214",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Central Ideas and Details",
+      "subskill": "Central ideas and details",
+      "difficulty": "Medium",
+      "passage": "A restoration team reintroduced beavers to a stream whose surrounding trees had been removed decades earlier. After several years, beaver dams slowed the water and created shallow pools. Some native aquatic plants returned, although the team cautioned that recovery varied from one section of the stream to another.",
+      "question": "Which statement best captures the main idea?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Beavers always restore damaged streams to their original condition.",
+          "is_correct": false,
+          "explanation": "A overstates the finding and ignores variation between stream sections."
+        },
+        {
+          "label": "B",
+          "text": "Reintroducing beavers helped change stream conditions and supported some plant recovery, though results varied.",
+          "is_correct": true,
+          "explanation": "Dams altered water conditions and some plants returned, but recovery was uneven."
+        },
+        {
+          "label": "C",
+          "text": "The restoration failed because every stream section recovered at the same rate.",
+          "is_correct": false,
+          "explanation": "C contradicts the statement that results varied and incorrectly declares failure."
+        },
+        {
+          "label": "D",
+          "text": "Native plants prevent beavers from constructing dams.",
+          "is_correct": false,
+          "explanation": "D reverses the relationship and is unsupported."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-215",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: misplaced modifiers",
+      "difficulty": "Hard",
+      "passage": "______ across the valley at dawn, the researchers could see the mist rising from the river.",
+      "question": "Which choice completes the sentence so that the modifier clearly describes the intended noun?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The ridge was walked along",
+          "is_correct": false,
+          "explanation": "A awkwardly makes the ridge the object of a passive construction and does not attach the modifier clearly to the researchers."
+        },
+        {
+          "label": "B",
+          "text": "The mist rose",
+          "is_correct": false,
+          "explanation": "B makes “the mist” the subject of the main clause and leaves the researchers’ action unconnected."
+        },
+        {
+          "label": "C",
+          "text": "Walking along the ridge",
+          "is_correct": true,
+          "explanation": "The implied subject of “Walking along the ridge” is the researchers, matching the main clause."
+        },
+        {
+          "label": "D",
+          "text": "To walk along the ridge",
+          "is_correct": false,
+          "explanation": "D uses an infinitive that does not form the intended introductory participial phrase."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-216",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: logical comparison",
+      "difficulty": "Medium",
+      "passage": "The new battery’s energy storage capacity is greater than ______.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "the previous model",
+          "is_correct": false,
+          "explanation": "A compares a capacity with a physical object rather than with another capacity."
+        },
+        {
+          "label": "B",
+          "text": "that of the previous model",
+          "is_correct": true,
+          "explanation": "“that” stands for “energy storage capacity,” making the two things being compared parallel."
+        },
+        {
+          "label": "C",
+          "text": "the previous model did",
+          "is_correct": false,
+          "explanation": "C uses a verb phrase rather than a noun phrase after “greater than,” so the comparison is ungrammatical."
+        },
+        {
+          "label": "D",
+          "text": "when compared with the previous model",
+          "is_correct": false,
+          "explanation": "D creates an incomplete comparison and does not fit after “is greater than.”"
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-217",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: punctuation around nonessential clauses",
+      "difficulty": "Medium",
+      "passage": "The observatory, ______ was built in 1924, now houses a digital archive.",
+      "question": "Which choice completes the sentence according to Standard English conventions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "that",
+          "is_correct": false,
+          "explanation": "A is generally used for essential clauses and does not fit the commas marking this nonessential clause."
+        },
+        {
+          "label": "B",
+          "text": "which,",
+          "is_correct": false,
+          "explanation": "B adds an extra comma before the clause is complete, creating faulty punctuation."
+        },
+        {
+          "label": "C",
+          "text": "it",
+          "is_correct": false,
+          "explanation": "C creates a sentence fragment or an ungrammatical appositive structure."
+        },
+        {
+          "label": "D",
+          "text": "which",
+          "is_correct": true,
+          "explanation": "“which was built in 1924” is a nonessential clause set off by commas."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-218",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: colon after an independent clause",
+      "difficulty": "Medium",
+      "passage": "The team made one important discovery: ______.",
+      "question": "Which choice completes the sentence so that the colon introduces a full explanation of the discovery?",
+      "options": [
+        {
+          "label": "A",
+          "text": "because the mineral formed only when the water contained dissolved iron",
+          "is_correct": false,
+          "explanation": "A starts a dependent clause with “because” and cannot stand as the explanation after the colon in this sentence."
+        },
+        {
+          "label": "B",
+          "text": "the mineral formed only when the water contained dissolved iron",
+          "is_correct": true,
+          "explanation": "The colon follows an independent clause and introduces another independent clause that explains the discovery."
+        },
+        {
+          "label": "C",
+          "text": "which the mineral formed only when the water contained dissolved iron",
+          "is_correct": false,
+          "explanation": "C begins with an incorrect relative pronoun and does not form a grammatical clause."
+        },
+        {
+          "label": "D",
+          "text": "forming only when the water contained dissolved iron",
+          "is_correct": false,
+          "explanation": "D is a participial fragment rather than a complete explanation."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-219",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "subskill": "Transitions",
+      "difficulty": "Medium",
+      "passage": "The author’s first study found that a new reading app increased the time students spent reading. ______, the study did not determine whether the students understood the texts more deeply.",
+      "question": "Which choice completes the text with the most logical transition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "In other words",
+          "is_correct": false,
+          "explanation": "A restates the previous finding instead of contrasting it with a limitation."
+        },
+        {
+          "label": "B",
+          "text": "For instance",
+          "is_correct": false,
+          "explanation": "B would introduce a specific example, not a limitation."
+        },
+        {
+          "label": "C",
+          "text": "Therefore",
+          "is_correct": false,
+          "explanation": "C suggests that deeper understanding follows from the finding, while the sentence says that this was not determined."
+        },
+        {
+          "label": "D",
+          "text": "However",
+          "is_correct": true,
+          "explanation": "The second sentence introduces a limitation that contrasts with the positive result."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-220",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Easy",
+      "passage": "The engineer described the design as “robust” because it continued to function even after repeated exposure to dust, vibration, and high temperatures.",
+      "question": "As used in the text, “robust” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "fragile",
+          "is_correct": false,
+          "explanation": "A is the opposite of a design that withstands difficult conditions."
+        },
+        {
+          "label": "B",
+          "text": "durable",
+          "is_correct": true,
+          "explanation": "“robust” means strong or durable under stress."
+        },
+        {
+          "label": "C",
+          "text": "complex",
+          "is_correct": false,
+          "explanation": "C means complicated, which is not the relevant quality being described."
+        },
+        {
+          "label": "D",
+          "text": "expensive",
+          "is_correct": false,
+          "explanation": "D describes cost, which the passage does not discuss."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-221",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: verb form after a preposition",
+      "difficulty": "Medium",
+      "passage": "The archivist is interested in ______ how the letters were distributed.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "learn",
+          "is_correct": false,
+          "explanation": "A uses the base form where a gerund is needed after “in.”"
+        },
+        {
+          "label": "B",
+          "text": "learned",
+          "is_correct": false,
+          "explanation": "B uses a past-tense verb and does not complete the prepositional phrase."
+        },
+        {
+          "label": "C",
+          "text": "learning",
+          "is_correct": true,
+          "explanation": "A preposition such as “in” is followed by a noun or gerund; “learning” is the appropriate form."
+        },
+        {
+          "label": "D",
+          "text": "to learn",
+          "is_correct": false,
+          "explanation": "D uses an infinitive, which does not follow the preposition in this construction."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-222",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: pronoun agreement",
+      "difficulty": "Easy",
+      "passage": "The applicants reviewed the instructions before submitting ______ portfolios.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "his or her",
+          "is_correct": false,
+          "explanation": "A is singular, while the antecedent “applicants” is plural."
+        },
+        {
+          "label": "B",
+          "text": "its",
+          "is_correct": false,
+          "explanation": "B is singular and generally refers to an organization or thing, not the plural applicants."
+        },
+        {
+          "label": "C",
+          "text": "them",
+          "is_correct": false,
+          "explanation": "C is an object pronoun, not a possessive determiner before “portfolios.”"
+        },
+        {
+          "label": "D",
+          "text": "their",
+          "is_correct": true,
+          "explanation": "“their” is the possessive determiner that agrees with the plural antecedent “applicants.”"
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-223",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Inferences",
+      "subskill": "Inferences",
+      "difficulty": "Medium",
+      "passage": "An archaeologist found traces of several grains in cooking pots from a settlement. The grains included varieties that grow in different seasons, and the pots came from layers dated to the same century. The archaeologist concludes that residents probably stored food for later use.",
+      "question": "Which additional finding would most strongly support the conclusion?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The pots were decorated with images of local animals.",
+          "is_correct": false,
+          "explanation": "A concerns decoration, which does not directly indicate storage."
+        },
+        {
+          "label": "B",
+          "text": "The settlement was located near a river.",
+          "is_correct": false,
+          "explanation": "B identifies a location feature but does not show that grain was stored."
+        },
+        {
+          "label": "C",
+          "text": "The cooking pots were made from clay found nearby.",
+          "is_correct": false,
+          "explanation": "C concerns local manufacturing resources, not the storage practice."
+        },
+        {
+          "label": "D",
+          "text": "The grains show little evidence of damage from insects and moisture, despite being found in storage pits.",
+          "is_correct": true,
+          "explanation": "Evidence of preserved grain in storage pits would directly support the idea that food was saved for later use."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-224",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Cross-Text Connections",
+      "subskill": "Cross-text connections",
+      "difficulty": "Hard",
+      "passage": "Text 1: A transportation planner argues that adding protected bicycle lanes can encourage some commuters to replace short car trips with cycling.\n\nText 2: A public-health researcher agrees that protected lanes can encourage cycling but notes that the effect may be small where destinations are far apart or cycling infrastructure does not connect to transit.",
+      "question": "How would the researcher in Text 2 most likely respond to the planner’s argument?",
+      "options": [
+        {
+          "label": "A",
+          "text": "By denying that any commuter ever switches from driving to cycling",
+          "is_correct": false,
+          "explanation": "A is more absolute than the researcher’s position, which accepts that cycling can increase."
+        },
+        {
+          "label": "B",
+          "text": "By agreeing in principle while emphasizing the importance of local conditions and connected routes",
+          "is_correct": true,
+          "explanation": "Text 2 accepts the basic possibility but adds conditions that may limit the effect."
+        },
+        {
+          "label": "C",
+          "text": "By claiming protected lanes are only useful for recreation",
+          "is_correct": false,
+          "explanation": "C narrows the claim to recreation without support."
+        },
+        {
+          "label": "D",
+          "text": "By arguing that car trips are unrelated to transport infrastructure",
+          "is_correct": false,
+          "explanation": "D contradicts the argument that infrastructure can influence travel choices."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-225",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Text Structure and Purpose",
+      "subskill": "Text structure and purpose",
+      "difficulty": "Medium",
+      "passage": "The first section of a report explains how a city’s air-quality sensors collect hourly readings. The next section compares those readings with traffic counts and wind direction. The final section evaluates which neighborhoods experienced the greatest changes during the study period.",
+      "question": "How is the report organized?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It presents a disputed claim, lists its critics, and rejects all opposing views.",
+          "is_correct": false,
+          "explanation": "A describes an argumentative structure not reflected in the report’s sections."
+        },
+        {
+          "label": "B",
+          "text": "It narrates events in the order that the sensors were invented.",
+          "is_correct": false,
+          "explanation": "B is not supported; the order concerns the report’s analysis rather than the history of the sensors."
+        },
+        {
+          "label": "C",
+          "text": "It describes the data collection, examines relationships among variables, and then compares outcomes across neighborhoods.",
+          "is_correct": true,
+          "explanation": "The described sequence moves from measurement, to comparison, to geographic evaluation."
+        },
+        {
+          "label": "D",
+          "text": "It introduces a neighborhood, describes its history, and ends with a travel recommendation.",
+          "is_correct": false,
+          "explanation": "D introduces subject matter absent from the description."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-226",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Hard",
+      "passage": "The editor called the report “comprehensive” because it considered not only the project’s costs but also its environmental, social, and logistical effects.",
+      "question": "As used in the text, “comprehensive” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "thorough",
+          "is_correct": true,
+          "explanation": "“comprehensive” means covering the subject broadly and thoroughly."
+        },
+        {
+          "label": "B",
+          "text": "narrow",
+          "is_correct": false,
+          "explanation": "B is the opposite of considering many dimensions of a project."
+        },
+        {
+          "label": "C",
+          "text": "incomplete",
+          "is_correct": false,
+          "explanation": "C contradicts the editor’s description of the report."
+        },
+        {
+          "label": "D",
+          "text": "brief",
+          "is_correct": false,
+          "explanation": "D means short in duration or length, which does not describe a report that covers many dimensions."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-227",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "subskill": "Transitions",
+      "difficulty": "Medium",
+      "passage": "The fossil was initially classified as belonging to an adult animal. Later imaging revealed that several bones had not fully fused. ______, the research team revised the classification to a juvenile specimen.",
+      "question": "Which choice completes the text with the most logical transition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "In contrast",
+          "is_correct": false,
+          "explanation": "A indicates opposition, but the new classification is a response to evidence."
+        },
+        {
+          "label": "B",
+          "text": "For example",
+          "is_correct": false,
+          "explanation": "B introduces an example rather than a consequence."
+        },
+        {
+          "label": "C",
+          "text": "Accordingly",
+          "is_correct": true,
+          "explanation": "The revision follows logically from the new evidence."
+        },
+        {
+          "label": "D",
+          "text": "Nevertheless",
+          "is_correct": false,
+          "explanation": "D suggests that the revision occurred despite the evidence, when it occurred because of it."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-228",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: parallel structure",
+      "difficulty": "Medium",
+      "passage": "The fellowship requires applicants to design a project, collect data, and ______ their results.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "present",
+          "is_correct": true,
+          "explanation": "“design,” “collect,” and “present” are parallel base-form verbs."
+        },
+        {
+          "label": "B",
+          "text": "presenting",
+          "is_correct": false,
+          "explanation": "B breaks the parallel verb pattern by using a gerund form."
+        },
+        {
+          "label": "C",
+          "text": "presentation of",
+          "is_correct": false,
+          "explanation": "C changes the list from verbs to a noun phrase."
+        },
+        {
+          "label": "D",
+          "text": "to presenting",
+          "is_correct": false,
+          "explanation": "D is not parallel with the other base-form verbs."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-229",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Medium",
+      "passage": "The scientist cautioned that the first results were “tentative,” because the experiment had involved only a small group of participants.",
+      "question": "As used in the text, “tentative” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "conclusive",
+          "is_correct": false,
+          "explanation": "A is the opposite of a result that needs further testing."
+        },
+        {
+          "label": "B",
+          "text": "irrelevant",
+          "is_correct": false,
+          "explanation": "B means unrelated to the issue, which is not implied."
+        },
+        {
+          "label": "C",
+          "text": "deliberately false",
+          "is_correct": false,
+          "explanation": "C adds an accusation of deception that the passage does not support."
+        },
+        {
+          "label": "D",
+          "text": "provisional",
+          "is_correct": true,
+          "explanation": "“tentative” means uncertain or provisional, especially given the small sample."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-230",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Command of Evidence",
+      "subskill": "Command of textual evidence",
+      "difficulty": "Medium",
+      "passage": "Some ecologists argue that restoring a wetland can reduce flood damage in nearby communities.",
+      "question": "Which finding would most directly support this claim?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A restored wetland attracts more bird species than a nearby park.",
+          "is_correct": false,
+          "explanation": "A supports biodiversity benefits, not the specific claim about reducing flood damage."
+        },
+        {
+          "label": "B",
+          "text": "Measurements show that the restored wetland temporarily stores stormwater and lowers downstream peak water levels.",
+          "is_correct": true,
+          "explanation": "Stormwater storage and lower downstream peak levels directly connect wetland restoration to reduced flooding risk."
+        },
+        {
+          "label": "C",
+          "text": "Residents report that the wetland is a pleasant place to walk.",
+          "is_correct": false,
+          "explanation": "C concerns recreation and does not measure flood-related outcomes."
+        },
+        {
+          "label": "D",
+          "text": "The wetland contains several plant species that are rare in the region.",
+          "is_correct": false,
+          "explanation": "D supports conservation value but not the claimed flood-control mechanism."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-231",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Text Structure and Purpose",
+      "subskill": "Text structure and purpose",
+      "difficulty": "Hard",
+      "passage": "A critic begins by summarizing a popular claim that ancient trade routes spread a particular writing system. The critic then discusses inscriptions found far from those routes and concludes that local communities may have adapted the system independently.",
+      "question": "What is the main purpose of the critic’s discussion of the distant inscriptions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "To prove that the writing system was never traded or borrowed",
+          "is_correct": false,
+          "explanation": "A overstates the argument; independent adaptation may have occurred, but borrowing is not ruled out entirely."
+        },
+        {
+          "label": "B",
+          "text": "To shift from the history of writing to the chemistry of ink",
+          "is_correct": false,
+          "explanation": "B introduces a topic not discussed in the passage."
+        },
+        {
+          "label": "C",
+          "text": "To show that all inscriptions were created at the same time",
+          "is_correct": false,
+          "explanation": "C makes a universal dating claim unsupported by the described evidence."
+        },
+        {
+          "label": "D",
+          "text": "To provide evidence that complicates the popular explanation",
+          "is_correct": true,
+          "explanation": "The distant inscriptions give the critic a reason to qualify the claim that trade routes alone explain the spread."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-232",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Rhetorical Synthesis",
+      "subskill": "Rhetorical synthesis",
+      "difficulty": "Medium",
+      "passage": "A student is comparing two methods for observing nocturnal animals. Notes: infrared cameras recorded animals without visible light; direct human observation sometimes changed the animals’ behavior; cameras require batteries and can fail in extreme cold.",
+      "question": "The goal is to explain one advantage and one limitation of infrared cameras. Which choice best meets that goal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Direct observation is always inaccurate, and infrared cameras work in every environment.",
+          "is_correct": false,
+          "explanation": "A overstates both methods and contradicts the noted camera limitations."
+        },
+        {
+          "label": "B",
+          "text": "Nocturnal animals are active at night, which is why researchers study them.",
+          "is_correct": false,
+          "explanation": "B provides general information but does not compare an advantage and a limitation."
+        },
+        {
+          "label": "C",
+          "text": "Infrared cameras can record nocturnal animals without visible light, but their batteries and cold-weather performance can limit their use.",
+          "is_correct": true,
+          "explanation": "It states a clear advantage and a limitation directly supported by the notes."
+        },
+        {
+          "label": "D",
+          "text": "Infrared cameras are more expensive than every possible alternative.",
+          "is_correct": false,
+          "explanation": "D introduces a cost comparison that the notes do not provide."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-233",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: apostrophes and possessives",
+      "difficulty": "Easy",
+      "passage": "The two ______ findings were published in separate journals.",
+      "question": "Which choice completes the sentence according to Standard English conventions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "scientist’s",
+          "is_correct": false,
+          "explanation": "A is singular possessive, appropriate for one scientist rather than two."
+        },
+        {
+          "label": "B",
+          "text": "scientists",
+          "is_correct": false,
+          "explanation": "B is plural but not possessive, so it does not show that the findings belong to them."
+        },
+        {
+          "label": "C",
+          "text": "scientists’",
+          "is_correct": true,
+          "explanation": "The plural noun “scientists” forms its possessive by adding an apostrophe after the s."
+        },
+        {
+          "label": "D",
+          "text": "scientist",
+          "is_correct": false,
+          "explanation": "D is singular and nonpossessive."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-234",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Transitions",
+      "subskill": "Transitions",
+      "difficulty": "Easy",
+      "passage": "The first prototype was inexpensive to build. ______, it required frequent repairs and was not suitable for long-term use.",
+      "question": "Which choice completes the text with the most logical transition?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Nevertheless",
+          "is_correct": true,
+          "explanation": "The low initial cost is contrasted with the prototype’s practical weakness."
+        },
+        {
+          "label": "B",
+          "text": "Moreover",
+          "is_correct": false,
+          "explanation": "B adds a supporting point, but the second sentence contrasts with the first benefit."
+        },
+        {
+          "label": "C",
+          "text": "In addition",
+          "is_correct": false,
+          "explanation": "C also signals addition rather than a contrast."
+        },
+        {
+          "label": "D",
+          "text": "Specifically",
+          "is_correct": false,
+          "explanation": "D introduces a specific detail, not the relationship between the two statements."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-235",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: agreement with an inverted subject",
+      "difficulty": "Hard",
+      "passage": "Near the entrance to the caves ______ several signs warning visitors about falling rocks.",
+      "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+      "options": [
+        {
+          "label": "A",
+          "text": "stands",
+          "is_correct": false,
+          "explanation": "A is singular, but the subject “several signs” is plural."
+        },
+        {
+          "label": "B",
+          "text": "has stood",
+          "is_correct": false,
+          "explanation": "B incorrectly uses a singular auxiliary and an awkward tense for the general description."
+        },
+        {
+          "label": "C",
+          "text": "stand",
+          "is_correct": true,
+          "explanation": "The subject follows the introductory location phrase, and plural “signs” requires “stand.”"
+        },
+        {
+          "label": "D",
+          "text": "is standing",
+          "is_correct": false,
+          "explanation": "D uses a singular progressive form that does not agree with the plural subject."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-236",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Rhetorical Synthesis",
+      "subskill": "Rhetorical synthesis",
+      "difficulty": "Medium",
+      "passage": "A student wants to introduce a study showing that shade trees can reduce sidewalk temperatures. Notes: measurements were taken on 12 summer afternoons; shaded sidewalks averaged 7°C cooler than nearby unshaded sidewalks; the researchers did not measure indoor temperatures.",
+      "question": "Which sentence best accomplishes the goal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The study proved that shade trees reduce indoor temperatures by 7°C in every building.",
+          "is_correct": false,
+          "explanation": "A claims an indoor effect that was not measured and generalizes beyond the study."
+        },
+        {
+          "label": "B",
+          "text": "Researchers measured temperatures, and trees provide many other benefits to cities.",
+          "is_correct": false,
+          "explanation": "B is vague and adds a broad claim without stating the important result."
+        },
+        {
+          "label": "C",
+          "text": "Sidewalks can be made from concrete, brick, stone, or other materials.",
+          "is_correct": false,
+          "explanation": "C provides unrelated background and omits the study’s finding."
+        },
+        {
+          "label": "D",
+          "text": "Over 12 summer afternoons, researchers measured sidewalk temperatures and found that shaded sidewalks averaged 7°C cooler than nearby unshaded ones.",
+          "is_correct": true,
+          "explanation": "It accurately reports the sample period, measured outcome, and size of the temperature difference."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-237",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Central Ideas and Details",
+      "subskill": "Central ideas and details",
+      "difficulty": "Easy",
+      "passage": "For decades, botanists assumed that a certain alpine plant spread mainly through seeds carried downhill by water. Recent observations, however, found that seeds often attach to the fur of small mammals, which can carry them uphill between valleys. The finding does not eliminate water dispersal, but it suggests that animal movement helps explain the plant’s presence in isolated high-elevation patches.",
+      "question": "Which choice best states the main idea of the text?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Water is the only effective means by which alpine plants spread.",
+          "is_correct": false,
+          "explanation": "A contradicts the text, which describes both water and animal dispersal."
+        },
+        {
+          "label": "B",
+          "text": "Alpine plants cannot survive in isolated patches without mammals.",
+          "is_correct": false,
+          "explanation": "B makes a claim about survival that the text does not establish."
+        },
+        {
+          "label": "C",
+          "text": "Botanists have proved that seed dispersal never occurs downhill.",
+          "is_correct": false,
+          "explanation": "C exaggerates the finding; the text explicitly retains water dispersal as a possible mechanism."
+        },
+        {
+          "label": "D",
+          "text": "New observations suggest that small mammals contribute to the plant’s dispersal.",
+          "is_correct": true,
+          "explanation": "The observations suggest that mammals help move seeds, potentially explaining isolated populations."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-238",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Text Structure and Purpose",
+      "subskill": "Author’s use of examples",
+      "difficulty": "Medium",
+      "passage": "To illustrate how small changes can alter a city’s water use, the author describes a hotel that replaced its old showerheads with efficient models and reduced water consumption without changing the number of rooms it rented.",
+      "question": "Why does the author include the hotel example?",
+      "options": [
+        {
+          "label": "A",
+          "text": "To prove that every water-saving measure is cost-free",
+          "is_correct": false,
+          "explanation": "A is too broad; the example does not establish that every measure has no cost."
+        },
+        {
+          "label": "B",
+          "text": "To show that reducing water use necessarily reduces hotel occupancy",
+          "is_correct": false,
+          "explanation": "B says the opposite of the example, which maintained the number of rented rooms."
+        },
+        {
+          "label": "C",
+          "text": "To illustrate a practical intervention that reduced consumption without reducing activity",
+          "is_correct": true,
+          "explanation": "The hotel shows how efficiency changes can lower resource use while normal activity continues."
+        },
+        {
+          "label": "D",
+          "text": "To argue that hotels use less water than private homes",
+          "is_correct": false,
+          "explanation": "D makes a comparison that the passage does not provide."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-239",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Cross-Text Connections",
+      "subskill": "Cross-text connections",
+      "difficulty": "Hard",
+      "passage": "Text 1: A historian argues that personal diaries can reveal details of daily life that official government records rarely preserve.\n\nText 2: A second historian agrees that diaries provide valuable detail but cautions that diarists may omit routine activities and describe events through their own social position.",
+      "question": "Both historians would most likely agree that diaries",
+      "options": [
+        {
+          "label": "A",
+          "text": "should replace all official records.",
+          "is_correct": false,
+          "explanation": "A goes beyond both historians’ positions; neither argues that diaries should replace other sources."
+        },
+        {
+          "label": "B",
+          "text": "contain no information about ordinary life.",
+          "is_correct": false,
+          "explanation": "B contradicts Text 1, which emphasizes the daily-life details diaries can reveal."
+        },
+        {
+          "label": "C",
+          "text": "are useful historical sources, though they have limitations.",
+          "is_correct": true,
+          "explanation": "Both acknowledge the value of diaries, and Text 2 explicitly identifies limitations."
+        },
+        {
+          "label": "D",
+          "text": "are always more accurate than government records.",
+          "is_correct": false,
+          "explanation": "D is too absolute and not stated by either author."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-240",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: semicolon between independent clauses",
+      "difficulty": "Medium",
+      "passage": "The telescope’s mirror was polished twice ______.",
+      "question": "Which choice connects the two independent clauses with a semicolon?",
+      "options": [
+        {
+          "label": "A",
+          "text": "; the images remained blurry because the air above the observatory was turbulent",
+          "is_correct": true,
+          "explanation": "The semicolon joins two closely related independent clauses."
+        },
+        {
+          "label": "B",
+          "text": ", the images remained blurry because the air above the observatory was turbulent",
+          "is_correct": false,
+          "explanation": "B creates a comma splice between two independent clauses."
+        },
+        {
+          "label": "C",
+          "text": "although the images remained blurry because the air above the observatory was turbulent",
+          "is_correct": false,
+          "explanation": "C makes the second clause subordinate and does not use a semicolon."
+        },
+        {
+          "label": "D",
+          "text": ", and the images remained blurry because the air above the observatory was turbulent",
+          "is_correct": false,
+          "explanation": "D is grammatical but uses a comma and coordinating conjunction rather than a semicolon."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-241",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Command of Evidence",
+      "subskill": "Command of textual evidence",
+      "difficulty": "Medium",
+      "passage": "A scientist claims that a newly designed roof coating reflects more sunlight than a conventional coating.",
+      "question": "Which result would best support the claim?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The new coating costs less to transport.",
+          "is_correct": false,
+          "explanation": "A concerns transport cost rather than reflectivity."
+        },
+        {
+          "label": "B",
+          "text": "Buildings with the new coating have more windows.",
+          "is_correct": false,
+          "explanation": "B introduces a building difference that could confound a temperature comparison, and it does not measure reflection."
+        },
+        {
+          "label": "C",
+          "text": "Under the same lighting conditions, the new coating reflects 82% of incoming sunlight while the conventional coating reflects 55%.",
+          "is_correct": true,
+          "explanation": "The controlled comparison directly measures the property named in the claim."
+        },
+        {
+          "label": "D",
+          "text": "Residents in buildings with the new coating report liking its color.",
+          "is_correct": false,
+          "explanation": "D concerns preference rather than how much sunlight the coating reflects."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-242",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Command of Evidence",
+      "subskill": "Command of quantitative evidence",
+      "difficulty": "Medium",
+      "passage": "A researcher tested a seed variety under three daily light durations. The average seedling heights after two weeks were: 4 hours of light, 5 cm; 8 hours, 9 cm; 12 hours, 10 cm.",
+      "question": "The researcher wants to emphasize that increasing light duration from 8 to 12 hours produced a smaller gain than increasing it from 4 to 8 hours. Which statement best uses the data?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Average height rose by 4 cm from 4 to 8 hours, but by only 1 cm from 8 to 12 hours.",
+          "is_correct": true,
+          "explanation": "The increase was 9 − 5 = 4 cm in the first interval and 10 − 9 = 1 cm in the second."
+        },
+        {
+          "label": "B",
+          "text": "Seedlings grew 5 cm when they received 4 hours of light.",
+          "is_correct": false,
+          "explanation": "B reports a height, not the changes between light durations."
+        },
+        {
+          "label": "C",
+          "text": "Mean height rose by 1 cm from 4 to 8 hours and by 4 cm from 8 to 12 hours.",
+          "is_correct": false,
+          "explanation": "C reverses the observed gains: the increase was 4 cm in the first interval and 1 cm in the second."
+        },
+        {
+          "label": "D",
+          "text": "Every additional 4 hours of light increased height by 5 cm.",
+          "is_correct": false,
+          "explanation": "D incorrectly claims a constant 5 cm increase, whereas the measured gains were 4 cm and 1 cm."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-243",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: semicolons and independent clauses",
+      "difficulty": "Medium",
+      "passage": "The excavation uncovered several ceramic fragments ______.",
+      "question": "Which choice connects the two independent clauses using a semicolon?",
+      "options": [
+        {
+          "label": "A",
+          "text": ", researchers used their shapes to estimate the age of the settlement",
+          "is_correct": false,
+          "explanation": "A creates a comma splice by joining two independent clauses with only a comma."
+        },
+        {
+          "label": "B",
+          "text": "because researchers used their shapes to estimate the age of the settlement",
+          "is_correct": false,
+          "explanation": "B makes the reason for uncovering the fragments the act of using their shapes, which is illogical in context."
+        },
+        {
+          "label": "C",
+          "text": ", and researchers used their shapes to estimate the age of the settlement",
+          "is_correct": false,
+          "explanation": "C is grammatical but uses a comma and coordinating conjunction rather than a semicolon."
+        },
+        {
+          "label": "D",
+          "text": "; researchers used their shapes to estimate the age of the settlement",
+          "is_correct": true,
+          "explanation": "A semicolon directly joins the two related independent clauses."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-244",
+      "section": "Reading and Writing",
+      "domain": "Expression of Ideas",
+      "skill": "Rhetorical Synthesis",
+      "subskill": "Rhetorical synthesis",
+      "difficulty": "Medium",
+      "passage": "A student is writing a report about an engineering project. The student’s notes say:\n• A university team built a small solar-powered desalination device.\n• The prototype produced 2 liters of fresh water per hour in sunny conditions.\n• The team is testing how cloud cover affects output.",
+      "question": "The student wants to emphasize that the device is still being evaluated. Which choice best uses the notes to meet the student’s goal?",
+      "options": [
+        {
+          "label": "A",
+          "text": "A university team has completed a solar desalination device that produces fresh water under all weather conditions.",
+          "is_correct": false,
+          "explanation": "A overstates the findings by claiming performance under all weather conditions and saying the device is complete."
+        },
+        {
+          "label": "B",
+          "text": "Desalination removes salt from seawater, a process that can be powered by several energy sources.",
+          "is_correct": false,
+          "explanation": "B gives general background but omits the specific results and ongoing evaluation."
+        },
+        {
+          "label": "C",
+          "text": "The team’s device is small, and the university has many engineering students.",
+          "is_correct": false,
+          "explanation": "C includes details that do not address the goal of emphasizing evaluation."
+        },
+        {
+          "label": "D",
+          "text": "A solar-powered desalination prototype produced 2 liters of fresh water per hour in sunny conditions, and researchers are still testing how cloud cover affects its output.",
+          "is_correct": true,
+          "explanation": "It includes the measured output and makes clear that testing remains underway."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-245",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Words in Context",
+      "subskill": "Words in context",
+      "difficulty": "Medium",
+      "passage": "The committee’s initial proposal was not rejected outright; instead, members sought to “temper” its most ambitious requirements so that smaller institutions could comply.",
+      "question": "As used in the text, “temper” most nearly means",
+      "options": [
+        {
+          "label": "A",
+          "text": "moderate",
+          "is_correct": true,
+          "explanation": "To temper a proposal is to moderate or soften its requirements."
+        },
+        {
+          "label": "B",
+          "text": "celebrate",
+          "is_correct": false,
+          "explanation": "B means praise or commemorate, which does not fit the context."
+        },
+        {
+          "label": "C",
+          "text": "conceal",
+          "is_correct": false,
+          "explanation": "C means hide something rather than adjust its strictness."
+        },
+        {
+          "label": "D",
+          "text": "intensify",
+          "is_correct": false,
+          "explanation": "D means make stronger, the opposite of the committee’s intended adjustment."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-246",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Inferences",
+      "subskill": "Inferences",
+      "difficulty": "Medium",
+      "passage": "A linguist compared recordings of a language made 60 years ago with recordings made recently. The newer speakers used many of the same grammatical patterns, but they pronounced two vowels differently and borrowed several technical terms from a neighboring language.",
+      "question": "Which conclusion is most consistent with the findings?",
+      "options": [
+        {
+          "label": "A",
+          "text": "The language has remained completely unchanged.",
+          "is_correct": false,
+          "explanation": "A ignores the vowel and vocabulary changes."
+        },
+        {
+          "label": "B",
+          "text": "The language has retained some grammatical features while changing in pronunciation and vocabulary.",
+          "is_correct": true,
+          "explanation": "The recordings show continuity in some grammatical patterns alongside changes in pronunciation and vocabulary."
+        },
+        {
+          "label": "C",
+          "text": "The language is no longer spoken by its community.",
+          "is_correct": false,
+          "explanation": "C has no support; the new recordings show that speakers still use the language."
+        },
+        {
+          "label": "D",
+          "text": "The neighboring language has replaced the original language entirely.",
+          "is_correct": false,
+          "explanation": "D greatly overstates the evidence; borrowing terms does not establish language replacement."
+        }
+      ],
+      "correct_answer": "B"
+    },
+    {
+      "id": "WBRW-247",
+      "section": "Reading and Writing",
+      "domain": "Craft and Structure",
+      "skill": "Text Structure and Purpose",
+      "subskill": "Text structure and purpose",
+      "difficulty": "Medium",
+      "passage": "To study how cities affect bird calls, a team first recorded birds in quiet suburban parks. It then compared those recordings with calls from birds living near major roads. The team found that birds near the roads often used higher-pitched calls.",
+      "question": "What is the main function of the first sentence?",
+      "options": [
+        {
+          "label": "A",
+          "text": "It presents a conclusion that the later sentences disprove.",
+          "is_correct": false,
+          "explanation": "A is wrong because the sentence establishes the study design rather than a conclusion."
+        },
+        {
+          "label": "B",
+          "text": "It explains why higher-pitched calls are biologically impossible.",
+          "is_correct": false,
+          "explanation": "B is not stated or implied."
+        },
+        {
+          "label": "C",
+          "text": "It introduces the baseline condition against which another group is compared.",
+          "is_correct": true,
+          "explanation": "Quiet suburban parks provide a comparison condition for birds near roads."
+        },
+        {
+          "label": "D",
+          "text": "It provides an alternative explanation for the results.",
+          "is_correct": false,
+          "explanation": "D describes no competing explanation; the first sentence specifies the initial recording location."
+        }
+      ],
+      "correct_answer": "C"
+    },
+    {
+      "id": "WBRW-248",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Boundaries",
+      "subskill": "Boundaries: introductory modifiers",
+      "difficulty": "Easy",
+      "passage": "After reviewing the survey responses ______ the analyst noticed an unexpected regional pattern.",
+      "question": "Which choice completes the sentence according to Standard English conventions?",
+      "options": [
+        {
+          "label": "A",
+          "text": ";",
+          "is_correct": false,
+          "explanation": "A uses a semicolon even though the introductory phrase is not an independent clause."
+        },
+        {
+          "label": "B",
+          "text": ":",
+          "is_correct": false,
+          "explanation": "B uses a colon after a phrase that cannot stand as an independent clause."
+        },
+        {
+          "label": "C",
+          "text": "—",
+          "is_correct": false,
+          "explanation": "C incorrectly separates the introductory phrase from the main clause with a dash."
+        },
+        {
+          "label": "D",
+          "text": ",",
+          "is_correct": true,
+          "explanation": "An introductory phrase is followed by a comma before the main clause."
+        }
+      ],
+      "correct_answer": "D"
+    },
+    {
+      "id": "WBRW-249",
+      "section": "Reading and Writing",
+      "domain": "Standard English Conventions",
+      "skill": "Form, Structure, and Sense",
+      "subskill": "Form, structure, and sense: subject-verb agreement",
+      "difficulty": "Easy",
+      "passage": "The collection of early maps ______ stored in a climate-controlled room.",
+      "question": "Which choice completes the sentence according to Standard English conventions?",
+      "options": [
+        {
+          "label": "A",
+          "text": "is",
+          "is_correct": true,
+          "explanation": "“collection” is the subject and takes the singular verb “is.”"
+        },
+        {
+          "label": "B",
+          "text": "are",
+          "is_correct": false,
+          "explanation": "B incorrectly makes the verb agree with “maps” rather than the singular subject “collection.”"
+        },
+        {
+          "label": "C",
+          "text": "were",
+          "is_correct": false,
+          "explanation": "C uses a plural verb and past tense, neither of which fits the singular subject and present statement."
+        },
+        {
+          "label": "D",
+          "text": "have been",
+          "is_correct": false,
+          "explanation": "D uses a plural auxiliary, which does not agree with the singular subject."
+        }
+      ],
+      "correct_answer": "A"
+    },
+    {
+      "id": "WBRW-250",
+      "section": "Reading and Writing",
+      "domain": "Information and Ideas",
+      "skill": "Central Ideas and Details",
+      "subskill": "Central ideas and details",
+      "difficulty": "Easy",
+      "passage": "Some coastal towns have begun replacing portions of seawalls with gently sloping planted banks. Unlike a vertical wall, the planted bank can absorb some wave energy and provide habitat for small organisms. It may require more land than a seawall, however, and its performance can depend on the local wave climate.",
+      "question": "Which statement best summarizes the text?",
+      "options": [
+        {
+          "label": "A",
+          "text": "Planted banks offer potential protective and ecological benefits, but they also have constraints.",
+          "is_correct": true,
+          "explanation": "The text balances possible benefits with land and site-specific limitations."
+        },
+        {
+          "label": "B",
+          "text": "Planted banks are always cheaper and more effective than seawalls.",
+          "is_correct": false,
+          "explanation": "B ignores the stated space requirement and dependence on local conditions."
+        },
+        {
+          "label": "C",
+          "text": "Seawalls provide more habitat than all natural shorelines.",
+          "is_correct": false,
+          "explanation": "C contradicts the text’s description of habitat provided by planted banks."
+        },
+        {
+          "label": "D",
+          "text": "Coastal towns are abandoning every form of engineered protection.",
+          "is_correct": false,
+          "explanation": "D is an unsupported universal claim; towns are replacing only portions of seawalls in the passage."
+        }
+      ],
+      "correct_answer": "A"
+    }
+  ]
+}

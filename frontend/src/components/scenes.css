@@ -1,0 +1,43 @@
+/* Motion and text for components/Scenes.jsx ("sc-" prefix). */
+
+.sc { display: block; width: 100%; height: 100%; }
+.sc-sign { font: 800 12.5px var(--display, "Lexend", sans-serif); fill: #fff4e6; letter-spacing: -0.005em; }
+
+/* Mouse parallax: each layer moves by its depth (--d) × pointer position. */
+.sc-layer { transform: translate(calc(var(--px, 0) * var(--d, 0) * 1px), calc(var(--py, 0) * var(--d, 0) * 0.6px)); transition: transform 0.7s cubic-bezier(.2,.8,.2,1); }
+
+.sc-twinkle { animation: scTwinkle 3.6s ease-in-out infinite; }
+@keyframes scTwinkle { 50% { opacity: 0.2; } }
+
+.sc-pulse { transform-box: fill-box; transform-origin: center; animation: scPulse 4.2s ease-in-out infinite; }
+@keyframes scPulse { 50% { transform: scale(1.2) rotate(10deg); } }
+
+.sc-shoot { opacity: 0; animation: scShoot 9s ease-in 1.5s infinite; }
+@keyframes scShoot {
+  0% { transform: translate(110px, 30px); opacity: 0; }
+  3% { opacity: 1; }
+  14% { transform: translate(340px, 132px); opacity: 0; }
+  100% { transform: translate(340px, 132px); opacity: 0; }
+}
+
+.sc-drift { animation: scDrift 36s ease-in-out infinite alternate; }
+.sc-drift.slow { animation-duration: 48s; }
+.sc-drift.slower { animation-duration: 64s; }
+.sc-drift.rev { animation-direction: alternate-reverse; }
+@keyframes scDrift { from { transform: translateX(-28px); } to { transform: translateX(28px); } }
+
+.sc-bob { animation: scBob 5s ease-in-out infinite; }
+.sc-bob.slow { animation-duration: 7s; }
+.sc-bob.late { animation-delay: -2.5s; }
+@keyframes scBob { 50% { transform: translateY(-9px); } }
+
+.sc-zz text { font: 800 26px var(--display, "Lexend", sans-serif); fill: #8f9dd8; opacity: 0; animation: scZz 3.4s ease-in-out infinite; }
+.sc-zz text:nth-child(2) { font-size: 32px; animation-delay: 0.55s; }
+.sc-zz text:nth-child(3) { font-size: 40px; animation-delay: 1.1s; }
+@keyframes scZz { 0%, 100% { opacity: 0; transform: translateY(8px); } 35%, 70% { opacity: 0.9; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc *, .sc-layer { animation: none !important; transition: none !important; }
+  .sc-shoot { display: none; }
+  .sc-zz text { opacity: 0.8; }
+}

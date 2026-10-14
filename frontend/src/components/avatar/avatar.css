@@ -1,0 +1,56 @@
+/* Profile pictures ("av-") and the picker ("avp-"). Used in the hub, the cover pages and the studio. */
+.av { position: relative; display: inline-grid; place-items: center; flex: none; border-radius: var(--av-radius, 30%); font-family: var(--display); font-weight: 700; line-height: 1; user-select: none; }
+.av svg { display: block; width: 100%; height: 100%; border-radius: inherit; }
+.av-framed { padding: var(--av-ring); background: var(--av-frame); box-shadow: 0 1px 2px rgba(22, 26, 46, 0.12); }
+.av-framed svg { border-radius: calc(var(--av-radius) - var(--av-ring)); background: var(--surface, #fff); }
+
+.avp { display: grid; gap: 22px; }
+.avp-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.avp-top p { margin: 0; color: var(--ink-soft); font-size: var(--fs-body); line-height: 1.5; max-width: 46ch; }
+.avp-top b { display: block; color: var(--ink); font-family: var(--display); font-size: var(--fs-h4); letter-spacing: -0.005em; margin-bottom: 2px; }
+.avp-group { display: grid; gap: 10px; min-width: 0; }
+.avp-group > h3 { margin: 0; font-size: var(--fs-small); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+.avp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 10px; }
+.avp-pick { position: relative; display: grid; place-items: center; padding: 4px; border: 2px solid transparent; border-radius: 22px; background: none; cursor: pointer; transition: transform 0.14s ease, border-color 0.14s ease; }
+.avp-pick .av { width: 100% !important; height: auto !important; aspect-ratio: 1; }
+.avp-pick:hover { transform: translateY(-2px); }
+.avp-pick[aria-checked="true"] { border-color: var(--primary); }
+.avp-pick[aria-checked="true"]::after { content: ""; position: absolute; right: -3px; top: -3px; width: 20px; height: 20px; border-radius: 50%; background: var(--primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; box-shadow: 0 0 0 2px var(--surface); }
+.avp-pick:focus-visible, .avp-chip:focus-visible, .avp-swatch:focus-visible { outline: 3px solid color-mix(in srgb, var(--primary) 45%, transparent); outline-offset: 2px; }
+
+.avp-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.avp-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 6px 14px 6px 8px; border: 1.5px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; font-size: var(--fs-small); font-weight: 600; cursor: pointer; }
+.avp-chip svg { width: 30px; height: 30px; flex: none; }
+.avp-chip.plain { padding-left: 14px; }
+.avp-chip:hover:not(.locked):not([aria-checked="true"]) { border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); background: var(--primary-softer); }
+.avp-chip[aria-checked="true"] { border-color: var(--primary); background: var(--primary-softer); color: var(--primary-dark); }
+.avp-swatch { width: 44px; height: 44px; padding: 0; border-radius: 50%; border: 3px solid var(--surface); box-shadow: 0 0 0 1.5px var(--border); cursor: pointer; transition: transform 0.14s ease; }
+.avp-swatch:hover:not(.locked) { transform: scale(1.1); }
+.avp-swatch.none { background: repeating-linear-gradient(135deg, var(--surface) 0 6px, var(--border) 6px 8px) !important; }
+.avp-swatch[aria-checked="true"] { box-shadow: 0 0 0 3px var(--primary); }
+/* Parts sold in the Comet Shop: not choosable until bought, and showing what they cost. */
+.avp-lock { display: inline-flex; align-items: center; gap: 3px; padding: 2px 7px 2px 5px; border-radius: 999px; background: var(--nova-soft, #f1e8ff); color: var(--nova, #8a3ffc); font-size: var(--fs-micro); font-weight: 750; }
+.avp-chip .avp-lock svg { width: 13px; height: 13px; }
+.avp-chip.locked, .avp-pick.locked, .avp-swatch.locked { cursor: not-allowed; }
+.avp-chip.locked { color: var(--ink-soft); background: var(--bg); }
+.avp-pick.locked .av { opacity: 0.45; }
+.avp-pick.locked .avp-lock { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
+.avp-swatch.locked { position: relative; display: inline-grid; place-items: center; color: #fff; }
+.avp-swatch.locked::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: rgba(20, 18, 50, 0.42); }
+.avp-swatch.locked .ic { position: relative; }
+.avp-shop { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: -8px 0 0; font-size: var(--fs-small); color: var(--ink-soft); }
+.avp-shop .ic { flex: none; color: var(--nova, #8a3ffc); }
+.avp-shop a { font-weight: 650; color: var(--nova, #8a3ffc); text-decoration: none; }
+.avp-shop a:hover { text-decoration: underline; }
+.avp-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.avp-actions small { color: var(--muted); }
+
+@media (max-width: 480px) {
+  .avp-grid { grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); gap: 6px; }
+  .avp-top { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .avp-pick { transition: none; }
+  .avp-pick:hover { transform: none; }
+}

@@ -1,0 +1,905 @@
+/* ---------- Buttons ---------- */
+.ie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  /* Northstar's pill (index.css), like every other button in the app. */
+  border-radius: var(--btn-radius, 999px);
+  border: 1px solid transparent;
+  background: var(--ie-surface);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+.ie-btn svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.ie-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ie-ring);
+}
+.ie-btn:disabled {
+  cursor: not-allowed;
+}
+.ie-btn--primary {
+  background: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-btn--primary:hover:not(:disabled) {
+  background: var(--ie-accent-600);
+}
+.ie-btn--primary:disabled {
+  background: var(--ie-accent-300);
+}
+.ie-btn--outline {
+  border-color: var(--ie-border);
+  color: var(--ie-gray-900);
+  background: var(--ie-surface);
+}
+.ie-btn--outline:hover:not(:disabled) {
+  background: var(--ie-gray-50);
+}
+.ie-btn--outline:disabled {
+  color: var(--ie-gray-400);
+}
+.ie-btn--hover-accent:hover:not(:disabled) {
+  background: var(--ie-accent-500);
+  border-color: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-btn--ghost {
+  background: transparent;
+  color: var(--ie-gray-800);
+}
+.ie-btn--ghost:hover:not(:disabled) {
+  background: var(--ie-gray-100);
+}
+.ie-btn--soft {
+  background: var(--ie-gray-100);
+  color: var(--ie-gray-900);
+}
+.ie-btn--soft:hover:not(:disabled) {
+  background: var(--ie-gray-200);
+}
+.ie-btn--success {
+  background: var(--ie-green-600);
+  color: #fff;
+}
+.ie-btn--success:hover:not(:disabled) {
+  background: var(--ie-green-700);
+}
+.ie-btn--danger {
+  background: var(--ie-danger-600);
+  color: #fff;
+}
+.ie-btn--danger:hover:not(:disabled) {
+  background: var(--ie-danger-700);
+}
+.ie-btn--danger-outline {
+  background: var(--ie-surface);
+  border-color: var(--ie-border);
+  color: var(--ie-danger-500);
+}
+.ie-btn--danger-outline:hover:not(:disabled) {
+  background: var(--ie-danger-50);
+  border-color: var(--ie-danger-200);
+}
+.ie-btn--dark {
+  background: var(--ie-gray-900);
+  color: #fff;
+}
+.ie-btn--dark:hover:not(:disabled) {
+  background: #000;
+}
+.ie-btn--sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+.ie-btn--xs {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  gap: 6px;
+}
+.ie-btn--lg {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+.ie-btn--icon {
+  width: 40px;
+  padding: 0;
+}
+.ie-btn--icon.ie-btn--sm {
+  width: 32px;
+}
+.ie-btn--block {
+  width: 100%;
+}
+.ie-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ie-accent-500);
+  font-weight: 500;
+  cursor: pointer;
+}
+.ie-link:hover {
+  text-decoration: underline;
+}
+.ie-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: ie-spin 0.7s linear infinite;
+  display: inline-block;
+  flex: none;
+}
+
+/* ---------- Form controls ---------- */
+.ie-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.ie-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ie-gray-900);
+}
+.ie-label small {
+  font-weight: 400;
+  color: var(--ie-gray-400);
+  font-style: italic;
+}
+.ie-input,
+.ie-textarea,
+.ie-select-native {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--ie-border);
+  border-radius: var(--ie-radius-sm);
+  background: var(--ie-surface);
+  font-size: 14px;
+  color: var(--ie-gray-900);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ie-input::placeholder,
+.ie-textarea::placeholder {
+  color: var(--ie-gray-400);
+}
+.ie-input:hover:not(:focus):not(:disabled),
+.ie-textarea:hover:not(:focus):not(:disabled),
+.ie-select-native:hover:not(:focus),
+.ie-select:not(.ie-select--open) .ie-select__trigger:hover:not(:focus-visible):not(:disabled) {
+  border-color: var(--ie-accent-300);
+}
+.ie-input:focus,
+.ie-textarea:focus,
+.ie-select-native:focus {
+  border-color: var(--ie-accent-500);
+  box-shadow: var(--ie-ring);
+}
+.ie-input:disabled,
+.ie-textarea:disabled {
+  background: var(--ie-gray-50);
+  color: var(--ie-gray-500);
+}
+.ie-input--center {
+  text-align: center;
+}
+.ie-textarea {
+  height: auto;
+  min-height: 80px;
+  padding: 10px 12px;
+  resize: vertical;
+  line-height: 1.5;
+}
+.ie-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ie-input-wrap > svg {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--ie-gray-400);
+  pointer-events: none;
+}
+.ie-input-wrap > .ie-input {
+  padding-left: 38px;
+}
+.ie-help {
+  font-size: 12px;
+  color: var(--ie-gray-500);
+}
+.ie-help--success {
+  color: var(--ie-green-600);
+}
+.ie-help--error {
+  color: var(--ie-danger-600);
+}
+.ie-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.ie-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ie-accent-500);
+}
+
+/* ---------- Custom select ---------- */
+.ie-select {
+  position: relative;
+  min-width: 0;
+}
+.ie-select__trigger {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid var(--ie-border);
+  border-radius: var(--ie-radius-sm);
+  background: var(--ie-surface);
+  font-size: 14px;
+  text-align: left;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ie-select__trigger:focus-visible,
+.ie-select--open .ie-select__trigger {
+  border-color: var(--ie-accent-500);
+  box-shadow: var(--ie-ring);
+}
+.ie-select__trigger > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ie-select__trigger svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ie-gray-500);
+  flex: none;
+}
+.ie-select__placeholder {
+  color: var(--ie-gray-400);
+}
+.ie-popover {
+  position: fixed;
+  z-index: 1200;
+  background: var(--ie-surface);
+  border: 1px solid var(--ie-border);
+  border-radius: var(--ie-radius);
+  box-shadow: var(--ie-shadow-lg);
+  padding: 4px;
+  animation: ie-pop-in 0.12s ease-out;
+}
+.ie-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.ie-menu__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 34px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: var(--ie-gray-900);
+}
+.ie-menu__item svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.ie-menu__item .ie-menu__check {
+  margin-left: auto;
+}
+.ie-menu__item:hover,
+.ie-menu__item--active {
+  background: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-menu__item--muted {
+  color: var(--ie-gray-500);
+}
+.ie-menu__item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: none;
+  color: var(--ie-gray-500);
+}
+.ie-menu__empty {
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ie-gray-500);
+}
+.ie-menu__search {
+  border: none;
+  border-bottom: 1px solid var(--ie-border);
+  border-radius: 0;
+  height: 38px;
+  margin-bottom: 4px;
+  width: 100%;
+  padding: 0 10px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* combobox trigger */
+.ie-combo-trigger {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--ie-border);
+  border-radius: var(--ie-radius-sm);
+  background: var(--ie-surface);
+  font-size: 14px;
+  transition: background-color 0.15s, color 0.15s;
+}
+.ie-combo-trigger svg {
+  width: 14px;
+  height: 14px;
+  color: var(--ie-gray-500);
+}
+.ie-combo-trigger:hover {
+  background: var(--ie-accent-500);
+  border-color: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-combo-trigger:hover svg {
+  color: #fff;
+}
+
+/* ---------- Surfaces ---------- */
+.ie-card {
+  background: var(--ie-surface);
+  border: 1px solid var(--ie-border);
+  border-radius: 10px;
+}
+.ie-card--pad {
+  padding: 20px;
+}
+.ie-divider {
+  height: 1px;
+  background: var(--ie-border);
+  border: none;
+  margin: 0;
+}
+
+/* ---------- Pills ---------- */
+.ie-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}
+.ie-pill svg {
+  width: 13px;
+  height: 13px;
+}
+.ie-pill--round {
+  border-radius: 999px;
+}
+.ie-pill--green {
+  background: var(--ie-green-50);
+  border-color: var(--ie-green-200);
+  color: var(--ie-green-700);
+}
+/* "blue" is kept as an alias of the brand accent: one blue across the module. */
+.ie-pill--blue,
+.ie-pill--accent {
+  background: var(--ie-accent-50);
+  border-color: var(--ie-accent-200);
+  color: var(--ie-accent-700);
+}
+.ie-pill--gray {
+  background: var(--ie-gray-100);
+  color: var(--ie-gray-800);
+  font-weight: 600;
+}
+/* Semantic red: low completion, problems. Not the brand colour. */
+.ie-pill--red {
+  background: var(--ie-danger-100);
+  border-color: var(--ie-danger-200);
+  color: var(--ie-danger-600);
+}
+.ie-pill--solid-accent {
+  background: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-pill--outline {
+  background: var(--ie-surface);
+  border-color: var(--ie-border);
+  color: var(--ie-gray-700);
+}
+.ie-pill--lg {
+  height: 26px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+/* ---------- Avatars ---------- */
+.ie-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ie-accent-100);
+  color: var(--ie-accent-500);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.ie-avatar--sm {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  background: var(--ie-gray-100);
+  color: var(--ie-gray-600);
+}
+.ie-avatar--blue {
+  width: 44px;
+  height: 44px;
+  background: var(--ie-accent-100);
+  color: var(--ie-accent-600);
+  font-size: 15px;
+}
+.ie-avatar--lg {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+/* ---------- Modal / drawer ---------- */
+.ie-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(15, 17, 21, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: ie-fade-in 0.15s ease-out;
+}
+.ie-modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+  background: var(--ie-surface);
+  border-radius: var(--ie-radius-lg);
+  box-shadow: var(--ie-shadow-lg);
+  animation: ie-pop-in 0.16s ease-out;
+}
+.ie-modal__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 24px 8px;
+}
+.ie-modal__title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.ie-modal__subtitle {
+  font-size: 14px;
+  color: var(--ie-gray-500);
+  margin-top: 4px;
+}
+.ie-modal__close {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--ie-radius-sm);
+  background: transparent;
+  color: var(--ie-gray-600);
+  transition: background-color 0.15s, box-shadow 0.15s, color 0.15s;
+}
+.ie-modal__close:hover {
+  background: var(--ie-gray-100);
+  color: var(--ie-gray-900);
+}
+.ie-modal__close--ring:hover {
+  background: var(--ie-surface);
+  box-shadow: 0 0 0 2px var(--ie-accent-500);
+  color: var(--ie-accent-500);
+}
+.ie-modal__close svg {
+  width: 18px;
+  height: 18px;
+}
+.ie-modal__body {
+  padding: 12px 24px 20px;
+  overflow-y: auto;
+  min-height: 0;
+}
+.ie-modal__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px 22px;
+}
+.ie-modal__footer--bordered {
+  border-top: 1px solid var(--ie-border);
+  padding-top: 16px;
+}
+.ie-confirm {
+  text-align: center;
+  padding: 30px 28px 26px;
+}
+.ie-confirm h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.ie-confirm p {
+  margin-top: 10px;
+  color: var(--ie-gray-500);
+  font-size: 16px;
+}
+.ie-confirm__actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+.ie-confirm__actions .ie-btn {
+  min-width: 96px;
+}
+
+.ie-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 17, 21, 0.55);
+  animation: ie-fade-in 0.15s ease-out;
+}
+.ie-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  width: min(640px, 100vw);
+  background: var(--ie-surface);
+  box-shadow: var(--ie-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: ie-slide-in-right 0.2s ease-out;
+}
+
+/* ---------- Toasts ---------- */
+.ie-toasts {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+.ie-toast {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 420px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: var(--ie-radius);
+  color: #fff;
+  box-shadow: var(--ie-shadow-lg);
+  font-size: 14px;
+  animation: ie-pop-in 0.18s ease-out;
+}
+.ie-toast svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-top: 1px;
+}
+/* Toasts carry white text, so each fill is dark enough for it in light and dark mode
+   (the info toast used --ie-gray-900, which flips to near-white in the dark studio). */
+.ie-toast--success {
+  background: var(--ie-green-700);
+}
+.ie-toast--error {
+  background: var(--ie-danger-600);
+}
+.ie-toast--info {
+  background: #232846;
+}
+.ie-toast__title {
+  font-weight: 600;
+}
+.ie-toast__desc {
+  opacity: 0.95;
+}
+
+/* ---------- Skeleton ---------- */
+.ie-skeleton {
+  background: var(--ie-gray-150);
+  border-radius: var(--ie-radius-sm);
+  animation: ie-pulse 1.4s ease-in-out infinite;
+}
+
+/* ---------- Pagination ---------- */
+.ie-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--ie-gray-500);
+  font-size: 14px;
+}
+.ie-pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--ie-gray-900);
+}
+.ie-pagination__controls .ie-btn:disabled {
+  color: var(--ie-gray-400);
+  background: transparent;
+}
+
+/* ---------- Segmented tabs ---------- */
+.ie-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--ie-gray-100);
+  border-radius: var(--ie-radius);
+}
+.ie-tabs__tab {
+  flex: 1;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--ie-radius-sm);
+  background: transparent;
+  color: var(--ie-gray-600);
+  font-size: 14px;
+  font-weight: 500;
+}
+.ie-tabs__tab svg {
+  width: 16px;
+  height: 16px;
+}
+.ie-tabs__tab--active {
+  background: var(--ie-surface);
+  color: var(--ie-gray-900);
+  box-shadow: var(--ie-shadow-sm);
+}
+
+/* ---------- Empty ---------- */
+.ie-empty {
+  padding: 36px 16px;
+  text-align: center;
+  color: var(--ie-gray-500);
+}
+
+/* ---------- Resizable split ---------- */
+.ie-split {
+  display: flex;
+  min-height: 0;
+  height: 100%;
+}
+.ie-split__pane {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+}
+.ie-split__handle {
+  position: relative;
+  flex: none;
+  width: 24px;
+  cursor: col-resize;
+  touch-action: none;
+}
+.ie-split__handle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 2px;
+  background: #a3a5a6;
+}
+.ie-split__knob {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid #a3a5a6;
+  background: var(--ie-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ie-gray-600);
+}
+.ie-split__knob svg {
+  width: 12px;
+  height: 12px;
+}
+.ie-split--dragging {
+  cursor: col-resize;
+  user-select: none;
+}
+
+/* ---------- Calendar ---------- */
+.ie-date-trigger svg {
+  width: 16px;
+  height: 16px;
+}
+.ie-cal {
+  padding: 8px;
+}
+.ie-cal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.ie-cal__nav {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ie-border);
+  border-radius: var(--ie-radius-sm);
+  background: var(--ie-surface);
+  color: var(--ie-gray-600);
+}
+.ie-cal__nav:hover {
+  background: var(--ie-gray-100);
+}
+.ie-cal__nav svg {
+  width: 14px;
+  height: 14px;
+}
+.ie-cal__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.ie-cal__wd {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ie-gray-500);
+  padding: 4px 0;
+}
+.ie-cal__day {
+  height: 34px;
+  border: none;
+  border-radius: var(--ie-radius-sm);
+  background: none;
+  font-size: 14px;
+}
+.ie-cal__day:hover {
+  background: var(--ie-gray-100);
+}
+.ie-cal__day--out {
+  color: var(--ie-gray-400);
+}
+.ie-cal__day--today,
+.ie-cal__day--selected {
+  background: var(--ie-accent-500);
+  color: #fff;
+}
+.ie-cal__day--today:hover,
+.ie-cal__day--selected:hover {
+  background: var(--ie-accent-600);
+}
+.ie-cal__day--today:not(.ie-cal__day--selected) {
+  background: var(--ie-accent-100);
+  color: var(--ie-accent-600);
+}
+
+/* ---------- Dropdown menu ---------- */
+.ie-dropdown__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  font-size: 14px;
+  color: var(--ie-gray-800);
+  text-align: left;
+}
+.ie-dropdown__item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ie-gray-500);
+}
+.ie-dropdown__item:hover:not(:disabled) {
+  background: var(--ie-gray-100);
+}
+.ie-dropdown__item--danger,
+.ie-dropdown__item--danger svg {
+  color: var(--ie-danger-500);
+}
+.ie-dropdown__item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Page-level loader ---------- */
+.ie-page-loader {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ie-gray-500);
+  gap: 10px;
+}

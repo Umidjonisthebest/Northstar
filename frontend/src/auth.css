@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Sign-in screens (pages/landing/Auth.jsx, ResetPassword, ChangePassword,
+   AdminLogin), "au-" prefix. One large rounded card on a soft twilight page:
+   the space scene on the left, the form on the right. On phones the scene
+   becomes a short banner above the form. Always light, whatever the app theme.
+   ========================================================================== */
+
+.au {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --ink: #17152f;
+  --ink-soft: #55526f;
+  --muted: #7d7a99;
+  --border: #e6e4f0;
+  --primary: #4b3fd6;
+  --au-field: #f5f4fb;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: var(--ink);
+  font-family: var(--sans);
+  background:
+    radial-gradient(60% 50% at 8% 0%, #ffe3f1 0%, transparent 70%),
+    radial-gradient(55% 50% at 100% 100%, #dfe9ff 0%, transparent 70%),
+    linear-gradient(160deg, #f4efff, #eef0ff 60%, #fdf1f6);
+}
+.au :focus-visible { outline: 3px solid #8f7bff; outline-offset: 3px; }
+/* Four-point stars scattered on the page behind the card. */
+.au::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.75; background-repeat: no-repeat; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b9a8ff' d='M12 1c.8 6.200 4.800 10.200 11 11-6.200.8-10.200 4.800-11 11-.8-6.200-4.800-10.200-11-11 6.200-.8 10.200-4.800 11-11z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffb3d6' d='M12 1c.8 6.200 4.800 10.200 11 11-6.200.8-10.200 4.800-11 11-.8-6.200-4.800-10.200-11-11 6.200-.8 10.200-4.800 11-11z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2399b8ff' d='M12 1c.8 6.200 4.800 10.200 11 11-6.200.8-10.200 4.800-11 11-.8-6.200-4.800-10.200-11-11 6.200-.8 10.200-4.800 11-11z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23b9a8ff' d='M12 1c.8 6.200 4.800 10.200 11 11-6.200.8-10.200 4.800-11 11-.8-6.200-4.800-10.200-11-11 6.200-.8 10.200-4.800 11-11z'/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffd28a' d='M12 1c.8 6.200 4.800 10.200 11 11-6.200.8-10.200 4.800-11 11-.8-6.200-4.800-10.200-11-11 6.200-.8 10.200-4.800 11-11z'/%3E%3C/svg%3E"); background-size: 26px, 16px, 20px, 12px, 18px; background-position: 4% 14%, 9% 78%, 96% 22%, 92% 88%, 50% 2.500%; }
+
+.au-card { width: min(1120px, 100%); min-height: min(720px, calc(100vh - 56px)); display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr); padding: 14px; gap: 14px; border-radius: 40px; background: #fff; box-shadow: 0 40px 90px -50px rgba(60, 40, 150, 0.55), 0 0 0 1px rgba(90, 70, 200, 0.06); animation: auIn 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@keyframes auIn { from { opacity: 0; transform: translateY(16px) scale(0.985); } }
+.au-art { border-radius: 28px; overflow: hidden; min-height: 240px; }
+
+.au-main { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 34px 40px 22px; min-width: 0; }
+.au-box { width: 100%; max-width: 420px; display: flex; flex-direction: column; }
+.au-logo { align-self: flex-start; margin-bottom: 34px; }
+.au h1 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 38px; line-height: 1.1; color: var(--ink); }
+/* The form arrives a piece at a time, top to bottom. */
+.au-box > * { animation: auRise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.au-box > :nth-child(2) { animation-delay: 0.06s; }
+.au-box > :nth-child(3) { animation-delay: 0.12s; }
+.au-box > :nth-child(4) { animation-delay: 0.18s; }
+.au-box > :nth-child(n + 5) { animation-delay: 0.24s; }
+@keyframes auRise { from { opacity: 0; transform: translateY(10px); } }
+.au-sub { margin: 10px 0 0; max-width: 40ch; font-size: 16px; line-height: 1.5; color: var(--ink-soft); }
+
+.au-form { display: grid; gap: 16px; margin-top: 28px; }
+.au-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.au-field { display: grid; gap: 7px; }
+.au-field > span:first-child { font-size: 14.5px; font-weight: 600; color: #2a2748; }
+.au-input { position: relative; display: block; }
+.au-field input { width: 100%; height: 54px; padding: 0 16px; border: 1.5px solid transparent; border-radius: 16px; background: var(--au-field); color: var(--ink); font-size: 16px; outline: none; transition: border-color 0.15s, background 0.15s, box-shadow 0.15s; }
+.au-field input::placeholder { color: #9c99b8; }
+.au-field input:hover { background: #efedf8; }
+.au-field input:focus { border-color: #8f7bff; background: #fff; box-shadow: 0 0 0 4px #e8e3ff; }
+.au-input:has(.au-eye) input { padding-right: 52px; }
+.au-eye { position: absolute; top: 50%; right: 8px; width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 12px; background: transparent; color: #6f6c8c; transform: translateY(-50%); }
+.au-eye:hover { background: #e6e3f4; color: var(--ink); }
+.au-forgot { justify-self: end; margin-top: -6px; color: #4b3fd6; font-size: 14.5px; font-weight: 600; text-decoration: none; }
+.au-forgot:hover { text-decoration: underline; }
+
+.au-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 56px; padding: 0 22px; border: 0; border-radius: var(--btn-radius); font: 600 16.5px var(--sans); text-decoration: none; cursor: pointer; transition: transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.2s, filter 0.2s; }
+/* The main action: Nova's indigo into violet. White on it is AA at every point of the gradient. */
+.au-btn.dark { background: linear-gradient(100deg, #4338ca, #6d3fd4); color: #fff; box-shadow: 0 14px 28px -16px rgba(80, 50, 200, 0.9); }
+.au-btn.dark:hover:not(:disabled) { transform: translateY(-2px); filter: brightness(1.07); box-shadow: 0 18px 32px -16px rgba(80, 50, 200, 0.95); }
+.au-btn.dark:active:not(:disabled) { transform: scale(0.98); }
+.au-btn.line { width: 100%; background: #fff; color: #2a2748; box-shadow: inset 0 0 0 1.5px #dedbee; }
+.au-btn.line:hover:not(:disabled) { transform: translateY(-1px); box-shadow: inset 0 0 0 1.5px #b9b3e0, 0 12px 24px -18px rgba(60, 40, 150, 0.5); }
+.au-btn.line .ic { color: #6d3fd4; }
+.au-btn:disabled { opacity: 0.6; cursor: progress; }
+.au-or { display: flex; align-items: center; gap: 16px; margin: 22px 0; color: var(--muted); font-size: 14.5px; }
+.au-or::before, .au-or::after { content: ""; flex: 1; height: 1px; background: #e6e4f0; }
+
+.au-error, .au-ok { display: flex; align-items: flex-start; gap: 9px; margin: 0; padding: 12px 14px; border-radius: 14px; font-size: 14.5px; font-weight: 500; line-height: 1.45; }
+.au-error { background: #fff1f1; color: #b42318; }
+.au-ok { background: #ecfdf3; color: #067647; }
+.au-error .ic, .au-ok .ic { flex-shrink: 0; margin-top: 1px; }
+.au-hint { margin: 12px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+.au-hint code { padding: 2px 7px; border-radius: 7px; background: var(--au-field); color: #3c395c; font-size: 12.5px; }
+.au-switch { margin: 22px 0 0; font-size: 16px; color: var(--ink-soft); }
+.au-switch a { color: #4b3fd6; font-weight: 650; text-decoration: none; }
+.au-switch a:hover { text-decoration: underline; }
+.au-foot { display: flex; flex-wrap: wrap; gap: 6px 20px; width: 100%; max-width: 420px; margin-top: 30px; padding-top: 16px; border-top: 1px solid #efedf6; font-size: 13.5px; color: var(--muted); }
+.au-foot a { color: #3c395c; font-weight: 600; text-decoration: none; }
+.au-foot a:hover { color: #4b3fd6; }
+
+/* Tablets and phones: the scene becomes a banner above the form, the way a planet rises at the
+   top of the screen, and the card fills the page. */
+@media (max-width: 900px) {
+  .au { padding: 0; place-items: stretch; background: #fff; }
+  .au::before { display: none; }
+  .au-card { grid-template-columns: 1fr; grid-template-rows: auto 1fr; min-height: 100vh; padding: 0; gap: 0; border-radius: 0; box-shadow: none; animation: none; }
+  .au-art { height: 210px; min-height: 0; border-radius: 0 0 32px 32px; }
+  .au-art .nsc-caption { display: none; }
+  .au-art .nsc-hero { right: 12%; bottom: 8%; width: 132px; }
+  .au-main { justify-content: flex-start; padding: 26px 20px 28px; }
+  .au-logo { margin-bottom: 22px; }
+}
+@media (max-width: 480px) {
+  .au h1 { font-size: 28px; }
+  .au-row { grid-template-columns: 1fr; }
+  .au-art { height: 176px; }
+  .au-art .nsc-hero { width: 112px; right: 10%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .au-card, .au-box > * { animation: none; }
+  .au-btn { transition: none; }
+}

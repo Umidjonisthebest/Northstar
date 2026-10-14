@@ -1,0 +1,118 @@
+/* Settings (/profile): a side menu of sections and their cards. Prefix ns-set-. The date and
+   target fields keep their ns-profile- styles (planning.css). */
+
+.ns-set { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 26px; align-items: start; }
+.ns-set-nav { position: sticky; top: 84px; display: grid; gap: 4px; }
+.ns-set-nav button { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 16px; border: 0; border-radius: 16px; background: transparent; color: var(--ink-soft); font-family: inherit; font-size: var(--fs-body); font-weight: 600; text-align: left; cursor: pointer; transition: background 0.16s, color 0.16s; }
+.ns-set-nav button:hover { background: var(--chip); color: var(--ink); }
+.ns-set-nav button.on { background: var(--surface); color: var(--ink); box-shadow: 0 6px 18px -8px rgba(40, 30, 90, 0.28), 0 0 0 1px var(--border); }
+.ns-set-nav button.on .ic { color: var(--primary); }
+
+.ns-set-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; min-width: 0; container: nsset / inline-size; }
+.ns-set-card { padding: 26px 28px 28px; border-radius: 24px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.ns-set-card > h2 { margin: 0; font: 600 var(--fs-h3) / var(--lh-head) var(--display); }
+.ns-set-note { margin: 6px 0 20px; max-width: var(--measure); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-soft); }
+
+/* The profile card: a strip of sky, the picture overlapping it, the name and four numbers. */
+.ns-set-me { padding: 0; overflow: hidden; }
+.ns-set-banner { position: relative; height: 150px; background: radial-gradient(70% 120% at 100% 0%, rgba(176, 95, 214, 0.75), transparent 62%), radial-gradient(60% 120% at 0% 100%, rgba(79, 125, 243, 0.7), transparent 66%), #1b1750; }
+.ns-set-banner svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ns-set-comet { fill: none; stroke-linecap: round; }
+.ns-set-comet.a { stroke: #7fa8ff; stroke-width: 26; opacity: 0.55; }
+.ns-set-comet.b { stroke: #f28ac4; stroke-width: 16; opacity: 0.5; }
+.ns-set-comet.c { stroke: #ffd76a; stroke-width: 7; opacity: 0.7; }
+.ns-set-spark { fill: #ffd76a; }
+.ns-set-spark.small { fill: #fff; opacity: 0.85; }
+.ns-set-medals { position: absolute; right: 18px; bottom: 14px; display: flex; align-items: center; }
+.ns-set-medals > * { display: grid; place-items: center; width: 48px; height: 48px; margin-left: -8px; border-radius: 50%; background: rgba(255, 255, 255, 0.92); box-shadow: 0 2px 8px rgba(20, 12, 70, 0.3); }
+.ns-set-medals button { padding: 0; border: 0; transition: transform 0.15s; }
+.ns-set-medals button:hover { z-index: 1; transform: translateY(-3px); }
+.ns-set-medals a { border: 2px dashed rgba(27, 23, 80, 0.4); color: #1b1750; font: 700 var(--fs-small) var(--sans); text-decoration: none; }
+.ns-set-medals a:hover { border-style: solid; }
+.ns-set-me-body { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.1fr); gap: 8px 24px; align-items: start; padding: 0 28px 26px; }
+.ns-set-face { margin-top: -52px; padding: 6px; border-radius: 34%; background: var(--surface); box-shadow: 0 8px 22px -10px rgba(40, 30, 90, 0.5); }
+.ns-set-face .av { display: grid; }
+.ns-set-who { grid-column: 1 / 3; padding-top: 6px; min-width: 0; }
+.ns-set-who h2 { margin: 0 0 10px; font: 600 var(--fs-h2) / var(--lh-head) var(--display); overflow-wrap: anywhere; }
+.ns-set-who ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.ns-set-who li { display: flex; align-items: center; gap: 9px; font-size: var(--fs-body); color: var(--ink-soft); overflow-wrap: anywhere; }
+.ns-set-who li .ic { flex-shrink: 0; color: var(--muted); }
+/* The lines between the four numbers are the grid's own background showing through its 1px gaps. */
+.ns-set-stats { grid-column: 3; grid-row: 1 / 3; align-self: end; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 18px 0 0; border-radius: 18px; overflow: hidden; background: color-mix(in srgb, var(--primary) 16%, var(--surface)); }
+.ns-set-stats div { padding: 14px 18px; background: var(--primary-softer); }
+.ns-set-stats dt { font-size: var(--fs-small); color: var(--ink-soft); }
+.ns-set-stats dd { margin: 2px 0 0; font: 600 var(--fs-h4) / 1.25 var(--display); color: var(--ink); }
+/* In a narrow column the four numbers go under the name: in one row while each still fits on a
+   line, then two by two. (These must come after the rules above: placed before them they never
+   applied, and a phone kept the three-column card with the numbers squeezed and cut off.) */
+@container nsset (max-width: 760px) {
+  .ns-set-me-body { grid-template-columns: auto minmax(0, 1fr); }
+  .ns-set-stats { grid-column: 1 / 3; grid-row: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@container nsset (max-width: 680px) {
+  .ns-set-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* The picture picker inside Settings: a roomier grid of tiles, each on its own card. */
+.ns-set-card .avp { gap: 26px; }
+.ns-set-card .avp-top { padding: 16px 18px; border-radius: 18px; background: var(--chip); }
+.ns-set-card .avp-group > h3 { font: 600 var(--fs-h4) / 1.2 var(--display); letter-spacing: 0; text-transform: none; color: var(--ink); }
+.ns-set-card .avp-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 12px; }
+.ns-set-card .avp-pick { padding: 10px; border: 1.5px solid var(--border); border-radius: 20px; background: var(--surface); }
+.ns-set-card .avp-pick:hover { border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+.ns-set-card .avp-pick[aria-checked="true"] { border-color: var(--primary); background: var(--primary-softer); box-shadow: 0 0 0 1px var(--primary); }
+.ns-set-card .avp-pick[aria-checked="true"]::after { right: 6px; top: 6px; }
+.ns-set-card .avp-actions { padding-top: 18px; border-top: 1px solid var(--border); }
+
+/* Theme: two small pictures of the app. */
+.ns-set-themes { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; max-width: 620px; }
+.ns-set-theme { display: grid; gap: 12px; padding: 12px; border: 1.5px solid var(--border); border-radius: 20px; background: var(--surface); color: var(--ink); font-family: inherit; text-align: left; cursor: pointer; transition: border-color 0.16s, box-shadow 0.16s; }
+.ns-set-theme:hover { border-color: var(--line-strong); }
+.ns-set-theme[aria-checked="true"] { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+.ns-set-preview { position: relative; display: grid; grid-template-columns: 26% 1fr; grid-template-rows: auto auto 1fr; gap: 7px 10px; height: 118px; padding: 12px; border-radius: 12px; }
+.ns-set-preview i { grid-row: 1 / 4; border-radius: 8px; }
+.ns-set-preview b { height: 9px; border-radius: 999px; }
+.ns-set-preview b + b { width: 62%; }
+.ns-set-preview em { border-radius: 9px; }
+.ns-set-theme.light .ns-set-preview { background: #f6f5fb; }
+.ns-set-theme.light .ns-set-preview i { background: #e6e1fb; }
+.ns-set-theme.light .ns-set-preview b { background: #c9c4e4; }
+.ns-set-theme.light .ns-set-preview em { background: #fff; box-shadow: 0 0 0 1px #e6e4f0; }
+.ns-set-theme.dark .ns-set-preview { background: #0f0d28; }
+.ns-set-theme.dark .ns-set-preview i { background: #1d1a4a; }
+.ns-set-theme.dark .ns-set-preview b { background: #3a3670; }
+.ns-set-theme.dark .ns-set-preview em { background: #1a1738; box-shadow: 0 0 0 1px #2e2a58; }
+.ns-set-theme-name { display: flex; align-items: center; gap: 8px; padding: 0 4px 2px; font-size: var(--fs-body); font-weight: 700; }
+.ns-set-tick { margin-left: auto; color: var(--primary); }
+
+/* Sign-in rows */
+.ns-set-rows { list-style: none; margin: 14px 0 0; padding: 0; }
+.ns-set-rows li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; padding: 16px 0; border-top: 1px solid var(--border); }
+.ns-set-rows li:first-child { border-top: 0; padding-top: 4px; }
+.ns-set-rows li > div { min-width: 0; flex: 1 1 260px; }
+.ns-set-rows b { display: block; font-size: var(--fs-body); }
+.ns-set-rows span { font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); overflow-wrap: anywhere; }
+.ns-set-out { color: var(--danger); }
+
+@media (max-width: 980px) {
+  .ns-set { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .ns-set-nav { position: static; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+  .ns-set-nav button { flex-shrink: 0; min-height: 44px; }
+}
+@media (max-width: 560px) {
+  /* Four sections don't fit in one row on a phone, and a row cut off mid-word hid the last two:
+     two rows of two, all in view. */
+  .ns-set-nav { display: grid; grid-template-columns: 1fr 1fr; overflow: visible; }
+  .ns-set-nav button { min-width: 0; padding: 4px 12px; gap: 9px; font-size: var(--fs-small); line-height: 1.2; }
+  .ns-set-card { padding: 20px 18px 22px; border-radius: 20px; }
+  .ns-set-me { padding: 0; }
+  .ns-set-banner { height: 120px; }
+  .ns-set-me-body { padding: 0 18px 20px; }
+  .ns-set-medals > * { width: 40px; height: 40px; }
+  .ns-set-medals .medal { transform: scale(0.82); }
+  .ns-set-card .avp-grid { grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 8px; }
+  .ns-set-card .avp-pick { padding: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ns-set-nav button, .ns-set-theme { transition: none; }
+}

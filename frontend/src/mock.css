@@ -1,0 +1,73 @@
+/* Full-Length Tests (/mock): the filter capsule, Nova's note and the test cards. Prefix ns-fl-. */
+
+
+.ns-fl-note { display: flex; gap: 16px; align-items: flex-start; padding: 20px 24px; border-radius: 22px; background: var(--primary-softer); border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent); }
+.ns-fl-note .nova { flex-shrink: 0; }
+.ns-fl-note h2 { margin: 2px 0 4px; font-size: 19px; font-weight: 600; }
+.ns-fl-note p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+
+.ns-fl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+
+/* One test. --tint is set per card from the sidebar's colour family (blue to orchid). */
+.ns-fl-card { --tint: #4f7df3; display: flex; flex-direction: column; min-width: 0; border-radius: 24px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: transform 0.2s var(--ease), box-shadow 0.2s; }
+.ns-fl-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* The picture at the top is the test itself: its modules as stops on a route, on a sheet of paper
+   rising out of the tinted panel. */
+.ns-fl-art { padding: 22px 22px 0; background: radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--tint) 30%, var(--surface)), transparent 62%), color-mix(in srgb, var(--tint) 15%, var(--surface)); border-bottom: 1px solid var(--border); }
+.ns-fl-sheet { min-height: 148px; padding: 14px 16px 18px; border-radius: 16px 16px 0 0; background: var(--surface); border: 1px solid color-mix(in srgb, var(--tint) 24%, var(--border)); border-bottom: 0; }
+.ns-fl-sheet-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 13px; font-weight: 700; color: var(--ink-soft); }
+.ns-fl-state { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }
+.ns-fl-state i { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.ns-fl-state.ready i { background: var(--tint); }
+.ns-fl-state.going i { background: var(--warn); }
+.ns-fl-state.done i { background: var(--good); }
+.ns-fl-state.cancelled i { background: var(--danger); }
+.ns-fl-time { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+.ns-fl-gone { margin: 0; padding: 18px 0; text-align: center; color: var(--muted); font-size: 14px; }
+
+.ns-fl-route { list-style: none; margin: 0; padding: 4px 0 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(78px, 1fr); overflow-x: auto; scrollbar-width: none; }
+.ns-fl-stop { position: relative; min-width: 0; padding: 0 6px; display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; }
+.ns-fl-stop + .ns-fl-stop::before { content: ""; position: absolute; top: 15px; right: calc(50% + 22px); width: calc(100% - 44px); border-top: 2px dotted var(--line-strong); }
+.ns-fl-stop.completed + .ns-fl-stop::before { border-top: 2px solid var(--tint); }
+.ns-fl-node { width: 32px; height: 32px; margin-bottom: 5px; border-radius: 50%; display: grid; place-items: center; border: 2px dashed var(--line-strong); background: var(--surface); color: var(--muted); font-family: var(--display); font-size: 14px; font-weight: 600; }
+.ns-fl-stop.next .ns-fl-node, .ns-fl-stop.in_progress .ns-fl-node { border: 2px solid var(--tint); color: var(--tint); box-shadow: 0 0 0 4px color-mix(in srgb, var(--tint) 18%, transparent); }
+.ns-fl-stop.completed .ns-fl-node { border: 2px solid var(--tint); background: var(--tint); color: #fff; }
+.ns-fl-stop b { max-width: 100%; font-size: 13px; line-height: 1.25; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.ns-fl-stop small { font-size: 12px; color: var(--muted); }
+
+.ns-fl-body { flex: 1; padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 8px; }
+.ns-fl-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.ns-fl-head h3 { margin: 0; min-width: 0; font-size: 21px; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+/* The teacher's rating. The text is the status colour pulled towards the ink, so it stays readable
+   on its own soft background in both themes. */
+.ns-fl-diff { flex-shrink: 0; margin-top: 3px; padding: 3px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; }
+.ns-fl-diff.easy { background: var(--good-soft); color: color-mix(in srgb, var(--good) 68%, var(--ink)); }
+.ns-fl-diff.medium { background: var(--warn-soft); color: color-mix(in srgb, var(--warn) 68%, var(--ink)); }
+.ns-fl-diff.hard { background: var(--danger-soft); color: color-mix(in srgb, var(--danger) 72%, var(--ink)); }
+.ns-fl-desc { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; overflow-wrap: anywhere; }
+.ns-fl-meta { margin: 0; color: var(--muted); font-size: 13px; font-weight: 600; }
+
+.ns-fl-actions { margin-top: auto; padding-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.ns-fl-actions .ns-btn, .ns-fl-actions .ns-pill-btn { height: 44px; border-radius: 999px; }
+.ns-fl-actions .ns-btn { padding: 0 18px 0 24px; }
+.ns-fl-actions .ns-pill-btn { cursor: pointer; font-family: inherit; font-weight: 600; }
+.ns-fl-wait { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 16px; border-radius: 999px; background: var(--chip); color: var(--ink-soft); font-size: 14px; font-weight: 600; }
+/* A test cancelled because the student left its page: a sentence, so it wraps. */
+.ns-fl-wait.cancelled { height: auto; min-height: 44px; padding: 10px 16px; border-radius: 14px; align-items: flex-start; background: var(--danger-soft); color: var(--ink); line-height: 1.4; }
+.ns-fl-wait.cancelled svg { flex: none; margin-top: 2px; color: var(--danger); }
+
+@media (max-width: 1000px) {
+  .ns-fl-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .ns-fl-note { padding: 16px; gap: 12px; }
+  .ns-fl-art { padding: 16px 16px 0; }
+  .ns-fl-sheet { padding: 12px 10px 16px; }
+  .ns-fl-body { padding: 18px; }
+  .ns-fl-head h3 { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ns-fl-card { transition: none; }
+  .ns-fl-card:hover { transform: none; }
+}

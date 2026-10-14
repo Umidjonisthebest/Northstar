@@ -1,0 +1,99 @@
+/* Score Calculator (/calculator). Prefix ns-calc-. */
+
+.ns-calc { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr); gap: 22px; align-items: start; }
+.ns-calc-inputs { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; min-width: 0; }
+
+.ns-calc-sec { --tint: #4f7df3; padding: 22px 24px 24px; border-radius: 22px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); border-top: 4px solid var(--tint); }
+.ns-calc-sec header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.ns-calc-sec h2 { margin: 0; font-size: var(--fs-h3); font-weight: 600; }
+.ns-calc-sec-score { color: var(--muted); font-size: var(--fs-small); font-weight: 700; white-space: nowrap; }
+.ns-calc-sec-score b { font-family: var(--display); font-size: 30px; font-weight: 600; color: var(--ink); }
+
+.ns-calc-dial { margin-top: 16px; }
+.ns-calc-dial-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.ns-calc-dial label { font-size: var(--fs-body); font-weight: 700; color: var(--ink); }
+.ns-calc-dial label small { display: block; margin-top: 1px; font-size: var(--fs-small); font-weight: 600; color: var(--muted); }
+.ns-calc-step { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: 999px; background: var(--chip); }
+.ns-calc-step button { width: 32px; height: 32px; border: 0; border-radius: 50%; background: var(--surface); color: var(--ink); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow-sm); }
+.ns-calc-step button:hover:not(:disabled) { color: var(--primary); box-shadow: var(--shadow-md); }
+html.dark .ns-calc-step button:hover:not(:disabled) { color: var(--primary-dark); }
+.ns-calc-step button:disabled { opacity: 0.4; cursor: not-allowed; }
+.ns-calc-step output { min-width: 68px; text-align: center; font-size: var(--fs-small); font-weight: 700; color: var(--ink-soft); }
+.ns-calc-step output b { font-size: 17px; color: var(--ink); }
+.ns-calc-dial input[type="range"] { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 8px; margin: 14px 0 4px; border-radius: 999px; background: linear-gradient(90deg, var(--tint) var(--fill), var(--chip-2) var(--fill)); outline-offset: 6px; cursor: pointer; }
+.ns-calc-dial input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--surface); border: 3px solid var(--tint); box-shadow: 0 2px 6px rgba(40, 30, 90, 0.25); }
+.ns-calc-dial input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 3px solid var(--tint); box-shadow: 0 2px 6px rgba(40, 30, 90, 0.25); }
+/* The handle gets a halo in the section's colour: this is the part to drag. */
+.ns-calc-dial input[type="range"]:hover::-webkit-slider-thumb { box-shadow: 0 0 0 6px color-mix(in srgb, var(--tint) 22%, transparent), 0 2px 6px rgba(40, 30, 90, 0.25); }
+.ns-calc-dial input[type="range"]:hover::-moz-range-thumb { box-shadow: 0 0 0 6px color-mix(in srgb, var(--tint) 22%, transparent), 0 2px 6px rgba(40, 30, 90, 0.25); }
+
+.ns-calc-route { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line-strong); font-size: var(--fs-body); font-weight: 700; }
+.ns-calc-route div { display: inline-flex; gap: 3px; padding: 3px; border-radius: 999px; background: var(--chip); }
+.ns-calc-route button { height: 32px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-soft); font-family: inherit; font-size: var(--fs-small); font-weight: 700; cursor: pointer; }
+.ns-calc-route button.on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
+.ns-calc-route button:not(.on):hover { background: color-mix(in srgb, var(--surface) 60%, transparent); color: var(--ink); }
+.ns-calc-note { display: flex; align-items: flex-start; gap: 8px; margin: 10px 0 0; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.ns-calc-note .ic { flex-shrink: 0; margin-top: 2px; color: var(--muted); }
+.ns-calc-note.up .ic { color: var(--gold); }
+
+/* The result: a strip of night sky, dark in both themes. */
+.ns-calc-result { position: sticky; top: 16px; padding: 26px 26px 24px; border-radius: 24px; color: #f6f5ff; background: radial-gradient(120% 80% at 100% 0%, rgba(176, 95, 214, 0.5), transparent 60%), radial-gradient(90% 70% at 0% 100%, rgba(79, 125, 243, 0.45), transparent 65%), #1b1750; box-shadow: var(--shadow-md); overflow: hidden; }
+.ns-calc-result::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.7; background-image: radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 34% 8%, #fff, transparent), radial-gradient(1.5px 1.5px at 58% 22%, #fff, transparent), radial-gradient(1px 1px at 82% 12%, #fff, transparent), radial-gradient(1px 1px at 92% 44%, #fff, transparent), radial-gradient(1.5px 1.5px at 8% 62%, #fff, transparent), radial-gradient(1px 1px at 72% 70%, #fff, transparent), radial-gradient(1px 1px at 44% 88%, #fff, transparent); }
+.ns-calc-result > * { position: relative; }
+.ns-calc-kicker { margin: 0; font-size: var(--fs-micro); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #c9c4f5; }
+.ns-calc-total { margin: 6px 0 0; font-family: var(--display); font-size: 68px; font-weight: 600; line-height: 1; color: #fff; }
+.ns-calc-range { margin: 8px 0 0; font-size: var(--fs-small); font-weight: 600; color: #c9c4f5; }
+.ns-calc-split { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.ns-calc-split span { padding: 7px 12px; border-radius: 12px; background: rgba(255, 255, 255, 0.1); font-size: var(--fs-small); color: #dedbfb; }
+.ns-calc-split b { margin-left: 4px; font-size: var(--fs-body); color: #fff; }
+.ns-calc-track { position: relative; height: 10px; margin-top: 22px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); }
+.ns-calc-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #7fa8ff, #f5b93a); transition: width 0.3s var(--ease); }
+.ns-calc-target { position: absolute; top: -6px; width: 4px; height: 22px; margin-left: -2px; border-radius: 3px; background: #ff7a6b; box-shadow: 0 0 0 3px rgba(255, 122, 107, 0.25); }
+.ns-calc-scale { display: flex; justify-content: space-between; margin-top: 8px; font-size: var(--fs-micro); font-weight: 700; color: #a9a4dc; }
+.ns-calc-gap { display: flex; align-items: center; gap: 6px; margin: 16px 0 0; font-size: var(--fs-body); color: #dedbfb; }
+.ns-calc-gap b { font-family: var(--display); font-size: 22px; color: #ffd76a; }
+.ns-calc-gap .ic { color: #ffd76a; }
+.ns-calc-goal { display: flex; align-items: center; gap: 8px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.ns-calc-goal label { flex: 1; font-size: var(--fs-small); font-weight: 700; color: #dedbfb; }
+.ns-calc-goal input { width: 96px; height: 40px; padding: 0 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.22); background: rgba(255, 255, 255, 0.08); color: #fff; font: 700 var(--fs-body) var(--sans); outline: none; }
+.ns-calc-goal input:hover:not(:focus) { border-color: rgba(255, 255, 255, 0.45); }
+.ns-calc-goal input:focus { border-color: #7fa8ff; box-shadow: 0 0 0 3px rgba(127, 168, 255, 0.3); }
+.ns-calc-goal button { height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: #fff; color: #1b1750; font: 700 var(--fs-small) var(--sans); cursor: pointer; }
+.ns-calc-goal button:hover:not(:disabled) { background: #dfe9ff; }
+.ns-calc-goal button:disabled { opacity: 0.6; }
+.ns-calc-now { margin: 12px 0 0; font-size: var(--fs-small); color: #c9c4f5; }
+.ns-calc-now b { color: #fff; }
+
+/* Fold-out explanations */
+.ns-calc-more { border-radius: 20px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.ns-calc-more summary { display: flex; align-items: center; gap: 10px; padding: 18px 22px; font-family: var(--display); font-size: var(--fs-h4); font-weight: 600; border-radius: 19px; cursor: pointer; list-style: none; transition: background 0.16s; }
+.ns-calc-more summary:hover { background: var(--chip); }
+.ns-calc-more summary:hover .ns-calc-chev { color: var(--ink); }
+.ns-calc-more summary::-webkit-details-marker { display: none; }
+.ns-calc-more summary .ic:first-child { color: var(--primary); }
+.ns-calc-chev { margin-left: auto; color: var(--muted); transition: transform 0.2s var(--ease); }
+.ns-calc-more[open] .ns-calc-chev { transform: rotate(180deg); }
+.ns-calc-more ol { list-style: none; margin: 0; padding: 0 22px 6px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px 22px; }
+.ns-calc-more ol li { display: flex; gap: 12px; }
+.ns-calc-more ol li > span { flex-shrink: 0; width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font: 600 var(--fs-small) var(--display); }
+.ns-calc-more ol b { font-size: var(--fs-body); }
+.ns-calc-more ol p { margin: 3px 0 0; font-size: var(--fs-small); line-height: 1.55; color: var(--ink-soft); }
+.ns-calc-fine { margin: 12px 22px 18px; font-size: var(--fs-small); line-height: 1.5; color: var(--muted); }
+.ns-calc-bench { list-style: none; margin: 0; padding: 0 22px; display: grid; gap: 4px; }
+.ns-calc-bench li { display: grid; grid-template-columns: 58px 1fr 20px; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 12px; font-size: var(--fs-small); color: var(--muted); }
+.ns-calc-bench li b { font-family: var(--display); font-size: var(--fs-body); font-weight: 600; }
+.ns-calc-bench li.hit { background: var(--good-soft); color: var(--ink); }
+.ns-calc-bench .ic { color: var(--good); }
+
+@media (max-width: 1000px) {
+  .ns-calc { grid-template-columns: minmax(0, 1fr); }
+  .ns-calc-result { position: static; order: -1; }
+}
+@media (max-width: 560px) {
+  .ns-calc-sec { padding: 18px; }
+  .ns-calc-result { padding: 22px 20px; }
+  .ns-calc-total { font-size: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ns-calc-fill, .ns-calc-chev { transition: none; }
+}

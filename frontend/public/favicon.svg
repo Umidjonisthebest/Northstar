@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Northstar">
+  <defs>
+    <linearGradient id="b" x1=".2" y1="0" x2=".8" y2="1">
+      <stop offset="0" stop-color="#ffa3cf"/><stop offset=".5" stop-color="#e89fe6"/><stop offset="1" stop-color="#a49cf4"/>
+    </linearGradient>
+  </defs>
+  <polygon points="50,13 63,35.5 88.5,41 71,60.5 73.8,86.5 50,76 26.2,86.5 29,60.5 11.5,41 37,35.5" fill="url(#b)" stroke="url(#b)" stroke-width="15" stroke-linejoin="round"/>
+  <path d="M50 3 56.5 16 50 31 43.5 16Z" fill="#2b2553"/>
+  <path d="M50 3 56.5 16 50 20 43.5 16Z" fill="#ff7a6b"/>
+  <rect x="27" y="39" width="46" height="35" rx="10" fill="#ece6ff" stroke="#2b2553" stroke-width="5.5"/>
+  <g fill="none" stroke="#2b2553" stroke-width="3.6" stroke-linecap="round">
+    <path d="M36.5 54q4-5 8 0M55.5 54q4-5 8 0M43.5 62q6.5 6 13 0"/>
+  </g>
+</svg>

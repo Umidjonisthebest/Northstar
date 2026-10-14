@@ -1,0 +1,67 @@
+/* The floating Desmos calculator (components/calculator/GraphingCalculator.jsx), `gcalc-`.
+   Only tokens from index.css are used: the mock-exam screen opens it too, and that screen doesn't
+   load the student hub's stylesheets. Above the player's side panel and navigator, below menus and
+   dialogs. */
+.gcalc { position: fixed; z-index: 55; display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); color: var(--ink); box-shadow: var(--shadow-lg); overflow: hidden; font-family: var(--sans); font-size: 15px; animation: gcalcIn 0.18s var(--ease); }
+.gcalc.closed { visibility: hidden; pointer-events: none; animation: none; }
+.gcalc.large { left: 16px; top: 16px; right: 16px; bottom: 16px; }
+.gcalc.moving { user-select: none; }
+/* While the window is dragged or resized the calculator must not take the pointer. */
+.gcalc.moving .gcalc-frame, .gcalc.moving .gcalc-api { pointer-events: none; }
+
+.gcalc-bar { display: flex; align-items: center; gap: 8px; flex-shrink: 0; height: 46px; padding: 0 8px 0 6px; border-bottom: 1px solid var(--border); background: var(--primary-softer); cursor: grab; touch-action: none; }
+.gcalc.moving .gcalc-bar { cursor: grabbing; }
+.gcalc.large .gcalc-bar { cursor: default; }
+.gcalc-bar b { font-size: 15px; font-weight: 700; }
+.gcalc-bar small { font-size: 12px; font-weight: 600; color: var(--muted); }
+.gcalc-space { flex: 1; }
+.gcalc-grip, .gcalc-btn { display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--ink-soft); text-decoration: none; }
+.gcalc-grip { color: var(--primary); cursor: inherit; }
+.gcalc-btn { cursor: pointer; }
+.gcalc-btn:hover { background: var(--primary-soft); color: var(--ink); }
+.gcalc-grip:focus-visible, .gcalc-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+
+/* Desmos draws on white whatever the theme, like a picture of a page. */
+.gcalc-body { position: relative; flex: 1; min-height: 0; background: #fff; }
+.gcalc-frame, .gcalc-api { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.gcalc-msg { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; background: #fff; color: #55526f; font-size: 14px; }
+.gcalc-msg b { color: #17152f; font-size: 16px; }
+.gcalc-loading { pointer-events: none; }
+.gcalc-spin { width: 26px; height: 26px; border: 3px solid #e4eeff; border-top-color: #1664e2; border-radius: 50%; animation: gcalcSpin 0.8s linear infinite; }
+@keyframes gcalcSpin {
+  to { transform: rotate(360deg); }
+}
+.gcalc-retry { margin-top: 6px; height: 36px; padding: 0 16px; border: 1px solid #d9d6e6; border-radius: 999px; background: #fff; color: #17152f; font: inherit; font-weight: 600; cursor: pointer; }
+.gcalc-retry:hover { border-color: #1664e2; color: #1664e2; }
+
+.gcalc-resize { position: absolute; right: 0; bottom: 0; width: 22px; height: 22px; cursor: nwse-resize; touch-action: none; background: linear-gradient(135deg, transparent 0 55%, #b9b6cf 55% 62%, transparent 62% 72%, #b9b6cf 72% 79%, transparent 79%); border-bottom-right-radius: 15px; }
+
+/* Docked against the left edge, the calculator moves the question over instead of covering it:
+   it sets --gcalc-dock on <html> to the width it takes, and the question screens leave that much
+   room. Dragged away from the edge, it floats over the page like any window. */
+.pl-body, .exam-body { padding-left: var(--gcalc-dock, 0px); transition: padding-left 0.22s var(--ease); }
+@media (prefers-reduced-motion: reduce) {
+  .pl-body, .exam-body { transition: none; }
+}
+
+/* The button that opens it on the mock-exam screen (the practice screens use their own toolbars). */
+.exam-shell .exam-calc-btn { display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; border: 1px solid var(--border); border-radius: var(--btn-radius); background: var(--surface); color: var(--ink); font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.exam-shell .exam-calc-btn:hover { border-color: var(--primary); color: var(--primary); }
+.exam-shell .exam-calc-btn[aria-pressed="true"] { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-dark); }
+
+/* On a phone: a sheet at the bottom, full width. The window's own position is ignored. */
+@media (max-width: 720px) {
+  .gcalc, .gcalc.large { left: 0 !important; right: 0 !important; top: auto !important; bottom: 0 !important; width: 100% !important; height: min(64dvh, 560px) !important; border-radius: 18px 18px 0 0; border-width: 1px 0 0; }
+  .gcalc.large { height: 100dvh !important; border-radius: 0; }
+  .gcalc-bar { cursor: default; }
+  .gcalc-resize { display: none; }
+  .exam-shell .exam-calc-btn span { display: none; }
+  .exam-shell .exam-calc-btn { width: 38px; padding: 0; justify-content: center; }
+}
+
+@keyframes gcalcIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.985); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gcalc { animation: none; }
+}

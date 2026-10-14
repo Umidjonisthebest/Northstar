@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 470" width="640" height="470" font-family="Arial, Helvetica, sans-serif">
+  <rect width="640" height="470" fill="#eef5e6"/>
+  <rect x="8" y="8" width="624" height="454" fill="none" stroke="#4b5a3c" stroke-width="2"/>
+
+  <!-- Woodland -->
+  <path d="M8 8 H632 V120 C560 140 480 118 400 132 C320 146 250 120 170 134 C110 144 60 128 8 140 Z" fill="#b9d8a2"/>
+  <g fill="#6f9f55">
+    <circle cx="60" cy="50" r="16"/><circle cx="95" cy="80" r="14"/><circle cx="140" cy="45" r="15"/>
+    <circle cx="200" cy="75" r="14"/><circle cx="250" cy="40" r="16"/><circle cx="430" cy="45" r="15"/>
+    <circle cx="480" cy="80" r="14"/><circle cx="530" cy="45" r="16"/><circle cx="585" cy="85" r="15"/>
+    <circle cx="600" cy="40" r="12"/>
+  </g>
+  <text x="530" y="118" font-size="15" font-style="italic" fill="#2f4a22">Woodland</text>
+
+  <!-- Paths -->
+  <g fill="none" stroke="#d9c9a3" stroke-width="16" stroke-linecap="round">
+    <path d="M320 462 V330"/>
+    <ellipse cx="320" cy="235" rx="170" ry="102"/>
+    <path d="M320 133 V112"/>
+  </g>
+
+  <!-- Lake -->
+  <ellipse cx="320" cy="235" rx="140" ry="76" fill="#9fcbea" stroke="#5f97c2" stroke-width="2"/>
+  <text x="298" y="241" font-size="18" font-weight="bold" fill="#2c5f86">Lake</text>
+
+  <!-- Car park -->
+  <rect x="24" y="360" width="120" height="86" fill="#d4d4d4" stroke="#8a8a8a"/>
+  <g stroke="#ffffff" stroke-width="2">
+    <line x1="44" y1="360" x2="44" y2="392"/><line x1="64" y1="360" x2="64" y2="392"/>
+    <line x1="84" y1="360" x2="84" y2="392"/><line x1="104" y1="360" x2="104" y2="392"/>
+    <line x1="124" y1="360" x2="124" y2="392"/>
+  </g>
+  <text x="50" y="425" font-size="14" font-weight="bold" fill="#444">Car park</text>
+
+  <!-- Entrance -->
+  <rect x="286" y="436" width="68" height="24" rx="3" fill="#4b5a3c"/>
+  <text x="293" y="453" font-size="12" font-weight="bold" fill="#fff">ENTRANCE</text>
+  <g transform="translate(372 432)">
+    <circle r="7" fill="#e2534b"/>
+    <text x="12" y="5" font-size="12" fill="#7a2a24" font-weight="bold">You are here</text>
+  </g>
+
+  <!-- Buildings -->
+  <g fill="#c8a57a" stroke="#6b4f2e" stroke-width="1.5">
+    <rect x="352" y="378" width="54" height="34"/>
+    <rect x="228" y="388" width="54" height="34"/>
+    <rect x="220" y="330" width="58" height="30"/>
+    <rect x="76" y="160" width="54" height="32"/>
+    <rect x="296" y="96" width="50" height="22"/>
+    <rect x="468" y="206" width="44" height="34"/>
+    <rect x="160" y="352" width="46" height="30"/>
+    <rect x="130" y="206" width="44" height="32"/>
+  </g>
+
+  <!-- Letters -->
+  <g font-size="15" font-weight="bold" text-anchor="middle">
+    <g transform="translate(379 395)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">A</text></g>
+    <g transform="translate(255 405)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">B</text></g>
+    <g transform="translate(249 345)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">C</text></g>
+    <g transform="translate(103 176)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">D</text></g>
+    <g transform="translate(321 107)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">E</text></g>
+    <g transform="translate(490 223)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">F</text></g>
+    <g transform="translate(183 367)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">G</text></g>
+    <g transform="translate(152 222)"><circle r="13" fill="#fff" stroke="#222" stroke-width="2"/><text y="5">H</text></g>
+  </g>
+
+  <!-- Compass -->
+  <g transform="translate(590 400)" font-size="12" font-weight="bold" text-anchor="middle" fill="#333">
+    <circle r="24" fill="#fff" stroke="#666"/>
+    <path d="M0 -18 L6 0 L0 -4 L-6 0 Z" fill="#333"/>
+    <text y="-26">N</text>
+  </g>
+  <text x="20" y="30" font-size="16" font-weight="bold" fill="#2f4a22">Greenfield Wildlife Park</text>
+</svg>

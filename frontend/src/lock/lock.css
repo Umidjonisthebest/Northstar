@@ -1,0 +1,197 @@
+/* The test lock's screens (LockScreens.jsx): the warning before a test, the "go back to full
+   screen" cover and the "cancelled" screen. index.css tokens only, prefix lk-. They cover the whole
+   page, above every other overlay (the calculator, the IELTS modals), and nothing shows through. */
+
+.lk-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+  background: var(--bg, #f6f5fb);
+  color: var(--ink, #17152f);
+  font-family: inherit;
+  /* IELTS screens set their own text sizes on .ie-root; this sits outside it. */
+  font-size: 15px;
+  line-height: 1.5;
+}
+/* The warning is asked for by the student, so the page it came from stays faintly in view. */
+.lk-screen.lk-notice {
+  background: color-mix(in srgb, var(--bg, #f6f5fb) 92%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+.lk-card {
+  width: min(560px, 100%);
+  padding: 30px 30px 24px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e6e4f0);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg, 0 24px 64px rgba(30, 22, 80, 0.18));
+  outline: none;
+  text-align: left;
+  animation: lk-in 0.18s ease-out;
+}
+@keyframes lk-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lk-card {
+    animation: none;
+  }
+}
+
+.lk-badge {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  background: var(--primary-soft, #e4eeff);
+  color: var(--primary, #1664e2);
+}
+.lk-badge-soft {
+  background: var(--warn-soft, #fdf1e2);
+  color: var(--warn, #d97b17);
+}
+.lk-badge-danger {
+  background: var(--danger-soft, #fdeceb);
+  color: var(--danger, #e2493d);
+}
+
+.lk-title {
+  margin: 0 0 8px;
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--ink, #17152f);
+}
+.lk-lead {
+  margin: 0 0 16px;
+  color: var(--ink-soft, #55526f);
+}
+.lk-note {
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--primary-softer, #f2f7ff);
+  color: var(--ink, #17152f);
+  font-size: 14px;
+}
+
+.lk-rules {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.lk-rules li {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 10px;
+  align-items: start;
+  color: var(--ink, #17152f);
+}
+.lk-rule-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--primary-softer, #f2f7ff);
+  color: var(--primary, #1664e2);
+}
+.lk-rules li > span:last-child {
+  padding-top: 4px;
+}
+.lk-rules li.lk-rule-strong {
+  padding: 10px 12px 10px 10px;
+  margin: 0 -10px;
+  border-radius: 12px;
+  background: var(--danger-soft, #fdeceb);
+  font-weight: 600;
+}
+.lk-rule-strong .lk-rule-icon {
+  background: transparent;
+  color: var(--danger, #e2493d);
+}
+
+.lk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.lk-sent {
+  margin-right: auto;
+  font-size: 13px;
+  color: var(--ink-soft, #55526f);
+}
+
+.lk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: var(--btn-radius, 999px);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.lk-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.lk-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary, #1664e2) 40%, transparent);
+  outline-offset: 2px;
+}
+.lk-btn-primary {
+  background: var(--primary, #1664e2);
+  color: var(--primary-ink, #fff);
+}
+.lk-btn-primary:hover:not(:disabled) {
+  background: var(--primary-dark, #1257cf);
+}
+html.dark .lk-btn-primary:hover:not(:disabled) {
+  background: var(--primary, #3b82f6);
+  filter: brightness(1.1);
+}
+.lk-btn-ghost {
+  background: transparent;
+  border-color: var(--border, #e6e4f0);
+  color: var(--ink, #17152f);
+}
+.lk-btn-ghost:hover:not(:disabled) {
+  background: var(--primary-softer, #f2f7ff);
+}
+
+@media (max-width: 520px) {
+  .lk-card {
+    padding: 22px 18px 18px;
+    border-radius: 16px;
+  }
+  .lk-title {
+    font-size: 20px;
+  }
+  .lk-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .lk-sent {
+    margin: 0;
+    text-align: center;
+  }
+}

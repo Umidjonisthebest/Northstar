@@ -1,0 +1,112 @@
+/* Round 2, Part 6: mistake reasons, spaced review and the trap profile (`rv-`).
+   Used by the practice player (the reason chips and the review line), the Saved & Mistakes page
+   (the review schedule and the trap profile) and the home page (the review prompt). */
+
+/* ---- "What went wrong?" ---- */
+.rv-why { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 14px; }
+.rv-why-label { font-size: var(--fs-small); font-weight: 600; color: var(--ink-soft); }
+.rv-why-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.rv-chip { height: 34px; padding: 0 13px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--ink); font-family: inherit; font-size: var(--fs-small); font-weight: 600; white-space: nowrap; cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+.rv-chip:hover:not(:disabled) { border-color: var(--ink-soft); }
+.rv-chip.on, .rv-chip.on:hover:not(:disabled) { border-color: var(--primary); background: var(--primary); color: var(--primary-ink); }
+.rv-chip:disabled { opacity: 0.6; cursor: default; }
+/* A reason shown, not chosen (question rows, skills). The second selector outranks the rows' own
+   rule for the spans inside them. */
+.rv-reason, .ns-qrow2-main .rv-reason { display: inline-flex; align-items: center; height: 24px; padding: 0 9px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-dark); font-size: var(--fs-micro); font-weight: 700; white-space: nowrap; }
+
+/* What an answer did to the review schedule (under the feedback in the player). */
+.rv-line { display: flex; align-items: center; gap: 7px; margin: 10px 0 0; font-size: var(--fs-small); color: var(--ink-soft); }
+.rv-line .ic { flex: none; color: var(--muted); }
+
+/* ---- The home page's prompt ---- */
+.rv-prompt { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 14px 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.rv-prompt > div { flex: 1; min-width: 220px; }
+.rv-prompt b { display: block; font-size: var(--fs-body); color: var(--ink); }
+.rv-prompt p { margin: 3px 0 0; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.rv-prompt-icon { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--primary-soft); color: var(--primary); }
+
+/* ---- The schedule (Saved & Mistakes, "Spaced review" tab) ---- */
+.rv-sched { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden; }
+.rv-sched > div { padding: 20px 22px; min-width: 0; }
+.rv-sched > div + div { border-left: 1px solid var(--line); }
+.rv-sched h3 { margin: 0 0 4px; font-size: var(--fs-h4); font-weight: 600; }
+.rv-sched p { margin: 0; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.rv-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-top: 14px; }
+.rv-day { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 9px 2px 8px; border-radius: 12px; background: var(--chip); font-size: var(--fs-micro); color: var(--muted); }
+.rv-day b { font-size: var(--fs-h4); font-weight: 600; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rv-day.none b { color: var(--muted); font-weight: 500; }
+.rv-day.today { background: var(--primary-soft); color: var(--primary-dark); }
+.rv-day.today b { color: var(--primary-dark); }
+/* The four reviews a question passes through: a step for each gap, and how many sit at it. */
+.rv-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 14px; }
+.rv-step { padding: 9px 10px 8px; border-radius: 12px; background: var(--chip); }
+.rv-step small { display: block; font-size: var(--fs-micro); color: var(--muted); white-space: nowrap; }
+.rv-step b { display: block; margin-top: 3px; font-size: var(--fs-h4); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.rv-learned { margin-top: 10px !important; }
+.rv-learned b { color: var(--ink); }
+/* A question row's review day. */
+.rv-when { font-size: var(--fs-small); color: var(--muted); white-space: nowrap; }
+.rv-when.due { color: var(--primary-dark); font-weight: 600; }
+html.dark .rv-when.due { color: var(--primary-dark); }
+.rv-rowtags { display: inline-flex; align-items: center; gap: 6px; margin-left: 8px; vertical-align: middle; }
+
+/* ---- The trap profile ---- */
+.rv-head { display: flex; align-items: center; gap: 18px; padding: 20px 24px; border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--line)); border-radius: 18px; background: var(--primary-softer); }
+.rv-head h2 { margin: 0 0 4px; font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-head); }
+.rv-head p { margin: 0; max-width: var(--measure); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-soft); }
+.rv-head-art { flex: none; }
+.rv-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.rv-card { padding: 24px 26px; }
+.rv-card h3 { margin: 0 0 4px; font-size: var(--fs-h3); font-weight: 600; }
+.rv-card > p { margin: 0 0 16px; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.rv-bars { display: flex; flex-direction: column; gap: 12px; }
+.rv-bar { display: grid; grid-template-columns: 132px minmax(0, 1fr) 34px; align-items: center; gap: 12px; font-size: var(--fs-body); }
+.rv-bar > span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rv-bar b { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.rv-bar.top > span:first-child { font-weight: 700; }
+.rv-track { height: 10px; border-radius: 99px; background: var(--chip-2); overflow: hidden; }
+.rv-track div { height: 100%; border-radius: 99px; background: var(--primary); }
+.rv-bar:not(.top) .rv-track div { background: color-mix(in srgb, var(--primary) 45%, var(--chip-2)); }
+.rv-tip { margin: 16px 0 0 !important; padding: 12px 14px; border-radius: 12px; background: var(--chip); font-size: var(--fs-small) !important; line-height: 1.5; color: var(--ink-2) !important; }
+.rv-tip b { color: var(--ink); }
+.rv-untagged { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 14px; font-size: var(--fs-small); color: var(--ink-soft); }
+.rv-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0 0 18px; padding: 0; list-style: none; }
+.rv-fact { padding: 12px 14px; border-radius: 14px; background: var(--chip); }
+.rv-fact b { display: block; font-size: var(--fs-h2); font-weight: 500; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.rv-fact span { display: block; margin-top: 4px; font-size: var(--fs-small); line-height: 1.35; color: var(--ink-soft); }
+.rv-fact small { display: block; margin-top: 2px; font-size: var(--fs-micro); color: var(--muted); }
+.rv-sub { margin: 0 0 10px; font-size: var(--fs-small); font-weight: 600; color: var(--ink-soft); }
+.rv-level { display: grid; grid-template-columns: 108px minmax(0, 1fr) 96px; gap: 12px; align-items: center; font-size: var(--fs-body); }
+.rv-level + .rv-level { margin-top: 12px; }
+.rv-level b { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+.rv-level .rv-track div { background: var(--hard); }
+.rv-skills { display: flex; flex-direction: column; }
+.rv-skill { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 18px; padding: 18px 0; border-top: 1px solid var(--line); }
+.rv-skill:first-child { border-top: 0; padding-top: 4px; }
+.rv-skill:last-child { padding-bottom: 0; }
+.rv-skill-name { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: var(--fs-h4); font-weight: 600; }
+.rv-skill-nums { margin: 4px 0 0; font-size: var(--fs-small); color: var(--ink-soft); }
+.rv-skill ul { grid-column: 1 / -1; margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.rv-skill li { display: flex; gap: 9px; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-2); }
+.rv-skill li .ic { flex: none; margin-top: 2px; color: var(--warn); }
+.rv-skill .ns-btn { align-self: start; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .rv-grid, .rv-sched { grid-template-columns: 1fr; }
+  .rv-sched > div + div { border-left: 0; border-top: 1px solid var(--line); }
+}
+/* Where the question rows drop their "last tried" column (shell.css), the review day goes too. */
+@media (max-width: 720px) {
+  .ns-qrow2 .rv-when { display: none; }
+}
+@media (max-width: 560px) {
+  .rv-head { align-items: flex-start; padding: 16px; gap: 12px; }
+  .rv-card { padding: 18px 16px; }
+  .rv-facts { grid-template-columns: 1fr; }
+  .rv-bar { grid-template-columns: 110px minmax(0, 1fr) 28px; gap: 8px; }
+  .rv-level { grid-template-columns: 92px minmax(0, 1fr) 84px; gap: 8px; }
+  .rv-skill { grid-template-columns: 1fr; }
+  .rv-day { padding: 8px 0 7px; }
+  .rv-sched > div { padding: 16px; }
+  .rv-rowtags { display: flex; margin: 4px 0 0; }
+}

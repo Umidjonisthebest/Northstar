@@ -1,0 +1,79 @@
+/* Study Planner (/plan): the summary strip, this week's days and the weeks to test day. Rows fold
+   open on a click. Prefix ns-pl-. The skill tiles inside a week are .ns-road-focus (planning.css). */
+
+.ns-pl-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; }
+.ns-pl-top > div { padding: 18px 22px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.ns-pl-count { display: flex; align-items: center; gap: 16px; }
+.ns-pl-count > b { flex-shrink: 0; min-width: 74px; padding: 8px 12px; border-radius: 16px; background: var(--primary-soft); color: var(--primary); text-align: center; font: 600 var(--fs-display) / 1 var(--display); }
+.ns-pl-count span { display: block; font-size: var(--fs-h4); font-weight: 700; color: var(--ink); }
+.ns-pl-count small, .ns-pl-progress small { font-size: var(--fs-small); color: var(--ink-soft); }
+.ns-pl-count small a:hover { color: var(--primary); }
+html.dark .ns-pl-count small a:hover { color: var(--primary-dark); }
+.ns-pl-progress { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.ns-pl-progress-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 14px; }
+.ns-pl-progress-top span { font-size: var(--fs-body); color: var(--ink-soft); }
+.ns-pl-progress-top b { font: 600 var(--fs-h3) / 1 var(--display); color: var(--ink); }
+.ns-pl-progress .ns-progress div { background: linear-gradient(90deg, #4f7df3, #8a5fe6); }
+
+.ns-pl-fine { margin: 0; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.ns-pl-basis { display: flex; align-items: flex-start; gap: 8px; margin-top: 14px; max-width: var(--measure); }
+.ns-pl-basis .ic { flex-shrink: 0; margin-top: 3px; color: var(--muted); }
+.ns-pl-chev { flex-shrink: 0; margin-left: auto; color: var(--muted); transition: transform 0.2s var(--ease); }
+
+/* This week: one row a day. A click on the row opens it. */
+.ns-pl-days { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.ns-pl-day { border-radius: 16px; background: var(--surface); border: 1px solid var(--border); transition: border-color 0.16s, box-shadow 0.16s; }
+.ns-pl-day.today { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.ns-pl-day:not(.today):hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); box-shadow: var(--shadow-sm); }
+.ns-pl-day-head:hover .ns-pl-chev, .ns-pl-week summary:hover .ns-pl-chev { color: var(--ink); }
+.ns-pl-day.done { background: color-mix(in srgb, var(--good-soft) 60%, var(--surface)); }
+.ns-pl-day-row { display: flex; align-items: center; gap: 4px; padding-left: 14px; }
+.ns-pl-day.done .ns-check { background: var(--good); border-color: var(--good); }
+.ns-pl-day-head { flex: 1; min-width: 0; display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 8px 16px 8px 10px; border: 0; background: transparent; color: var(--ink); font-family: inherit; text-align: left; cursor: pointer; border-radius: 0 16px 16px 0; }
+.ns-pl-dow { flex-shrink: 0; width: 38px; font-size: var(--fs-micro); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.ns-pl-day-head b { min-width: 0; font-size: var(--fs-body); font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ns-pl-day.done .ns-pl-day-head b { text-decoration: line-through; color: var(--ink-soft); }
+.ns-pl-day-head em { flex-shrink: 0; padding: 2px 10px; border-radius: 999px; background: var(--chip); color: var(--ink-soft); font-size: var(--fs-micro); font-style: normal; font-weight: 700; }
+/* How far the student's own work has taken the task ("7/15"), and the bar under the row. */
+.ns-pl-have { flex-shrink: 0; margin-left: auto; font-size: var(--fs-small); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.ns-pl-have ~ .ns-pl-chev { margin-left: 0; }
+.ns-pl-day .ns-pl-bar { margin: -4px 18px 14px 60px; }
+.ns-pl-bar div { background: linear-gradient(90deg, #4f7df3, #8a5fe6); }
+.ns-pl-rule { flex-basis: 100%; }
+.ns-pl-day-head em.today { background: var(--primary-soft); color: var(--primary); }
+.ns-pl-day-head em.done { background: var(--good-soft); color: color-mix(in srgb, var(--good) 70%, var(--ink)); }
+.ns-pl-day.open .ns-pl-chev { transform: rotate(180deg); }
+.ns-pl-day-body { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 4px 18px 16px 60px; animation: nsPlOpen 0.2s var(--ease); }
+.ns-pl-day-body dl { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.ns-pl-day-body dl div { padding: 8px 14px; border-radius: 12px; background: var(--chip); }
+.ns-pl-day-body dt { font-size: var(--fs-micro); color: var(--muted); }
+.ns-pl-day-body dd { margin: 1px 0 0; font-size: var(--fs-small); font-weight: 700; color: var(--ink); }
+@keyframes nsPlOpen { from { opacity: 0; transform: translateY(-4px); } }
+
+/* The weeks ahead: each folds away, the current one starts open. */
+.ns-pl-weeks { display: flex; flex-direction: column; gap: 10px; }
+.ns-pl-week { border-radius: 16px; background: var(--surface); border: 1px solid var(--border); }
+.ns-pl-week.now { border-color: color-mix(in srgb, var(--primary) 55%, var(--border)); }
+.ns-pl-week summary { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; min-height: 56px; padding: 10px 18px; border-radius: 15px; cursor: pointer; list-style: none; transition: background 0.16s; }
+.ns-pl-week summary:hover { background: var(--chip); }
+.ns-pl-week summary::-webkit-details-marker { display: none; }
+.ns-pl-week summary b { font: 600 var(--fs-h4) / 1.2 var(--display); }
+.ns-pl-dates, .ns-pl-skills { font-size: var(--fs-small); color: var(--ink-soft); }
+.ns-pl-week summary .ns-road-phase { margin-left: auto; }
+.ns-pl-week summary .ns-pl-chev { margin-left: 0; }
+.ns-pl-week[open] .ns-pl-chev { transform: rotate(180deg); }
+.ns-pl-week-body { padding: 2px 18px 18px; animation: nsPlOpen 0.2s var(--ease); }
+
+@media (max-width: 760px) {
+  .ns-pl-top { grid-template-columns: minmax(0, 1fr); }
+  .ns-pl-day-body { padding-left: 18px; }
+  .ns-pl-day .ns-pl-bar { margin-left: 18px; }
+  .ns-pl-skills { display: none; }
+  .ns-pl-day-head { gap: 10px; padding-right: 12px; }
+  .ns-pl-day-head b { white-space: normal; line-height: 1.3; }
+  .ns-pl-dow { width: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ns-pl-chev { transition: none; }
+  .ns-pl-day-body, .ns-pl-week-body { animation: none; }
+}

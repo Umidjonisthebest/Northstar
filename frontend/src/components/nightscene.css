@@ -1,0 +1,50 @@
+/* The space scene beside the sign-in forms ("nsc-"). Always night, whatever the app theme.
+   Everything is drawn in NightScene.jsx; there is no picture file behind it. */
+.nsc { --px: 0; --py: 0; position: relative; width: 100%; height: 100%; min-height: 200px; overflow: hidden; background: #130f3d; isolation: isolate; color: #fff; }
+.nsc-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+.nsc-art g[class^="nsc-l"] { transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.nsc-l1 { transform: translate(calc(var(--px) * -8px), calc(var(--py) * -6px)); }
+.nsc-l2 { transform: translate(calc(var(--px) * -16px), calc(var(--py) * -12px)); }
+.nsc-l3 { transform: translate(calc(var(--px) * -26px), calc(var(--py) * -18px)); }
+.nsc-l4 { transform: translate(calc(var(--px) * -40px), calc(var(--py) * -28px)); }
+
+.nsc-blink { animation: nscBlink 4.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes nscBlink { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.7); } }
+.nsc-shoot { opacity: 0; animation: nscShoot 11s ease-in 3s infinite; }
+@keyframes nscShoot {
+  0% { opacity: 0; transform: translate(300px, 380px) rotate(32deg); }
+  3% { opacity: 1; }
+  11% { opacity: 0; transform: translate(520px, 520px) rotate(32deg); }
+  100% { opacity: 0; transform: translate(520px, 520px) rotate(32deg); }
+}
+
+.nsc-hero { position: absolute; right: 8%; bottom: 27%; width: min(58%, 320px); aspect-ratio: 1; transform: translate(calc(var(--px) * 22px), calc(var(--py) * 14px)); transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.nsc-halo { position: absolute; inset: -20%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 190, 230, 0.5), rgba(170, 150, 255, 0.2) 45%, transparent 70%); animation: nscBreathe 6s ease-in-out infinite; }
+@keyframes nscBreathe { 0%, 100% { transform: scale(0.94); opacity: 0.85; } 50% { transform: scale(1.05); opacity: 1; } }
+/* A dotted orbit around Nova with one small moon going round it. */
+.nsc-orbit { position: absolute; inset: -9%; border-radius: 50%; border: 1.5px dotted rgba(220, 212, 255, 0.4); animation: nscOrbit 26s linear infinite; }
+.nsc-orbit i { position: absolute; top: 50%; left: -7px; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff3c4, #f5b54a); box-shadow: 0 0 14px rgba(255, 207, 92, 0.8); }
+@keyframes nscOrbit { to { transform: rotate(360deg); } }
+.nsc-band { filter: blur(26px); }
+.nsc-nova { position: relative; width: 100%; height: auto; filter: drop-shadow(0 24px 28px rgba(10, 4, 50, 0.6)); animation: nscFloat 3.6s ease-in-out infinite; }
+@keyframes nscFloat { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
+.nsc-shadow { position: absolute; left: 24%; right: 24%; bottom: -12%; height: 6%; border-radius: 50%; background: rgba(6, 3, 30, 0.55); filter: blur(9px); animation: nscShadow 3.6s ease-in-out infinite; }
+@keyframes nscShadow { 0%, 100% { transform: scaleX(1); opacity: 0.55; } 50% { transform: scaleX(0.84); opacity: 0.35; } }
+
+/* The line about the product, with its arrows (bottom-left, like a slide). */
+.nsc-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 30px 26px; background: linear-gradient(180deg, rgba(13, 10, 44, 0), rgba(13, 10, 44, 0.86) 55%); display: grid; gap: 14px; }
+.nsc-caption p { margin: 0; max-width: 22ch; font: 400 clamp(19px, 1.9vw, 25px) / 1.25 var(--display); color: #e3dfff; animation: nscLine 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.nsc-caption b { display: block; font-weight: 600; color: #fff; }
+@keyframes nscLine { from { opacity: 0; transform: translateY(8px); } }
+.nsc-arrows { display: flex; align-items: center; gap: 10px; }
+.nsc-arrows button { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.55); background: transparent; color: #fff; transition: background 0.18s, transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.nsc-arrows button:hover { background: rgba(255, 255, 255, 0.16); transform: scale(1.06); }
+.nsc-arrows button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.nsc-arrows svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.nsc-count { margin-left: 4px; font: 500 13px var(--sans); color: #b9b3e6; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nsc-blink, .nsc-shoot, .nsc-halo, .nsc-shadow, .nsc-nova, .nsc-orbit, .nsc-caption p { animation: none !important; }
+  .nsc-art g[class^="nsc-l"], .nsc-hero { transition: none; transform: none; }
+  .nsc-shoot { display: none; }
+}

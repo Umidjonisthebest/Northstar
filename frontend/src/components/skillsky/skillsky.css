@@ -1,0 +1,184 @@
+/* Skill constellation map ("sks-"). The stage is always night: it keeps its own colours in light
+   and dark mode. The tools, list and detail card follow the app theme. */
+.sks { display: grid; gap: 16px; }
+.sks-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.sks-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-small); color: var(--ink-soft); }
+.sks-legend li { display: inline-flex; align-items: center; gap: 5px; }
+.sks-legend b { color: var(--ink); font-weight: 650; font-variant-numeric: tabular-nums; }
+.sks-legend svg { width: 28px; height: 28px; overflow: visible; background: #1b1846; border-radius: 9px; }
+.sks-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+.sks-body { display: grid; gap: 14px; }
+/* The map gets the whole window's width: four panels in a row need the room. */
+.ns-content:has(.sks-stage) { max-width: 1560px; }
+
+/* ---- the sky: drawn here, no picture file ---- */
+.sks-stage { position: relative; display: grid; gap: 30px; padding: 26px; border-radius: 28px; isolation: isolate; color: #f1efff; container: sks / inline-size;
+  background:
+    radial-gradient(60% 30% at 50% 104%, rgba(255, 150, 196, 0.22), transparent 70%),
+    radial-gradient(44% 40% at 0% 100%, rgba(79, 125, 243, 0.28), transparent 70%),
+    radial-gradient(90% 60% at 10% -10%, #3a2f9a 0%, transparent 62%),
+    radial-gradient(80% 60% at 96% 104%, #4a2590 0%, transparent 60%),
+    linear-gradient(180deg, #1a1556 0%, #0e0b2e 100%);
+  box-shadow: 0 24px 60px -30px rgba(20, 12, 70, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.sks-defs { position: absolute; }
+
+.sks-group { display: grid; gap: 14px; }
+.sks-group-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; padding: 0 4px; }
+.sks-group-head h3 { margin: 0; font: 600 var(--fs-h3) / var(--lh-head) var(--display); color: #fff; }
+.sks-group-head span { font-size: var(--fs-small); font-weight: 600; color: #b9b5e2; }
+.sks-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+/* One constellation: a rounded pane of slightly lighter sky, tinted with the constellation's hue. */
+.sks-panel { --hue: #c9a8ff; display: flex; flex-direction: column; min-width: 0; border-radius: 22px; overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 50% 46%, color-mix(in srgb, var(--hue) 16%, transparent), transparent 72%),
+    rgba(255, 255, 255, 0.045);
+  border: 1px solid color-mix(in srgb, var(--hue) 34%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s, background-color 0.2s; }
+.sks-panel:hover { border-color: color-mix(in srgb, var(--hue) 62%, transparent); }
+.sks-panel.has-next { border-color: rgba(255, 122, 107, 0.7); }
+.sks-panel header { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; padding: 14px 16px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.sks-panel h4 { margin: 0; font: 600 var(--fs-body) / 1.25 var(--display); letter-spacing: 0.01em; color: color-mix(in srgb, var(--hue) 70%, #fff); }
+.sks-pct { flex-shrink: 0; padding: 3px 10px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); color: #fff; font: 700 var(--fs-micro) / 1.4 var(--sans); font-variant-numeric: tabular-nums; }
+.sks-frame { overflow: hidden; }
+.sks-panel svg { display: block; user-select: none; -webkit-user-select: none; }
+
+.sks-blink { animation: sksBlink 5s ease-in-out infinite; }
+@keyframes sksBlink { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.9; } }
+.sks-spark { fill: #fff3c9; }
+.sks-sname { font: 500 12.500px/1 var(--display); letter-spacing: 0.01em; fill: #f1efff; text-anchor: middle; paint-order: stroke; stroke: rgba(14, 11, 46, 0.9); stroke-width: 4px; stroke-linejoin: round; pointer-events: none; transition: fill 0.2s; }
+.sks-star.s-new .sks-sname { fill: #c9c5ee; }
+.sks-star:hover .sks-sname, .sks-star:focus-visible .sks-sname, .sks-star.on .sks-sname { fill: #fff; }
+
+.sks-line { stroke: var(--hue); stroke-width: 2; stroke-linecap: round; opacity: 0.9; }
+.sks-line-glow { stroke: var(--hue); stroke-width: 8; stroke-linecap: round; opacity: 0.18; }
+.sks-line.open { stroke-dasharray: 1.500 7; opacity: 0.6; }
+
+/* ---- stars ---- */
+.sks-star { cursor: pointer; outline: none; }
+.sks-hit { fill: transparent; }
+.sks-glow { opacity: 0.4; transition: opacity 0.2s; pointer-events: none; }
+.sks-shape { fill: #d8d2ff; stroke: #d8d2ff; transition: transform 0.18s cubic-bezier(0.3, 1.5, 0.5, 1); transform-box: fill-box; transform-origin: center; }
+.sks-shine { fill: #fff; opacity: 0.7; pointer-events: none; }
+.sks-face { fill: none; stroke: #8a5a00; stroke-width: 1.500; stroke-linecap: round; pointer-events: none; }
+.sks-ring { fill: none; stroke: #ffe08a; stroke-width: 1.400; stroke-dasharray: 1.500 6; stroke-linecap: round; opacity: 0.9; animation: sksSpin 30s linear infinite; transform-box: fill-box; transform-origin: center; }
+.sks-star.s-new .sks-shape { fill: #b9b3ee; stroke: #b9b3ee; opacity: 0.85; }
+.sks-star.s-new .sks-glow { opacity: 0.2; }
+.sks-star.s-started .sks-shape { fill: #f0ecff; stroke: #f0ecff; }
+.sks-star.s-started .sks-glow { opacity: 0.34; }
+.sks-star.s-learning .sks-shape { fill: #ffe6bd; stroke: #ffe6bd; }
+.sks-star.s-learning .sks-glow { opacity: 0.46; }
+.sks-star.s-strong .sks-shape, .sks-star.s-mastered .sks-shape { fill: #ffd76a; stroke: #ffd76a; }
+.sks-star.s-strong .sks-glow { opacity: 0.6; }
+.sks-star.s-mastered .sks-glow { opacity: 0.85; }
+/* Each star dims, shrinks and sways a few degrees around the lean it was given in the markup. */
+.sks-twinkle { animation: sksTwinkle 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes sksTwinkle {
+  0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.8; transform: scale(0.9) rotate(9deg); }
+}
+@keyframes sksSpin { to { transform: rotate(360deg); } }
+.sks-star:hover .sks-shape, .sks-star:focus-visible .sks-shape, .sks-star.on .sks-shape { transform: scale(1.28); }
+.sks-star:hover .sks-glow, .sks-star:focus-visible .sks-glow, .sks-star.on .sks-glow { opacity: 1; }
+.sks-star:focus-visible .sks-hit { stroke: #fff; stroke-width: 2; stroke-dasharray: 4 5; }
+.sks-star.on .sks-hit { stroke: rgba(255, 255, 255, 0.6); stroke-width: 1.500; }
+
+/* ---- "your next step": the one coral thing on the screen ---- */
+.sks-focus-ring { fill: none; stroke: #ff7a6b; stroke-width: 2.600; }
+.sks-focus-pulse { fill: none; stroke: #ff7a6b; stroke-width: 2; opacity: 0; animation: sksPulse 2.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes sksPulse {
+  0% { opacity: 0.8; transform: scale(0.8); }
+  100% { opacity: 0; transform: scale(1.7); }
+}
+.sks-guide { pointer-events: none; }
+.sks-guide .nova { animation: novaFloat 3.4s ease-in-out infinite; }
+.sks-next-tag { fill: #ff7a6b; }
+.sks-next-text { font: 600 12px/1 var(--display); fill: #3a0e08; text-anchor: middle; }
+
+/* ---- detail card: stays at the bottom of the window while a skill is chosen ---- */
+.sks-detail { display: grid; gap: 10px; padding: 18px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line, var(--border)); box-shadow: var(--shadow-sm); animation: sksIn 0.25s ease; }
+.sks-detail:not(.empty) { position: sticky; bottom: 14px; z-index: 5; box-shadow: var(--shadow-lg); }
+@keyframes sksIn { from { opacity: 0; transform: translateY(6px); } }
+@media (min-width: 900px) {
+  .sks-detail:not(.empty) { grid-template-columns: minmax(220px, 1.1fr) minmax(200px, 0.8fr) minmax(240px, 1.4fr) auto; grid-template-areas: "head facts tip go" "name facts tip go" "where facts next go"; column-gap: 24px; align-items: center; }
+  .sks-detail:not(.empty) .sks-detail-head { grid-area: head; }
+  .sks-detail:not(.empty) h3 { grid-area: name; }
+  .sks-detail:not(.empty) .sks-where { grid-area: where; margin: 0; }
+  .sks-detail:not(.empty) .sks-facts { grid-area: facts; }
+  .sks-detail:not(.empty) .sks-tip { grid-area: tip; }
+  .sks-detail:not(.empty) .sks-next { grid-area: next; }
+  .sks-detail:not(.empty) > .ns-btn { grid-area: go; white-space: nowrap; }
+}
+.sks-detail.empty { justify-items: start; color: var(--ink-soft); font-size: var(--fs-small); }
+.sks-detail.empty p { margin: 0; line-height: 1.5; }
+.sks-detail-head { display: flex; align-items: center; justify-content: space-between; }
+.sks-detail h3 { margin: 0; font-family: var(--display); font-size: var(--fs-h3); letter-spacing: -0.005em; line-height: 1.25; }
+.sks-where { margin: -4px 0 0; font-size: var(--fs-small); color: var(--muted); }
+.sks-x { width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 11px; background: transparent; color: var(--ink-soft); }
+.sks-x:hover { background: var(--chip, var(--primary-softer)); }
+.sks-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 2px 0; }
+.sks-facts div { padding: 10px 12px; border-radius: 14px; background: var(--chip, var(--primary-softer)); }
+.sks-facts dt { font-size: var(--fs-micro); color: var(--muted); }
+.sks-facts dd { margin: 2px 0 0; font-family: var(--display); font-size: var(--fs-h3); font-weight: 700; font-variant-numeric: tabular-nums; }
+.sks-next { display: flex; gap: 8px; margin: 0; padding: 10px 12px; border-radius: 14px; background: color-mix(in srgb, #ff7a6b 12%, var(--surface)); color: var(--ink); font-size: var(--fs-small); line-height: 1.45; }
+.sks-next svg { flex: none; margin-top: 2px; color: #d9483a; }
+.sks-tip { margin: 0; font-size: var(--fs-small); line-height: 1.55; color: var(--ink-soft); }
+.sks-tip b { display: block; font-size: var(--fs-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.sks-go-next { background: #ff7a6b; color: #3a0e08; border-color: transparent; font-weight: 700; }
+.sks-go-next:hover { background: #ff8d80; }
+.sks-chip { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px; font-size: var(--fs-micro); font-weight: 650; background: var(--chip, #eee); color: var(--ink-soft); }
+.sks-chip.s-started { background: #ece8ff; color: #4a3fa3; }
+.sks-chip.s-learning { background: #fff0d6; color: #8a5a12; }
+.sks-chip.s-strong { background: #fff0c2; color: #7a5200; }
+.sks-chip.s-mastered { background: #ffe08a; color: #5e3f00; }
+html.dark .sks-chip.s-started { background: #2a2558; color: #cfc8ff; }
+html.dark .sks-chip.s-learning { background: #3c3016; color: #ffe6bd; }
+html.dark .sks-chip.s-strong, html.dark .sks-chip.s-mastered { background: #40330d; color: #ffd76a; }
+.sks-tag { margin-left: 8px; padding: 2px 8px; border-radius: 999px; background: #ff7a6b; color: #3a0e08; font-size: var(--fs-micro); font-weight: 700; white-space: nowrap; }
+
+/* ---- list view ---- */
+.sks-list { display: grid; gap: 18px; }
+.sks-list section { border: 1px solid var(--line, var(--border)); border-radius: 18px; background: var(--surface); overflow-x: auto; }
+.sks-list h3 { margin: 0; padding: 14px 18px 10px; font-family: var(--display); font-size: var(--fs-h4); }
+.sks-list h3 small { margin-left: 8px; font: 500 var(--fs-micro) var(--sans); color: var(--muted); }
+.sks-list table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
+.sks-list th, .sks-list td { padding: 10px 18px; text-align: left; border-top: 1px solid var(--line, var(--border)); }
+.sks-list thead th { font-size: var(--fs-micro); font-weight: 600; color: var(--muted); }
+.sks-list tbody th { font-weight: 550; min-width: 200px; }
+.sks-list td { color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sks-list tr.next th { box-shadow: inset 3px 0 0 #ff7a6b; }
+.sks-fail { display: grid; justify-items: center; gap: 12px; padding: 40px 16px; color: var(--ink-soft); }
+
+/* ---- the Days / Skills switch on /sky ---- */
+.ns-sky-tabs { display: inline-flex; gap: 4px; padding: 5px; border-radius: 999px; background: var(--chip, var(--primary-softer)); }
+.ns-sky-tabs button { min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-soft); font-size: var(--fs-body); font-weight: 650; display: inline-flex; align-items: center; gap: 8px; }
+.ns-sky-tabs button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
+.ns-sky-tabs button:not([aria-selected="true"]):hover { background: color-mix(in srgb, var(--surface) 60%, transparent); color: var(--ink); }
+
+/* Panels per row follow the stage's own width, not the window's (the sidebar takes its share). */
+@container sks (max-width: 960px) {
+  .sks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container sks (max-width: 500px) {
+  .sks-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  /* Clear the phone tab bar, and keep the card short enough to leave the map in view. */
+  .sks-detail:not(.empty) { bottom: 92px; padding: 14px 16px; gap: 8px; }
+  .sks-detail:not(.empty) .sks-tip { display: none; }
+  .sks-detail h3 { font-size: var(--fs-h4); }
+}
+@media (max-width: 720px) {
+  .sks-stage { padding: 14px; border-radius: 22px; gap: 24px; }
+  .sks-list th, .sks-list td { padding: 9px 12px; }
+  .sks-list tbody th { min-width: 150px; }
+  .ns-sky-tabs { display: flex; }
+  .ns-sky-tabs button { flex: 1; justify-content: center; padding: 0 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sks-shape, .sks-glow, .sks-panel { transition: none !important; }
+  .sks-focus-pulse { opacity: 0; }
+  .sks-blink, .sks-twinkle, .sks-ring { animation: none !important; }
+}

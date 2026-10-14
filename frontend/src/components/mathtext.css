@@ -1,0 +1,37 @@
+/* Math drawn by MathText.jsx (mx-): stacked fractions, radicals, exponents and subscripts. Sizes
+   are in em and every line is currentColor, so it follows whatever text it sits in: prompt, answer
+   choice, explanation, Nova's chat. */
+.mx-unseen { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Fractions. */
+.mx-frac { position: relative; display: inline-flex; flex-direction: column; vertical-align: middle; margin: 0 0.16em; font-size: 0.92em; line-height: 1.2; text-align: center; white-space: nowrap; overflow-wrap: normal; font-variant-numeric: lining-nums; }
+.mx-num { padding: 0 0.24em 0.1em; border-bottom: max(1px, 0.07em) solid currentColor; }
+.mx-den { padding: 0.1em 0.24em 0; }
+.mx-num[data-n]::before, .mx-den[data-n]::before { content: attr(data-n); }
+.mx-frac.mx-mixed { margin-left: -0.06em; }
+/* A fraction inside a fraction or an exponent has shrunk once already. */
+.mx-frac .mx-frac { font-size: 0.86em; margin: 0 0.1em; }
+.mx-sup .mx-frac, .mx-sub .mx-frac { font-size: 0.88em; line-height: 1.05; margin: 0 0.08em; }
+.mx-sup .mx-num, .mx-sub .mx-num { padding: 0 0.16em 0.04em; }
+.mx-sup .mx-den, .mx-sub .mx-den { padding: 0.04em 0.16em 0; }
+.mx-sup .mx-frac { top: -0.3em; } /* an exponent's denominator stays clear of the baseline */
+
+/* Exponents and subscripts: one size wherever they are, and no taller line for a plain x². */
+.mx-sup, .mx-sub { font-size: 0.7em; line-height: 0; }
+.mx-sup { vertical-align: 0.52em; }
+.mx-sub { vertical-align: -0.26em; }
+
+/* Roots: the sign is a drawing stretched to the height of what it covers, and the bar over the
+   contents is their top border. ∛ and ∜ carry their number in the crook of the sign. */
+.mx-root { position: relative; display: inline-block; padding-left: 0.6em; margin: 0 0.05em; line-height: 1.2; white-space: nowrap; overflow-wrap: normal; --mx-rule: max(1px, 0.07em); }
+.mx-root-sign { position: absolute; left: 0; top: calc(var(--mx-rule) / 2); width: 0.62em; height: calc(100% - var(--mx-rule) / 2); overflow: visible; fill: none; stroke: currentColor; stroke-width: var(--mx-rule); stroke-linecap: round; stroke-linejoin: round; }
+.mx-root-sign path { vector-effect: non-scaling-stroke; }
+.mx-root-sign .mx-root-down { stroke-width: max(1.6px, 0.12em); }
+.mx-root-body { display: inline-block; padding: 0.1em 0.12em 0 0.08em; border-top: var(--mx-rule) solid currentColor; }
+.mx-root-n { padding-left: 0.74em; }
+.mx-root-n .mx-root-sign { left: 0.14em; }
+.mx-root-n::before { content: attr(data-n); position: absolute; left: 0; top: 0.08em; font-size: 0.52em; line-height: 1; }
+.mx-den > .mx-root:first-child { margin-top: 0.1em; } /* the root's bar is not the fraction's */
+
+/* A highlight covers the whole of a fraction or root, not just a band through its middle. */
+mark .mx-frac, mark .mx-root { background: inherit; border-radius: 2px; }

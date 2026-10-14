@@ -1,0 +1,287 @@
+/* IELTS module styles. Every class is prefixed with `ie-`, and element-level rules only
+   apply inside `.ie-root` (set by <IeltsScope> and the IELTS portal roots — see
+   ../scope.js), so nothing here leaks into Northstar's pages.
+
+   COLOUR: the tokens below are Northstar's palette (src/index.css), so IELTS and SAT read
+   as one product. The IELTS module used to carry its own red accent and Tailwind greys.
+     accent  = Northstar's sky-blue brand (--primary / --primary-dark / --primary-soft)
+     danger  = Northstar's --danger, only for errors, wrong answers and destructive actions
+     green / amber = Northstar's --good / --warn
+     gray    = Northstar's cool slate neutrals (--ink / --ink-soft / --muted / --border / --bg)
+     skill   = the Listening / Reading / Writing colours the student hub already uses
+   They are copied (not referenced) because the candidate exam and editors must stay light
+   even when the rest of the app is in dark mode (same approach as the cover page). */
+:root {
+  --ie-font: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --ie-accent-700: #0f48a8;
+  --ie-accent-600: #1257cf;
+  --ie-accent-500: #1664e2;
+  --ie-accent-300: #96b9f2;
+  --ie-accent-200: #c9dcfa;
+  --ie-accent-100: #e4eeff;
+  --ie-accent-50: #f2f7ff;
+
+  --ie-danger-700: #a82e25;
+  --ie-danger-600: #c93a2f;
+  --ie-danger-500: #e2493d;
+  --ie-danger-300: #f1a49c;
+  --ie-danger-200: #f7cdc9;
+  --ie-danger-100: #fdeceb;
+  --ie-danger-50: #fef6f5;
+
+  --ie-green-700: #0d7a58;
+  --ie-green-600: #12906a;
+  --ie-green-500: #16a374;
+  --ie-green-200: #bfe8d4;
+  --ie-green-100: #e3f8ef;
+  --ie-green-50: #effbf6;
+
+  --ie-amber-500: #d97b17;
+  --ie-amber-100: #fdf1e2;
+
+  --ie-skill-listening: #1c9ff0;
+  --ie-skill-listening-soft: #e4f4ff;
+  --ie-skill-listening-ink: #0369a1;
+  --ie-skill-reading: #d9468f;
+  --ie-skill-reading-soft: #fde7f2;
+  --ie-skill-reading-ink: #a61e63;
+  --ie-skill-writing: #7c4dff;
+  --ie-skill-writing-soft: #efe8ff;
+  --ie-skill-writing-ink: #5b2fd0;
+
+  --ie-gray-950: #0c1020;
+  --ie-gray-900: #161a2e;
+  --ie-gray-800: #252a42;
+  --ie-gray-700: #3a405b;
+  --ie-gray-600: #555b75;
+  --ie-gray-500: #6b728c;
+  --ie-gray-400: #8b91a8;
+  --ie-gray-300: #ccd1e0;
+  --ie-gray-200: #e4e8f1;
+  --ie-gray-150: #eaeef6;
+  --ie-gray-100: #f0f3fa;
+  --ie-gray-50: #f5f7fc;
+
+  --ie-bg: #f5f7fc;
+  --ie-surface: #ffffff;
+  --ie-border: #e4e8f1;
+  --ie-text: #161a2e;
+  --ie-muted: #6b728c;
+
+  --ie-radius-sm: 6px;
+  --ie-radius: 8px;
+  --ie-radius-lg: 12px;
+  --ie-shadow-sm: 0 1px 2px rgba(22, 26, 46, 0.06);
+  --ie-shadow: 0 4px 12px rgba(22, 26, 46, 0.08);
+  --ie-shadow-lg: 0 12px 32px rgba(22, 26, 46, 0.16);
+  --ie-ring: 0 0 0 3px rgba(22, 100, 226, 0.18);
+}
+
+/* Inside Northstar's teacher studio (`.ie-root--admin`) the IELTS pages follow its
+   dark mode: neutrals and tinted backgrounds are remapped to Northstar's dark tokens.
+   The candidate exam and the full-screen editors/previews keep the light look. */
+html.dark .ie-root--admin {
+  color-scheme: dark;
+  --ie-bg: #14141f;
+  --ie-surface: #1a1b2e;
+  --ie-border: #2d2f44;
+  --ie-text: #f7f7fb;
+  --ie-muted: #9a9cb4;
+
+  --ie-gray-950: #ffffff;
+  --ie-gray-900: #f7f7fb;
+  --ie-gray-800: #dcdded;
+  --ie-gray-700: #c3c4d6;
+  --ie-gray-600: #a6a8bf;
+  --ie-gray-500: #8d8fa7;
+  --ie-gray-400: #6d6f88;
+  --ie-gray-300: #45475f;
+  --ie-gray-200: #34364d;
+  --ie-gray-150: #2b2d44;
+  --ie-gray-100: #24263b;
+  --ie-gray-50: #1e2033;
+
+  --ie-accent-700: #1f56c0;
+  --ie-accent-600: #2f6fe0;
+  --ie-accent-500: #3b82f6;
+  --ie-accent-300: #2c4780;
+  --ie-accent-200: #2a3f70;
+  --ie-accent-100: #1d2c4d;
+  --ie-accent-50: #172238;
+
+  --ie-danger-200: #5c2a2c;
+  --ie-danger-100: #3a1e1e;
+  --ie-danger-50: #2d1b21;
+  --ie-green-200: #28553a;
+  --ie-green-100: #1e3a2a;
+  --ie-green-50: #172b20;
+  --ie-amber-100: #3d3310;
+
+  --ie-skill-listening-soft: color-mix(in srgb, var(--ie-skill-listening) 18%, transparent);
+  --ie-skill-listening-ink: color-mix(in srgb, var(--ie-skill-listening) 55%, #fff);
+  --ie-skill-reading-soft: color-mix(in srgb, var(--ie-skill-reading) 18%, transparent);
+  --ie-skill-reading-ink: color-mix(in srgb, var(--ie-skill-reading) 55%, #fff);
+  --ie-skill-writing-soft: color-mix(in srgb, var(--ie-skill-writing) 18%, transparent);
+  --ie-skill-writing-ink: color-mix(in srgb, var(--ie-skill-writing) 55%, #fff);
+
+  --ie-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --ie-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --ie-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --ie-ring: 0 0 0 3px rgba(59, 130, 246, 0.28);
+}
+html.dark .ie-root--admin .ie-btn--dark {
+  color: var(--ie-bg);
+}
+html.dark .ie-root--admin .ie-pill--blue,
+html.dark .ie-root--admin .ie-pill--accent {
+  color: #7fadff;
+}
+html.dark .ie-root--admin .ie-pill--green {
+  color: #7ee2a0;
+}
+html.dark .ie-root--admin .ie-pill--red {
+  color: #ff9a92;
+}
+/* The stat banner itself follows the remapped accent tokens; its icon needs the lighter blue. */
+html.dark .ie-root--admin .ie-stat-banner__icon {
+  color: #7fadff;
+}
+
+.ie-root {
+  font-family: var(--ie-font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ie-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ie-root,
+.ie-root *,
+.ie-root *::before,
+.ie-root *::after {
+  box-sizing: border-box;
+}
+
+/* Full-screen IELTS pages (candidate site, editors, previews) paint their own background. */
+.ie-scope--page {
+  min-height: 100vh;
+  background: var(--ie-bg);
+}
+
+.ie-root :where(h1, h2, h3, h4, p) {
+  margin: 0;
+}
+
+.ie-root :where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+}
+
+.ie-root :where(button) {
+  cursor: pointer;
+}
+
+.ie-root :where(a) {
+  color: inherit;
+}
+
+.ie-root :where(img) {
+  max-width: 100%;
+}
+
+.ie-root ::selection {
+  background: var(--ie-accent-200);
+}
+
+/* Browser focus ring, as in the standalone IELTS app, instead of Northstar's violet
+   one. Same specificity as Northstar's rule (this file loads later), so IELTS
+   components that set their own `outline` still win. */
+.ie-root :where(:focus-visible) {
+  outline: revert;
+  outline-offset: revert;
+}
+
+.ie-sr-only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ie-muted {
+  color: var(--ie-muted);
+}
+
+.ie-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ie-spacer {
+  flex: 1;
+}
+
+.ie-scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ie-gray-300) transparent;
+}
+
+@keyframes ie-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ie-pulse {
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes ie-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ie-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ie-slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ie-root *,
+  .ie-root *::before,
+  .ie-root *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

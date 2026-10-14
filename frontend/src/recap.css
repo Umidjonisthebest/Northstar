@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Monthly recap (pages/hub/Recap.jsx) and its pointer on the home pages
+   (components/RecapPrompt.jsx). The recap card reuses the night sky panel
+   from sky.css. Prefix: ns-recap-.
+   ========================================================================== */
+
+.ns-recap-months { display: flex; flex-wrap: wrap; gap: 8px; }
+.ns-recap-months button { height: 38px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); color: var(--ink-soft); font-size: var(--fs-small); font-weight: 550; }
+.ns-recap-months button:hover { border-color: var(--ink-soft); }
+.ns-recap-months button.on { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); color: var(--ink); }
+
+.ns-recap-card { padding: 26px 28px 28px; }
+.ns-recap-kicker { margin: 0; font-size: var(--fs-micro); font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky-lit); }
+.ns-recap-card h2 { margin: 6px 0 18px; font-family: var(--display); font-size: var(--fs-h1); letter-spacing: -0.005em; }
+.ns-recap-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ns-recap-stat { display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 16px 18px; border-radius: 16px; background: rgba(255, 255, 255, 0.08); }
+.ns-recap-stat span { font-size: var(--fs-micro); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky-soft-ink); }
+.ns-recap-stat b { font-family: var(--display); font-size: var(--fs-h2); line-height: 1.2; overflow-wrap: anywhere; }
+.ns-recap-stat small { font-size: var(--fs-small); line-height: 1.45; color: var(--sky-soft-ink); }
+.ns-recap-stat a { margin-top: 4px; font-size: var(--fs-small); font-weight: 600; color: var(--sky-lit); }
+
+.ns-recap-share { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 22px; align-items: center; padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.ns-recap-share h2 { margin: 0 0 6px; font-size: var(--fs-h4); font-weight: 600; }
+.ns-recap-share p { margin: 0; font-size: var(--fs-body); line-height: 1.5; color: var(--ink-soft); }
+.ns-recap-share-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.ns-recap-preview { display: grid; place-items: center; aspect-ratio: 1; border-radius: 14px; background: #141d52; overflow: hidden; }
+.ns-recap-preview img { display: block; width: 100%; height: 100%; }
+.ns-recap-preview p { padding: 16px; text-align: center; color: #d5dbf7; }
+
+/* Home page pointer */
+.ns-recap-prompt { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 14px 18px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
+.ns-recap-prompt > div { flex: 1; min-width: 220px; }
+.ns-recap-prompt b { display: block; font-size: var(--fs-body); color: var(--ink); }
+.ns-recap-prompt p { margin: 3px 0 0; font-size: var(--fs-small); line-height: 1.5; color: var(--ink-soft); }
+.ns-recap-prompt-icon { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--sky-soft); color: var(--sky); }
+
+@media (max-width: 900px) {
+  .ns-recap-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ns-recap-share { grid-template-columns: 1fr; }
+  .ns-recap-preview { max-width: 320px; }
+}
+@media (max-width: 520px) {
+  .ns-recap-grid { grid-template-columns: 1fr; }
+  .ns-recap-card { padding: 20px 18px; }
+}

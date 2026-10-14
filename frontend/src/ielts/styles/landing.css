@@ -1,0 +1,138 @@
+/* ================= Candidate landing / login ================= */
+.ie-landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--ie-bg);
+}
+.ie-landing__inner {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 56px;
+  align-items: center;
+}
+.ie-landing__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--ie-accent-100);
+  border: 1px solid var(--ie-accent-200);
+  color: var(--ie-accent-500);
+  font-size: 14px;
+}
+.ie-landing__pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ie-accent-500);
+  opacity: 0.55;
+}
+.ie-landing h1 {
+  font-size: 48px;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  margin: 22px 0 16px;
+  color: var(--ie-gray-900);
+}
+.ie-landing h1 em {
+  color: var(--ie-accent-500);
+  font-style: normal;
+}
+.ie-landing__lead {
+  font-size: 17px;
+  color: var(--ie-gray-600);
+  line-height: 1.6;
+  max-width: 460px;
+}
+.ie-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+  max-width: 460px;
+}
+.ie-feature {
+  background: var(--ie-surface);
+  border: 1px solid var(--ie-gray-150);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(22, 26, 46, 0.04);
+}
+.ie-feature__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--ie-accent-100);
+  color: var(--ie-accent-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.ie-feature__icon svg {
+  width: 19px;
+  height: 19px;
+}
+.ie-feature h3 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.ie-feature p {
+  font-size: 13px;
+  color: var(--ie-gray-500);
+  margin-top: 2px;
+  line-height: 1.45;
+}
+.ie-login-card {
+  background: var(--ie-surface);
+  border-radius: 12px;
+  border: 1px solid var(--ie-gray-150);
+  box-shadow: 0 12px 32px rgba(22, 26, 46, 0.08);
+  padding: 24px;
+}
+.ie-login-card__pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--ie-accent-100);
+  color: var(--ie-accent-500);
+  font-size: 13px;
+}
+.ie-login-card h2 {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 600;
+  margin: 14px 0 10px;
+  letter-spacing: -0.01em;
+}
+.ie-login-card__sub {
+  text-align: center;
+  color: var(--ie-gray-500);
+  font-size: 14px;
+  margin-bottom: 26px;
+}
+.ie-login-card .ie-label {
+  display: block;
+  margin-bottom: 8px;
+}
+.ie-login-card__input {
+  height: 40px;
+}
+@media (max-width: 860px) {
+  .ie-landing__inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .ie-landing h1 {
+    font-size: 38px;
+  }
+}

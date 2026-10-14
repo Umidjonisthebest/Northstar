@@ -1,0 +1,41 @@
+/* Success-story card (components/StoryCard.jsx), "st-" prefix. Always light:
+   it sits on the cover page, and the studio shows it as a preview. */
+
+.st-card {
+  --st-ink: #0369a1;
+  --st-soft: #e0f4ff;
+  --st-ring: #bfe6ff;
+  color-scheme: light;
+  display: flex; flex-direction: column; gap: 22px;
+  padding: 30px 30px 32px; border-radius: 30px;
+  background: #fff; color: #10142a; border: 1.5px solid #eceef4;
+  box-shadow: 0 1px 0 rgba(16, 20, 42, 0.03);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s, border-color 0.35s;
+}
+.st-card:hover { transform: translateY(-6px); border-color: var(--st-ring); box-shadow: 0 30px 60px -34px color-mix(in srgb, var(--st-ink) 55%, transparent); }
+.st-card.st-tone-sun { --st-ink: #a15c07; --st-soft: #fff5d6; --st-ring: #ffe39a; }
+.st-card.st-tone-sky { --st-ink: #0369a1; --st-soft: #e0f4ff; --st-ring: #bfe6ff; }
+.st-card.st-tone-rose { --st-ink: #be185d; --st-soft: #ffe4ef; --st-ring: #ffc3da; }
+.st-card.st-tone-mint { --st-ink: #047857; --st-soft: #dcfbea; --st-ring: #aef0cc; }
+.st-card.st-tone-lilac { --st-ink: #6d28d9; --st-soft: #efe8ff; --st-ring: #d6c6ff; }
+.st-card.st-tone-peach { --st-ink: #c2410c; --st-soft: #ffeadd; --st-ring: #ffcfb2; }
+
+.st-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.st-jump { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; background: var(--st-soft); color: var(--st-ink); font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -0.005em; font-variant-numeric: tabular-nums; }
+.st-delta { color: var(--st-ink); font-family: var(--display); font-weight: 600; font-size: 21px; letter-spacing: -0.005em; }
+.st-who { display: flex; align-items: center; gap: 16px; }
+.st-avatar { width: 76px; height: 76px; flex-shrink: 0; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, #fff, var(--st-soft) 70%); box-shadow: inset 0 0 0 2px var(--st-ring); }
+.st-who b { display: block; font-family: var(--display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; }
+.st-who span { color: #6b7089; font-size: 16px; }
+.st-quote { margin: 0; font-size: 19px; line-height: 1.6; color: #2a2f47; }
+
+@media (max-width: 640px) {
+  .st-card { padding: 24px 22px 26px; border-radius: 26px; }
+  .st-jump { font-size: 19px; padding: 10px 18px; }
+  .st-delta { font-size: 18px; }
+  .st-quote { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-card { transition: none; }
+  .st-card:hover { transform: none; }
+}
